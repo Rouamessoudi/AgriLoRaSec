@@ -1,0 +1,125 @@
+=== Comparaison des 4 modèles (même dataset, split par run_id) ===
+
+Modèle                   Accuracy   F1-macro
+--------------------------------------------
+Random Forest               0.915      0.478
+XGBoost                     0.914      0.422
+ANN (MLP)                   0.955      0.539
+LSTM (fenêtres)             0.938      0.549
+
+Y = paquet (capteur=Normal / jammer / replay / wormhole).
+Les 3 premiers : une ligne = un événement. LSTM : fenêtre de 16.
+sender_mac n'est PAS dans X (seulement pour construire Y).
+
+=== Random Forest AgriLoRaSec ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset.csv
+Accuracy test : 0.915
+F1-macro test : 0.478
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.571     0.193     0.288        83
+      Normal      1.000     1.000     1.000       934
+      Replay      0.529     0.500     0.514        18
+    Wormhole      0.068     0.278     0.109        18
+
+    accuracy                          0.915      1053
+   macro avg      0.542     0.493     0.478      1053
+weighted avg      0.942     0.915     0.920      1053
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        16       0       3        64
+Normal          0     934       0         0
+Replay          4       0       9         5
+Wormhole        8       0       5         5
+
+Label = type d'émetteur (capteur=Normal, jammer, replay, wormhole).
+sender_mac sert UNIQUEMENT à construire Y, jamais comme feature X.
+
+=== XGBoost AgriLoRaSec ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset.csv
+Accuracy test : 0.914
+F1-macro test : 0.422
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.500     0.181     0.265        83
+      Normal      1.000     1.000     1.000       934
+      Replay      0.129     0.444     0.200        18
+    Wormhole      0.185     0.278     0.222        18
+
+    accuracy                          0.914      1053
+   macro avg      0.454     0.476     0.422      1053
+weighted avg      0.932     0.914     0.915      1053
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        15       0      51        17
+Normal          0     934       0         0
+Replay          5       0       8         5
+Wormhole       10       0       3         5
+
+Label = type d'émetteur (capteur=Normal, jammer, replay, wormhole).
+sender_mac sert UNIQUEMENT à construire Y, jamais comme feature X.
+
+=== ANN (MLP) AgriLoRaSec ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset.csv
+Accuracy test : 0.955
+F1-macro test : 0.539
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.795     0.747     0.770        83
+      Normal      1.000     1.000     1.000       934
+      Replay      0.294     0.556     0.385        18
+    Wormhole      0.000     0.000     0.000        18
+
+    accuracy                          0.955      1053
+   macro avg      0.522     0.576     0.539      1053
+weighted avg      0.955     0.955     0.954      1053
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        62       0      15         6
+Normal          0     934       0         0
+Replay          7       0      10         1
+Wormhole        9       0       9         0
+
+Label = type d'émetteur (capteur=Normal, jammer, replay, wormhole).
+sender_mac sert UNIQUEMENT à construire Y, jamais comme feature X.
+
+=== LSTM AgriLoRaSec ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset.csv
+Accuracy test : 0.938
+F1-macro test : 0.549
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.714     0.714     0.714         7
+      Normal      1.000     0.966     0.982        87
+      Replay      0.333     1.000     0.500         1
+    Wormhole      0.000     0.000     0.000         1
+
+    accuracy                          0.938        96
+   macro avg      0.512     0.670     0.549        96
+weighted avg      0.962     0.938     0.948        96
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming         5       0       1         1
+Normal          2      84       0         1
+Replay          0       0       1         0
+Wormhole        0       0       1         0
+
+Label = type d'émetteur (capteur=Normal, jammer, replay, wormhole).
+sender_mac sert UNIQUEMENT à construire Y, jamais comme feature X.
+
+Fenêtres train 322 | test 96 | longueur 16
+Chaque fenêtre vient d'un seul run ; split toujours par run_id.
+Y de la fenêtre = Label du DERNIER paquet (détection d'émetteur).
+PyTorch LSTM CPU, 25 époques, 32 unités.

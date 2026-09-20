@@ -1,0 +1,1677 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2025 Andras Varga, OpenSim Ltd.
+Version: 6.3.0, build: 251110-bb3d6a4731, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  4
+Loading NED files from ../src:  13
+Loading NED files from ../../flora-1.2.0/src:  22
+Loading NED files from ../../inet-4.5.4/src:  1187
+
+Preparing for running configuration Wormhole, run #0...
+Scenario: $0="avg", $repetition=0
+Assigned runID=Wormhole-0-20260918-11:21:45-227613
+Setting up network "agrilorasec.simulations.AgriLoRaNetwork"...
+Initializing...
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork.replayer.LoRaNic.mac
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork.wormholeB.LoRaNic.mac
+WormholeApp init role=entry attackStart=360 attackEnd=1440 maxPending=4
+WormholeApp init role=exit attackStart=360 attackEnd=1440 maxPending=4
+
+Running simulation...
+** Event #0   t=0   Elapsed: 2.9e-05s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 330   present: 330   in FES: 17
+WormholeApp ATTACK_START role=entry t=360 end=1440
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=7 t=363.25546283181 delay=3.47975s due=366.73521265758 captures=1
+WORMHOLE_CAPTURE AgriSensorPacket temp=15.9358 soil=29.0455 air=79.8284 nodeIndex=0
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=8 t=363.81825896169 delay=4.43986s due=368.25811491673 captures=2
+WORMHOLE_CAPTURE AgriSensorPacket temp=22.4278 soil=45.1283 air=77.3496 nodeIndex=8
+WormholeApp TUNNEL A->B t=366.73521265758 delay=3.47975s mac=0A-AA-00-00-00-02 seq=7
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=7 t=366.73521265758
+WORMHOLE_EXIT AgriSensorPacket temp=15.9358 soil=29.0455 air=79.8284 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=7
+WormholeApp DROP_SELF_RAW t=366.73521265758
+WormholeApp PHY_TX_END t=366.81329265758 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=368.25811491673 delay=4.43986s mac=0A-AA-00-00-00-0A seq=8
+WormholeApp CLASS_A_IDLE t=370.86329265758 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=8 t=370.86329265858
+WORMHOLE_EXIT AgriSensorPacket temp=22.4278 soil=45.1283 air=77.3496 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=8
+WormholeApp DROP_SELF_RAW t=370.86329265858
+WormholeApp PHY_TX_END t=370.94137265858 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=7 t=371.69690838653 delay=0.387709s due=372.08461788559 captures=3
+WORMHOLE_CAPTURE AgriSensorPacket temp=31.3588 soil=34.2556 air=30.1234 nodeIndex=9
+WormholeApp TUNNEL A->B t=372.08461788559 delay=0.387709s mac=0A-AA-00-00-00-0B seq=7
+WormholeApp CLASS_A_IDLE t=374.99137265858 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=7 t=374.99137265958
+WORMHOLE_EXIT AgriSensorPacket temp=31.3588 soil=34.2556 air=30.1234 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=7
+WormholeApp DROP_SELF_RAW t=374.99137265958
+WormholeApp PHY_TX_END t=375.06945265958 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=8 t=377.0115447186 delay=3.33807s due=380.34961197272 captures=4
+WORMHOLE_CAPTURE AgriSensorPacket temp=28.874 soil=51.0009 air=87.0024 nodeIndex=0
+WormholeApp CLASS_A_IDLE t=379.11945265958 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=380.34961197272 delay=3.33807s mac=0A-AA-00-00-00-02 seq=8
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=8 t=380.34961197272
+WORMHOLE_EXIT AgriSensorPacket temp=28.874 soil=51.0009 air=87.0024 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=8
+WormholeApp DROP_SELF_RAW t=380.34961197272
+WormholeApp PHY_TX_END t=380.42769197272 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=5 t=384.06957030578 delay=0.74584s due=384.81541045647 captures=5
+WORMHOLE_CAPTURE AgriSensorPacket temp=29.271 soil=88.9938 air=38.3824 nodeIndex=2
+WormholeApp CLASS_A_IDLE t=384.47769197272 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=384.81541045647 delay=0.74584s mac=0A-AA-00-00-00-04 seq=5
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=5 t=384.81541045647
+WORMHOLE_EXIT AgriSensorPacket temp=29.271 soil=88.9938 air=38.3824 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=5
+WormholeApp DROP_SELF_RAW t=384.81541045647
+WormholeApp PHY_TX_END t=384.89349045647 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=388.94349045647 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=9 t=398.56600360658 delay=5.71942s due=404.28542526917 captures=6
+WORMHOLE_CAPTURE AgriSensorPacket temp=27.3933 soil=20.9564 air=52.617 nodeIndex=8
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=9 t=400.51572530854 delay=0.74019s due=401.25591501775 captures=7
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.0503 soil=56.9548 air=57.3804 nodeIndex=3
+WormholeApp TUNNEL A->B t=401.25591501775 delay=0.74019s mac=0A-AA-00-00-00-05 seq=9
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=9 t=401.25591501775
+WORMHOLE_EXIT AgriSensorPacket temp=26.0503 soil=56.9548 air=57.3804 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=9
+WormholeApp DROP_SELF_RAW t=401.25591501775
+WormholeApp PHY_TX_END t=401.33399501775 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=5 t=403.70539347064 delay=1.23106s due=404.93645411675 captures=8
+WORMHOLE_CAPTURE AgriSensorPacket temp=19.1469 soil=47.5824 air=57.1862 nodeIndex=1
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=7 t=404.28248142525 delay=5.05987s due=409.34235411429 captures=9
+WORMHOLE_CAPTURE AgriSensorPacket temp=34.7504 soil=53.9375 air=70.7289 nodeIndex=5
+WormholeApp TUNNEL A->B t=404.28542526917 delay=5.71942s mac=0A-AA-00-00-00-0A seq=9
+WormholeApp TUNNEL A->B t=404.93645411675 delay=1.23106s mac=0A-AA-00-00-00-03 seq=5
+WormholeApp CLASS_A_IDLE t=405.38399501775 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=9 t=405.38399501875
+WORMHOLE_EXIT AgriSensorPacket temp=27.3933 soil=20.9564 air=52.617 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=9
+WormholeApp DROP_SELF_RAW t=405.38399501875
+WormholeApp PHY_TX_END t=405.46207501875 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=409.34235411429 delay=5.05987s mac=0A-AA-00-00-00-07 seq=7
+WormholeApp CLASS_A_IDLE t=409.51207501875 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=5 t=409.51207501975
+WORMHOLE_EXIT AgriSensorPacket temp=19.1469 soil=47.5824 air=57.1862 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=5
+WormholeApp DROP_SELF_RAW t=409.51207501975
+WormholeApp PHY_TX_END t=409.59015501975 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=413.64015501975 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=7 t=413.64015502075
+WORMHOLE_EXIT AgriSensorPacket temp=34.7504 soil=53.9375 air=70.7289 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=7
+WormholeApp DROP_SELF_RAW t=413.64015502075
+WormholeApp PHY_TX_END t=413.71823502075 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=6 t=414.58293430987 delay=4.37098s due=418.95391637369 captures=10
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.8776 soil=17.9198 air=73.9046 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=417.76823502075 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=418.95391637369 delay=4.37098s mac=0A-AA-00-00-00-03 seq=6
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=6 t=418.95391637369
+WORMHOLE_EXIT AgriSensorPacket temp=37.8776 soil=17.9198 air=73.9046 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=6
+WormholeApp DROP_SELF_RAW t=418.95391637369
+WormholeApp PHY_TX_END t=419.03199637369 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=423.08199637369 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=8 t=432.01712158106 delay=4.87805s due=436.89517649558 captures=11
+WORMHOLE_CAPTURE AgriSensorPacket temp=23.782 soil=89.2013 air=44.9389 nodeIndex=5
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=2 t=436.35344757404 delay=5.17392s due=441.52736630534 captures=12
+WORMHOLE_CAPTURE AgriSensorPacket temp=12.5135 soil=49.052 air=89.3738 nodeIndex=6
+WormholeApp TUNNEL A->B t=436.89517649558 delay=4.87805s mac=0A-AA-00-00-00-07 seq=8
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=8 t=436.89517649558
+WORMHOLE_EXIT AgriSensorPacket temp=23.782 soil=89.2013 air=44.9389 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=8
+WormholeApp DROP_SELF_RAW t=436.89517649558
+WormholeApp PHY_TX_END t=436.97325649558 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=6 t=439.77197747197 delay=0.738408s due=440.51038525829 captures=13
+WORMHOLE_CAPTURE AgriSensorPacket temp=17.0926 soil=52.9321 air=32.2465 nodeIndex=2
+WormholeApp TUNNEL A->B t=440.51038525829 delay=0.738408s mac=0A-AA-00-00-00-04 seq=6
+WormholeApp CLASS_A_IDLE t=441.02325649558 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=6 t=441.02325649658
+WORMHOLE_EXIT AgriSensorPacket temp=17.0926 soil=52.9321 air=32.2465 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=6
+WormholeApp DROP_SELF_RAW t=441.02325649658
+WormholeApp PHY_TX_END t=441.10133649658 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=441.52736630534 delay=5.17392s mac=0A-AA-00-00-00-08 seq=2
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=7 t=441.82695730361 delay=5.83987s due=447.66682516534 captures=14
+WORMHOLE_CAPTURE AgriSensorPacket temp=15.0399 soil=42.0801 air=91.0098 nodeIndex=1
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=8 t=443.31351485795 delay=1.42002s due=444.7335354456 captures=15
+WORMHOLE_CAPTURE AgriSensorPacket temp=39.3189 soil=82.4274 air=70.8472 nodeIndex=9
+WormholeApp TUNNEL A->B t=444.7335354456 delay=1.42002s mac=0A-AA-00-00-00-0B seq=8
+WormholeApp CLASS_A_IDLE t=445.15133649658 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=2 t=445.15133649758
+WORMHOLE_EXIT AgriSensorPacket temp=12.5135 soil=49.052 air=89.3738 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=2
+WormholeApp DROP_SELF_RAW t=445.15133649758
+WormholeApp PHY_TX_END t=445.22941649758 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=7 t=446.41964050854 delay=5.28583s due=451.70546884179 captures=16
+WORMHOLE_CAPTURE AgriSensorPacket temp=23.5104 soil=64.3895 air=37.2441 nodeIndex=7
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=9 t=446.60390971966 delay=2.41085s due=449.0147580042 captures=17
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.6262 soil=60.3984 air=53.7809 nodeIndex=5
+WormholeApp TUNNEL A->B t=447.66682516534 delay=5.83987s mac=0A-AA-00-00-00-03 seq=7
+WormholeApp TUNNEL A->B t=449.0147580042 delay=2.41085s mac=0A-AA-00-00-00-07 seq=9
+WormholeApp CLASS_A_IDLE t=449.27941649758 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=8 t=449.27941649858
+WORMHOLE_EXIT AgriSensorPacket temp=39.3189 soil=82.4274 air=70.8472 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=8
+WormholeApp DROP_SELF_RAW t=449.27941649858
+WormholeApp PHY_TX_END t=449.35749649858 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=451.70546884179 delay=5.28583s mac=0A-AA-00-00-00-09 seq=7
+WormholeApp CLASS_A_IDLE t=453.40749649858 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=7 t=453.40749649958
+WORMHOLE_EXIT AgriSensorPacket temp=15.0399 soil=42.0801 air=91.0098 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=7
+WormholeApp DROP_SELF_RAW t=453.40749649958
+WormholeApp PHY_TX_END t=453.48557649958 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=457.53557649958 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=9 t=457.53557650058
+WORMHOLE_EXIT AgriSensorPacket temp=16.6262 soil=60.3984 air=53.7809 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=9
+WormholeApp DROP_SELF_RAW t=457.53557650058
+WormholeApp PHY_TX_END t=457.61365650058 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=10 t=460.87919325643 delay=3.19466s due=464.07385725091 captures=18
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.9033 soil=26.6756 air=38.8965 nodeIndex=3
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=8 t=461.13605456569 delay=0.260505s due=461.39655925278 captures=19
+WORMHOLE_CAPTURE AgriSensorPacket temp=15.8685 soil=55.5703 air=34.6622 nodeIndex=1
+WormholeApp TUNNEL A->B t=461.39655925278 delay=0.260505s mac=0A-AA-00-00-00-03 seq=8
+WormholeApp CLASS_A_IDLE t=461.66365650058 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=7 t=461.66365650158
+WORMHOLE_EXIT AgriSensorPacket temp=23.5104 soil=64.3895 air=37.2441 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=7
+WormholeApp DROP_SELF_RAW t=461.66365650158
+WormholeApp PHY_TX_END t=461.74173650158 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=10 t=463.44255640709 delay=0.361541s due=463.80409765538 captures=20
+WORMHOLE_CAPTURE AgriSensorPacket temp=12.0209 soil=58.2893 air=88.5735 nodeIndex=8
+WormholeApp TUNNEL A->B t=463.80409765538 delay=0.361541s mac=0A-AA-00-00-00-0A seq=10
+WormholeApp TUNNEL A->B t=464.07385725091 delay=3.19466s mac=0A-AA-00-00-00-05 seq=10
+WormholeApp CLASS_A_IDLE t=465.79173650158 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=8 t=465.79173650258
+WORMHOLE_EXIT AgriSensorPacket temp=15.8685 soil=55.5703 air=34.6622 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=8
+WormholeApp DROP_SELF_RAW t=465.79173650258
+WormholeApp PHY_TX_END t=465.86981650258 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=3 t=467.22140859467 delay=1.71272s due=468.93412923048 captures=21
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.875 soil=84.1061 air=83.0582 nodeIndex=6
+WormholeApp TUNNEL A->B t=468.93412923048 delay=1.71272s mac=0A-AA-00-00-00-08 seq=3
+WormholeApp CLASS_A_IDLE t=469.91981650258 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=10 t=469.91981650358
+WORMHOLE_EXIT AgriSensorPacket temp=12.0209 soil=58.2893 air=88.5735 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=10
+WormholeApp DROP_SELF_RAW t=469.91981650358
+WormholeApp PHY_TX_END t=469.99789650358 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=474.04789650358 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=10 t=474.04789650458
+WORMHOLE_EXIT AgriSensorPacket temp=37.9033 soil=26.6756 air=38.8965 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=10
+WormholeApp DROP_SELF_RAW t=474.04789650458
+WormholeApp PHY_TX_END t=474.12597650458 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=478.17597650458 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=3 t=478.17597650558
+WORMHOLE_EXIT AgriSensorPacket temp=37.875 soil=84.1061 air=83.0582 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=3
+WormholeApp DROP_SELF_RAW t=478.17597650558
+WormholeApp PHY_TX_END t=478.25405650558 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=8 t=481.62497166293 delay=3.34339s due=484.96835759259 captures=22
+WORMHOLE_CAPTURE AgriSensorPacket temp=36.7759 soil=38.2508 air=40.9275 nodeIndex=7
+WormholeApp CLASS_A_IDLE t=482.30405650558 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=3 t=483.70841454363 delay=0.409729s due=484.11814339267 captures=23
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.0128 soil=78.3957 air=90.5568 nodeIndex=4
+WormholeApp TUNNEL A->B t=484.11814339267 delay=0.409729s mac=0A-AA-00-00-00-06 seq=3
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=3 t=484.11814339267
+WORMHOLE_EXIT AgriSensorPacket temp=26.0128 soil=78.3957 air=90.5568 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=3
+WormholeApp DROP_SELF_RAW t=484.11814339267
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=4 t=484.15919290588 delay=1.87364s due=486.03283016884 captures=24
+WORMHOLE_CAPTURE AgriSensorPacket temp=29.8494 soil=17.6779 air=81.3258 nodeIndex=6
+WormholeApp PHY_TX_END t=484.19622339267 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=11 t=484.41838532693 delay=2.00363s due=486.42201263677 captures=25
+WORMHOLE_CAPTURE AgriSensorPacket temp=17.9948 soil=49.2065 air=31.8623 nodeIndex=8
+WormholeApp TUNNEL A->B t=484.96835759259 delay=3.34339s mac=0A-AA-00-00-00-09 seq=8
+WormholeApp TUNNEL A->B t=486.03283016884 delay=1.87364s mac=0A-AA-00-00-00-08 seq=4
+WormholeApp TUNNEL A->B t=486.42201263677 delay=2.00363s mac=0A-AA-00-00-00-0A seq=11
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=9 t=486.7172615218 delay=0.795216s due=487.51247776812 captures=26
+WORMHOLE_CAPTURE AgriSensorPacket temp=19.0697 soil=15.0728 air=93.599 nodeIndex=0
+WormholeApp TUNNEL A->B t=487.51247776812 delay=0.795216s mac=0A-AA-00-00-00-02 seq=9
+WormholeApp CLASS_A_IDLE t=488.24622339267 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=8 t=488.24622339367
+WORMHOLE_EXIT AgriSensorPacket temp=36.7759 soil=38.2508 air=40.9275 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=8
+WormholeApp DROP_SELF_RAW t=488.24622339367
+WormholeApp PHY_TX_END t=488.32430339367 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=492.37430339367 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=4 t=492.37430339467
+WORMHOLE_EXIT AgriSensorPacket temp=29.8494 soil=17.6779 air=81.3258 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=4
+WormholeApp DROP_SELF_RAW t=492.37430339467
+WormholeApp PHY_TX_END t=492.45238339467 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=9 t=492.80565657997 delay=4.47282s due=497.27847162444 captures=27
+WORMHOLE_CAPTURE AgriSensorPacket temp=31.7172 soil=27.3497 air=55.4701 nodeIndex=1
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=7 t=495.50126097054 delay=5.5602s due=501.06145824873 captures=28
+WORMHOLE_CAPTURE AgriSensorPacket temp=10.1082 soil=44.3835 air=58.0954 nodeIndex=2
+WormholeApp CLASS_A_IDLE t=496.50238339467 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=11 t=496.50238339567
+WORMHOLE_EXIT AgriSensorPacket temp=17.9948 soil=49.2065 air=31.8623 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=11
+WormholeApp DROP_SELF_RAW t=496.50238339567
+WormholeApp PHY_TX_END t=496.58046339567 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=497.27847162444 delay=4.47282s mac=0A-AA-00-00-00-03 seq=9
+WormholeApp CLASS_A_IDLE t=500.63046339567 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=9 t=500.63046339667
+WORMHOLE_EXIT AgriSensorPacket temp=19.0697 soil=15.0728 air=93.599 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=9
+WormholeApp DROP_SELF_RAW t=500.63046339667
+WormholeApp PHY_TX_END t=500.70854339667 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=501.06145824873 delay=5.5602s mac=0A-AA-00-00-00-04 seq=7
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=11 t=501.97275749124 delay=5.58757s due=507.56032435167 captures=29
+WORMHOLE_CAPTURE AgriSensorPacket temp=19.8192 soil=55.5366 air=87.2626 nodeIndex=3
+WormholeApp CLASS_A_IDLE t=504.75854339667 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=9 t=504.75854339767
+WORMHOLE_EXIT AgriSensorPacket temp=31.7172 soil=27.3497 air=55.4701 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=9
+WormholeApp DROP_SELF_RAW t=504.75854339767
+WormholeApp PHY_TX_END t=504.83662339767 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=507.56032435167 delay=5.58757s mac=0A-AA-00-00-00-05 seq=11
+WormholeApp CLASS_A_IDLE t=508.88662339767 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=7 t=508.88662339867
+WORMHOLE_EXIT AgriSensorPacket temp=10.1082 soil=44.3835 air=58.0954 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=7
+WormholeApp DROP_SELF_RAW t=508.88662339867
+WormholeApp PHY_TX_END t=508.96470339867 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=5 t=512.44856363007 delay=4.36665s due=516.81520993813 captures=30
+WORMHOLE_CAPTURE AgriSensorPacket temp=25.053 soil=68.149 air=81.975 nodeIndex=6
+WormholeApp CLASS_A_IDLE t=513.01470339867 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=11 t=513.01470339967
+WORMHOLE_EXIT AgriSensorPacket temp=19.8192 soil=55.5366 air=87.2626 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=11
+WormholeApp DROP_SELF_RAW t=513.01470339967
+WormholeApp PHY_TX_END t=513.09278339967 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=9 t=516.56620740933 delay=5.60765s due=522.17385300865 captures=31
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.9828 soil=71.6433 air=62.1735 nodeIndex=9
+WormholeApp TUNNEL A->B t=516.81520993813 delay=4.36665s mac=0A-AA-00-00-00-08 seq=5
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=12 t=516.92892050198 delay=4.91514s due=521.84405853566 captures=32
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.1103 soil=28.306 air=75.2972 nodeIndex=8
+WormholeApp CLASS_A_IDLE t=517.14278339967 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=5 t=517.14278340067
+WORMHOLE_EXIT AgriSensorPacket temp=25.053 soil=68.149 air=81.975 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=5
+WormholeApp DROP_SELF_RAW t=517.14278340067
+WormholeApp PHY_TX_END t=517.22086340067 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=10 t=520.21012461246 delay=4.28097s due=524.49109635807 captures=33
+WORMHOLE_CAPTURE AgriSensorPacket temp=30.5129 soil=59.1999 air=20.3505 nodeIndex=0
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=10 t=520.30768276721 delay=3.61328s due=523.92096696202 captures=34
+WORMHOLE_CAPTURE AgriSensorPacket temp=33.8662 soil=65.2133 air=52.8752 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=521.27086340067 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=521.84405853566 delay=4.91514s mac=0A-AA-00-00-00-0A seq=12
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=12 t=521.84405853566
+WORMHOLE_EXIT AgriSensorPacket temp=37.1103 soil=28.306 air=75.2972 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=12
+WormholeApp DROP_SELF_RAW t=521.84405853566
+WormholeApp PHY_TX_END t=521.92213853566 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=522.17385300865 delay=5.60765s mac=0A-AA-00-00-00-0B seq=9
+WormholeApp TUNNEL A->B t=523.92096696202 delay=3.61328s mac=0A-AA-00-00-00-03 seq=10
+WormholeApp TUNNEL A->B t=524.49109635807 delay=4.28097s mac=0A-AA-00-00-00-02 seq=10
+WormholeApp CLASS_A_IDLE t=525.97213853566 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=9 t=525.97213853666
+WORMHOLE_EXIT AgriSensorPacket temp=37.9828 soil=71.6433 air=62.1735 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=9
+WormholeApp DROP_SELF_RAW t=525.97213853666
+WormholeApp PHY_TX_END t=526.05021853666 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=530.10021853666 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=10 t=530.10021853766
+WORMHOLE_EXIT AgriSensorPacket temp=33.8662 soil=65.2133 air=52.8752 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=10
+WormholeApp DROP_SELF_RAW t=530.10021853766
+WormholeApp PHY_TX_END t=530.17829853766 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=10 t=530.8361003718 delay=4.1277s due=534.96380014449 captures=35
+WORMHOLE_CAPTURE AgriSensorPacket temp=35.5367 soil=50.4956 air=35.4372 nodeIndex=5
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=4 t=533.41845633277 delay=4.34634s due=537.7647933685 captures=36
+WORMHOLE_CAPTURE AgriSensorPacket temp=30.6436 soil=83.5508 air=86.432 nodeIndex=4
+WormholeApp CLASS_A_IDLE t=534.22829853766 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=10 t=534.22829853866
+WORMHOLE_EXIT AgriSensorPacket temp=30.5129 soil=59.1999 air=20.3505 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=10
+WormholeApp DROP_SELF_RAW t=534.22829853866
+WormholeApp PHY_TX_END t=534.30637853866 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=534.96380014449 delay=4.1277s mac=0A-AA-00-00-00-07 seq=10
+WormholeApp TUNNEL A->B t=537.7647933685 delay=4.34634s mac=0A-AA-00-00-00-06 seq=4
+WormholeApp CLASS_A_IDLE t=538.35637853866 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=10 t=538.35637853966
+WORMHOLE_EXIT AgriSensorPacket temp=35.5367 soil=50.4956 air=35.4372 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=10
+WormholeApp DROP_SELF_RAW t=538.35637853966
+WormholeApp PHY_TX_END t=538.43445853966 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=11 t=540.84281795402 delay=4.18197s due=545.0247851364 captures=37
+WORMHOLE_CAPTURE AgriSensorPacket temp=27.2594 soil=38.0911 air=93.5379 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=542.48445853966 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=4 t=542.48445854066
+WORMHOLE_EXIT AgriSensorPacket temp=30.6436 soil=83.5508 air=86.432 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=4
+WormholeApp DROP_SELF_RAW t=542.48445854066
+WormholeApp PHY_TX_END t=542.56253854066 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=545.0247851364 delay=4.18197s mac=0A-AA-00-00-00-03 seq=11
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=8 t=545.05106621164 delay=3.4836s due=548.53466469434 captures=38
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.7219 soil=17.6573 air=32.972 nodeIndex=2
+WormholeApp CLASS_A_IDLE t=546.61253854066 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=11 t=546.61253854166
+WORMHOLE_EXIT AgriSensorPacket temp=27.2594 soil=38.0911 air=93.5379 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=11
+WormholeApp DROP_SELF_RAW t=546.61253854166
+WormholeApp PHY_TX_END t=546.69061854166 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=548.53466469434 delay=3.4836s mac=0A-AA-00-00-00-04 seq=8
+WormholeApp CLASS_A_IDLE t=550.74061854166 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=8 t=550.74061854266
+WORMHOLE_EXIT AgriSensorPacket temp=16.7219 soil=17.6573 air=32.972 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=8
+WormholeApp DROP_SELF_RAW t=550.74061854266
+WormholeApp PHY_TX_END t=550.81869854266 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=12 t=553.00106829215 delay=4.90439s due=557.90545603057 captures=39
+WORMHOLE_CAPTURE AgriSensorPacket temp=13.1854 soil=17.7619 air=83.5244 nodeIndex=3
+WormholeApp CLASS_A_IDLE t=554.86869854266 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=557.90545603057 delay=4.90439s mac=0A-AA-00-00-00-05 seq=12
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=12 t=557.90545603057
+WORMHOLE_EXIT AgriSensorPacket temp=13.1854 soil=17.7619 air=83.5244 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=12
+WormholeApp DROP_SELF_RAW t=557.90545603057
+WormholeApp PHY_TX_END t=557.98353603057 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=562.03353603057 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=9 t=577.99913032502 delay=3.54921s due=581.54834328491 captures=40
+WORMHOLE_CAPTURE AgriSensorPacket temp=32.3449 soil=73.5222 air=32.5609 nodeIndex=2
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=10 t=578.0244936215 delay=0.57078s due=578.59527351746 captures=41
+WORMHOLE_CAPTURE AgriSensorPacket temp=38.4385 soil=43.2022 air=49.2477 nodeIndex=9
+WormholeApp TUNNEL A->B t=578.59527351746 delay=0.57078s mac=0A-AA-00-00-00-0B seq=10
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=10 t=578.59527351746
+WORMHOLE_EXIT AgriSensorPacket temp=38.4385 soil=43.2022 air=49.2477 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=10
+WormholeApp DROP_SELF_RAW t=578.59527351746
+WormholeApp PHY_TX_END t=578.67335351746 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=581.54834328491 delay=3.54921s mac=0A-AA-00-00-00-04 seq=9
+WormholeApp CLASS_A_IDLE t=582.72335351746 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=9 t=582.72335351846
+WORMHOLE_EXIT AgriSensorPacket temp=32.3449 soil=73.5222 air=32.5609 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=9
+WormholeApp DROP_SELF_RAW t=582.72335351846
+WormholeApp PHY_TX_END t=582.80143351846 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=6 t=585.58228845549 delay=1.19411s due=586.77639615336 captures=42
+WORMHOLE_CAPTURE AgriSensorPacket temp=35.1469 soil=27.5804 air=48.4328 nodeIndex=6
+WormholeApp TUNNEL A->B t=586.77639615336 delay=1.19411s mac=0A-AA-00-00-00-08 seq=6
+WormholeApp CLASS_A_IDLE t=586.85143351846 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=6 t=586.92639615336
+WORMHOLE_EXIT AgriSensorPacket temp=35.1469 soil=27.5804 air=48.4328 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=6
+WormholeApp DROP_SELF_RAW t=586.92639615336
+WormholeApp PHY_TX_END t=587.00447615336 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=591.05447615336 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=11 t=598.31069677384 delay=5.75104s due=604.06173439352 captures=43
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.8161 soil=67.2237 air=91.6506 nodeIndex=9
+WormholeApp TUNNEL A->B t=604.06173439352 delay=5.75104s mac=0A-AA-00-00-00-0B seq=11
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=11 t=604.06173439352
+WORMHOLE_EXIT AgriSensorPacket temp=16.8161 soil=67.2237 air=91.6506 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=11
+WormholeApp DROP_SELF_RAW t=604.06173439352
+WormholeApp PHY_TX_END t=604.13981439352 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=608.18981439352 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=5 t=612.18683566469 delay=2.98478s due=615.1716117251 captures=44
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.6853 soil=85.3016 air=93.5628 nodeIndex=4
+WormholeApp TUNNEL A->B t=615.1716117251 delay=2.98478s mac=0A-AA-00-00-00-06 seq=5
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=5 t=615.1716117251
+WORMHOLE_EXIT AgriSensorPacket temp=26.6853 soil=85.3016 air=93.5628 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=5
+WormholeApp DROP_SELF_RAW t=615.1716117251
+WormholeApp PHY_TX_END t=615.2496917251 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=619.2996917251 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=11 t=620.28694559247 delay=2.9633s due=623.25024861957 captures=45
+WORMHOLE_CAPTURE AgriSensorPacket temp=12.6734 soil=21.033 air=23.0631 nodeIndex=0
+WormholeApp TUNNEL A->B t=623.25024861957 delay=2.9633s mac=0A-AA-00-00-00-02 seq=11
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=11 t=623.25024861957
+WORMHOLE_EXIT AgriSensorPacket temp=12.6734 soil=21.033 air=23.0631 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=11
+WormholeApp DROP_SELF_RAW t=623.25024861957
+WormholeApp PHY_TX_END t=623.32832861957 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=9 t=624.02420873627 delay=4.04684s due=628.07104677815 captures=46
+WORMHOLE_CAPTURE AgriSensorPacket temp=22.6865 soil=53.1286 air=74.2291 nodeIndex=7
+WormholeApp CLASS_A_IDLE t=627.37832861957 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=628.07104677815 delay=4.04684s mac=0A-AA-00-00-00-09 seq=9
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=9 t=628.07104677815
+WORMHOLE_EXIT AgriSensorPacket temp=22.6865 soil=53.1286 air=74.2291 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=9
+WormholeApp DROP_SELF_RAW t=628.07104677815
+WormholeApp PHY_TX_END t=628.14912677815 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=10 t=628.75892231598 delay=2.95323s due=631.712147813 captures=47
+WORMHOLE_CAPTURE AgriSensorPacket temp=32.3394 soil=11.9126 air=20.9852 nodeIndex=2
+WormholeApp TUNNEL A->B t=631.712147813 delay=2.95323s mac=0A-AA-00-00-00-04 seq=10
+WormholeApp CLASS_A_IDLE t=632.19912677815 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=10 t=632.19912677915
+WORMHOLE_EXIT AgriSensorPacket temp=32.3394 soil=11.9126 air=20.9852 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=10
+WormholeApp DROP_SELF_RAW t=632.19912677915
+WormholeApp PHY_TX_END t=632.27720677915 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=10 t=635.48040471628 delay=2.28026s due=637.76066059324 captures=48
+WORMHOLE_CAPTURE AgriSensorPacket temp=27.448 soil=42.9085 air=29.2725 nodeIndex=7
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=11 t=635.53569239289 delay=0.553122s due=636.08881456035 captures=49
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.9125 soil=89.0444 air=54.1023 nodeIndex=5
+WormholeApp TUNNEL A->B t=636.08881456035 delay=0.553122s mac=0A-AA-00-00-00-07 seq=11
+WormholeApp CLASS_A_IDLE t=636.32720677915 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=11 t=636.32720678015
+WORMHOLE_EXIT AgriSensorPacket temp=16.9125 soil=89.0444 air=54.1023 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=11
+WormholeApp DROP_SELF_RAW t=636.32720678015
+WormholeApp PHY_TX_END t=636.40528678015 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=637.76066059324 delay=2.28026s mac=0A-AA-00-00-00-09 seq=10
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=6 t=639.11567774391 delay=3.30161s due=642.41729204477 captures=50
+WORMHOLE_CAPTURE AgriSensorPacket temp=28.6147 soil=73.8138 air=73.3403 nodeIndex=4
+WormholeApp CLASS_A_IDLE t=640.45528678015 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=10 t=640.45528678115
+WORMHOLE_EXIT AgriSensorPacket temp=27.448 soil=42.9085 air=29.2725 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=10
+WormholeApp DROP_SELF_RAW t=640.45528678115
+WormholeApp PHY_TX_END t=640.53336678115 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=642.41729204477 delay=3.30161s mac=0A-AA-00-00-00-06 seq=6
+WormholeApp CLASS_A_IDLE t=644.58336678115 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=6 t=644.58336678215
+WORMHOLE_EXIT AgriSensorPacket temp=28.6147 soil=73.8138 air=73.3403 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=6
+WormholeApp DROP_SELF_RAW t=644.58336678215
+WormholeApp PHY_TX_END t=644.66144678215 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=11 t=646.49517624091 delay=5.57333s due=652.06850409155 captures=51
+WORMHOLE_CAPTURE AgriSensorPacket temp=13.7263 soil=69.1612 air=61.4051 nodeIndex=2
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=12 t=647.30985569943 delay=0.563933s due=647.87378861019 captures=52
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.3347 soil=46.1779 air=27.4186 nodeIndex=9
+WormholeApp TUNNEL A->B t=647.87378861019 delay=0.563933s mac=0A-AA-00-00-00-0B seq=12
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=7 t=648.48401799071 delay=1.43981s due=649.92382761862 captures=53
+WORMHOLE_CAPTURE AgriSensorPacket temp=38.4147 soil=47.7874 air=66.148 nodeIndex=4
+WormholeApp CLASS_A_IDLE t=648.71144678215 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=12 t=648.71144678315
+WORMHOLE_EXIT AgriSensorPacket temp=21.3347 soil=46.1779 air=27.4186 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=12
+WormholeApp DROP_SELF_RAW t=648.71144678315
+WormholeApp PHY_TX_END t=648.78952678315 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=649.92382761862 delay=1.43981s mac=0A-AA-00-00-00-06 seq=7
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=12 t=651.44729202633 delay=2.27371s due=653.72100616719 captures=54
+WORMHOLE_CAPTURE AgriSensorPacket temp=14.6108 soil=74.7754 air=42.7204 nodeIndex=1
+WormholeApp TUNNEL A->B t=652.06850409155 delay=5.57333s mac=0A-AA-00-00-00-04 seq=11
+WormholeApp CLASS_A_IDLE t=652.83952678315 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=7 t=652.83952678415
+WORMHOLE_EXIT AgriSensorPacket temp=38.4147 soil=47.7874 air=66.148 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=7
+WormholeApp DROP_SELF_RAW t=652.83952678415
+WormholeApp PHY_TX_END t=652.91760678415 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=653.72100616719 delay=2.27371s mac=0A-AA-00-00-00-03 seq=12
+WormholeApp CLASS_A_IDLE t=656.96760678415 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=11 t=656.96760678515
+WORMHOLE_EXIT AgriSensorPacket temp=13.7263 soil=69.1612 air=61.4051 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=11
+WormholeApp DROP_SELF_RAW t=656.96760678515
+WormholeApp PHY_TX_END t=657.04568678515 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=661.09568678515 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=12 t=661.09568678615
+WORMHOLE_EXIT AgriSensorPacket temp=14.6108 soil=74.7754 air=42.7204 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=12
+WormholeApp DROP_SELF_RAW t=661.09568678615
+WormholeApp PHY_TX_END t=661.17376678615 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=665.22376678615 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=11 t=666.43406434188 delay=0.561412s due=666.9954759296 captures=55
+WORMHOLE_CAPTURE AgriSensorPacket temp=29.1108 soil=27.8188 air=40.4716 nodeIndex=7
+WormholeApp TUNNEL A->B t=666.9954759296 delay=0.561412s mac=0A-AA-00-00-00-09 seq=11
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=11 t=666.9954759296
+WORMHOLE_EXIT AgriSensorPacket temp=29.1108 soil=27.8188 air=40.4716 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=11
+WormholeApp DROP_SELF_RAW t=666.9954759296
+WormholeApp PHY_TX_END t=667.0735559296 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=671.1235559296 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=12 t=674.63470942969 delay=5.8042s due=680.43891320334 captures=56
+WORMHOLE_CAPTURE AgriSensorPacket temp=13.404 soil=79.2796 air=73.8227 nodeIndex=7
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=8 t=678.33494265199 delay=4.92691s due=683.26185450649 captures=57
+WORMHOLE_CAPTURE AgriSensorPacket temp=28.5808 soil=79.3219 air=50.3017 nodeIndex=4
+WormholeApp TUNNEL A->B t=680.43891320334 delay=5.8042s mac=0A-AA-00-00-00-09 seq=12
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=12 t=680.43891320334
+WORMHOLE_EXIT AgriSensorPacket temp=13.404 soil=79.2796 air=73.8227 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=12
+WormholeApp DROP_SELF_RAW t=680.43891320334
+WormholeApp PHY_TX_END t=680.51699320334 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=683.26185450649 delay=4.92691s mac=0A-AA-00-00-00-06 seq=8
+WormholeApp CLASS_A_IDLE t=684.56699320334 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=8 t=684.56699320434
+WORMHOLE_EXIT AgriSensorPacket temp=28.5808 soil=79.3219 air=50.3017 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=8
+WormholeApp DROP_SELF_RAW t=684.56699320434
+WormholeApp PHY_TX_END t=684.64507320434 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=13 t=686.14062286777 delay=3.74652s due=689.88714514845 captures=58
+WORMHOLE_CAPTURE AgriSensorPacket temp=19.3287 soil=84.442 air=71.5154 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=688.69507320434 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=689.88714514845 delay=3.74652s mac=0A-AA-00-00-00-03 seq=13
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=13 t=689.88714514845
+WORMHOLE_EXIT AgriSensorPacket temp=19.3287 soil=84.442 air=71.5154 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=13
+WormholeApp DROP_SELF_RAW t=689.88714514845
+WormholeApp PHY_TX_END t=689.96522514845 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=694.01522514845 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=13 t=694.41162562774 delay=4.0849s due=698.49652219031 captures=59
+WORMHOLE_CAPTURE AgriSensorPacket temp=36.1384 soil=52.2195 air=56.7887 nodeIndex=3
+WormholeApp TUNNEL A->B t=698.49652219031 delay=4.0849s mac=0A-AA-00-00-00-05 seq=13
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=13 t=698.49652219031
+WORMHOLE_EXIT AgriSensorPacket temp=36.1384 soil=52.2195 air=56.7887 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=13
+WormholeApp DROP_SELF_RAW t=698.49652219031
+WormholeApp PHY_TX_END t=698.57460219031 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=702.62460219031 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=9 t=709.25196429775 delay=1.50718s due=710.75914648677 captures=60
+WORMHOLE_CAPTURE AgriSensorPacket temp=25.5046 soil=87.7606 air=33.0242 nodeIndex=4
+WormholeApp TUNNEL A->B t=710.75914648677 delay=1.50718s mac=0A-AA-00-00-00-06 seq=9
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=9 t=710.75914648677
+WORMHOLE_EXIT AgriSensorPacket temp=25.5046 soil=87.7606 air=33.0242 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=9
+WormholeApp DROP_SELF_RAW t=710.75914648677
+WormholeApp PHY_TX_END t=710.83722648677 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=12 t=713.21530228503 delay=3.08473s due=716.30002749603 captures=61
+WORMHOLE_CAPTURE AgriSensorPacket temp=34.5331 soil=25.1113 air=93.9962 nodeIndex=0
+WormholeApp CLASS_A_IDLE t=714.88722648677 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=716.30002749603 delay=3.08473s mac=0A-AA-00-00-00-02 seq=12
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=12 t=716.30002749603
+WORMHOLE_EXIT AgriSensorPacket temp=34.5331 soil=25.1113 air=93.9962 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=12
+WormholeApp DROP_SELF_RAW t=716.30002749603
+WormholeApp PHY_TX_END t=716.37810749603 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=720.42810749603 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=13 t=721.51032150807 delay=2.36737s due=723.87769570138 captures=62
+WORMHOLE_CAPTURE AgriSensorPacket temp=13.1331 soil=67.7206 air=89.9213 nodeIndex=0
+WormholeApp TUNNEL A->B t=723.87769570138 delay=2.36737s mac=0A-AA-00-00-00-02 seq=13
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=13 t=723.87769570138
+WORMHOLE_EXIT AgriSensorPacket temp=13.1331 soil=67.7206 air=89.9213 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=13
+WormholeApp DROP_SELF_RAW t=723.87769570138
+WormholeApp PHY_TX_END t=723.95577570138 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=728.00577570138 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=13 t=729.59668232772 delay=0.654406s due=730.25108876806 captures=63
+WORMHOLE_CAPTURE AgriSensorPacket temp=19.5422 soil=87.3235 air=32.5492 nodeIndex=9
+WormholeApp TUNNEL A->B t=730.25108876806 delay=0.654406s mac=0A-AA-00-00-00-0B seq=13
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=13 t=730.25108876806
+WORMHOLE_EXIT AgriSensorPacket temp=19.5422 soil=87.3235 air=32.5492 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=13
+WormholeApp DROP_SELF_RAW t=730.25108876806
+WormholeApp PHY_TX_END t=730.32916876806 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=734.37916876806 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=13 t=746.00348856006 delay=2.89766s due=748.90114694415 captures=64
+WORMHOLE_CAPTURE AgriSensorPacket temp=17.8265 soil=80.7833 air=68.2878 nodeIndex=8
+WormholeApp TUNNEL A->B t=748.90114694415 delay=2.89766s mac=0A-AA-00-00-00-0A seq=13
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=13 t=748.90114694415
+WORMHOLE_EXIT AgriSensorPacket temp=17.8265 soil=80.7833 air=68.2878 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=13
+WormholeApp DROP_SELF_RAW t=748.90114694415
+WormholeApp PHY_TX_END t=748.97922694415 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=14 t=748.99227408478 delay=1.78835s due=750.78062055283 captures=65
+WORMHOLE_CAPTURE AgriSensorPacket temp=11.2579 soil=54.5547 air=88.7756 nodeIndex=1
+WormholeApp TUNNEL A->B t=750.78062055283 delay=1.78835s mac=0A-AA-00-00-00-03 seq=14
+WormholeApp CLASS_A_IDLE t=753.02922694415 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=14 t=753.02922694515
+WORMHOLE_EXIT AgriSensorPacket temp=11.2579 soil=54.5547 air=88.7756 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=14
+WormholeApp DROP_SELF_RAW t=753.02922694515
+WormholeApp PHY_TX_END t=753.10730694515 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=13 t=753.21859576963 delay=0.484372s due=753.70296815315 captures=66
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.7439 soil=86.39 air=91.7012 nodeIndex=7
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=14 t=753.56235512701 delay=5.65615s due=759.21850789647 captures=67
+WORMHOLE_CAPTURE AgriSensorPacket temp=32.9644 soil=69.239 air=73.0531 nodeIndex=0
+WormholeApp TUNNEL A->B t=753.70296815315 delay=0.484372s mac=0A-AA-00-00-00-09 seq=13
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=14 t=756.20941701686 delay=2.77365s due=758.98307018671 captures=68
+WORMHOLE_CAPTURE AgriSensorPacket temp=20.6255 soil=59.7274 air=62.0682 nodeIndex=9
+WormholeApp CLASS_A_IDLE t=757.15730694515 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=13 t=757.15730694615
+WORMHOLE_EXIT AgriSensorPacket temp=16.7439 soil=86.39 air=91.7012 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=13
+WormholeApp DROP_SELF_RAW t=757.15730694615
+WormholeApp PHY_TX_END t=757.23538694615 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=758.98307018671 delay=2.77365s mac=0A-AA-00-00-00-0B seq=14
+WormholeApp TUNNEL A->B t=759.21850789647 delay=5.65615s mac=0A-AA-00-00-00-02 seq=14
+WormholeApp CLASS_A_IDLE t=761.28538694615 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=14 t=761.28538694715
+WORMHOLE_EXIT AgriSensorPacket temp=20.6255 soil=59.7274 air=62.0682 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=14
+WormholeApp DROP_SELF_RAW t=761.28538694715
+WormholeApp PHY_TX_END t=761.36346694715 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=765.41346694715 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=14 t=765.41346694815
+WORMHOLE_EXIT AgriSensorPacket temp=32.9644 soil=69.239 air=73.0531 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=14
+WormholeApp DROP_SELF_RAW t=765.41346694815
+WormholeApp PHY_TX_END t=765.49154694815 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=7 t=766.04790032844 delay=4.82821s due=770.87611301426 captures=69
+WORMHOLE_CAPTURE AgriSensorPacket temp=31.4782 soil=52.9152 air=40.9175 nodeIndex=6
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=15 t=767.99934861638 delay=2.28347s due=770.28282344291 captures=70
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.8155 soil=23.7936 air=50.7662 nodeIndex=1
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=15 t=769.35658210339 delay=2.61882s due=771.97539811284 captures=71
+WORMHOLE_CAPTURE AgriSensorPacket temp=35.6741 soil=37.9525 air=81.6202 nodeIndex=0
+WormholeApp CLASS_A_IDLE t=769.54154694815 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=770.28282344291 delay=2.28347s mac=0A-AA-00-00-00-03 seq=15
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=15 t=770.28282344291
+WORMHOLE_EXIT AgriSensorPacket temp=16.8155 soil=23.7936 air=50.7662 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=15
+WormholeApp DROP_SELF_RAW t=770.28282344291
+WormholeApp PHY_TX_END t=770.36090344291 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=770.87611301426 delay=4.82821s mac=0A-AA-00-00-00-08 seq=7
+WormholeApp TUNNEL A->B t=771.97539811284 delay=2.61882s mac=0A-AA-00-00-00-02 seq=15
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=12 t=774.18925678282 delay=0.90094s due=775.09019703742 captures=72
+WORMHOLE_CAPTURE AgriSensorPacket temp=22.5146 soil=37.4675 air=93.0444 nodeIndex=2
+WormholeApp CLASS_A_IDLE t=774.41090344291 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=7 t=774.41090344391
+WORMHOLE_EXIT AgriSensorPacket temp=31.4782 soil=52.9152 air=40.9175 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=7
+WormholeApp DROP_SELF_RAW t=774.41090344391
+WormholeApp PHY_TX_END t=774.48898344391 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=775.09019703742 delay=0.90094s mac=0A-AA-00-00-00-04 seq=12
+WormholeApp CLASS_A_IDLE t=778.53898344391 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=15 t=778.53898344491
+WORMHOLE_EXIT AgriSensorPacket temp=35.6741 soil=37.9525 air=81.6202 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=15
+WormholeApp DROP_SELF_RAW t=778.53898344491
+WormholeApp PHY_TX_END t=778.61706344491 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=15 t=780.32439412522 delay=1.01547s due=781.3398651312 captures=73
+WORMHOLE_CAPTURE AgriSensorPacket temp=15.2049 soil=70.7854 air=35.4755 nodeIndex=9
+WormholeApp TUNNEL A->B t=781.3398651312 delay=1.01547s mac=0A-AA-00-00-00-0B seq=15
+WormholeApp CLASS_A_IDLE t=782.66706344491 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=12 t=782.66706344591
+WORMHOLE_EXIT AgriSensorPacket temp=22.5146 soil=37.4675 air=93.0444 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=12
+WormholeApp DROP_SELF_RAW t=782.66706344591
+WormholeApp PHY_TX_END t=782.74514344591 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=12 t=785.75250369978 delay=2.77126s due=788.52376639079 captures=74
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.1451 soil=83.3425 air=40.8445 nodeIndex=5
+WormholeApp CLASS_A_IDLE t=786.79514344591 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=15 t=786.79514344691
+WORMHOLE_EXIT AgriSensorPacket temp=15.2049 soil=70.7854 air=35.4755 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=15
+WormholeApp DROP_SELF_RAW t=786.79514344691
+WormholeApp PHY_TX_END t=786.87322344691 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=788.52376639079 delay=2.77126s mac=0A-AA-00-00-00-07 seq=12
+WormholeApp CLASS_A_IDLE t=790.92322344691 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=12 t=790.92322344791
+WORMHOLE_EXIT AgriSensorPacket temp=26.1451 soil=83.3425 air=40.8445 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=12
+WormholeApp DROP_SELF_RAW t=790.92322344791
+WormholeApp PHY_TX_END t=791.00130344791 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=795.05130344791 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=8 t=799.87649657399 delay=2.44722s due=802.32371332114 captures=75
+WORMHOLE_CAPTURE AgriSensorPacket temp=17.6729 soil=35.0939 air=69.3054 nodeIndex=6
+WormholeApp TUNNEL A->B t=802.32371332114 delay=2.44722s mac=0A-AA-00-00-00-08 seq=8
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=8 t=802.32371332114
+WORMHOLE_EXIT AgriSensorPacket temp=17.6729 soil=35.0939 air=69.3054 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=8
+WormholeApp DROP_SELF_RAW t=802.32371332114
+WormholeApp PHY_TX_END t=802.40179332114 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=14 t=805.23116611289 delay=5.86726s due=811.09842589689 captures=76
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.6659 soil=51.077 air=86.442 nodeIndex=8
+WormholeApp CLASS_A_IDLE t=806.45179332114 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=811.09842589689 delay=5.86726s mac=0A-AA-00-00-00-0A seq=14
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=14 t=811.09842589689
+WORMHOLE_EXIT AgriSensorPacket temp=37.6659 soil=51.077 air=86.442 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=14
+WormholeApp DROP_SELF_RAW t=811.09842589689
+WormholeApp PHY_TX_END t=811.17650589689 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=815.22650589689 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=16 t=817.54186926966 delay=4.26658s due=821.80844819647 captures=77
+WORMHOLE_CAPTURE AgriSensorPacket temp=39.2185 soil=40.1612 air=78.8107 nodeIndex=9
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=13 t=820.47895066025 delay=3.90814s due=824.38708658368 captures=78
+WORMHOLE_CAPTURE AgriSensorPacket temp=36.0162 soil=66.187 air=69.9699 nodeIndex=5
+WormholeApp TUNNEL A->B t=821.80844819647 delay=4.26658s mac=0A-AA-00-00-00-0B seq=16
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=16 t=821.80844819647
+WORMHOLE_EXIT AgriSensorPacket temp=39.2185 soil=40.1612 air=78.8107 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=16
+WormholeApp DROP_SELF_RAW t=821.80844819647
+WormholeApp PHY_TX_END t=821.88652819647 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=824.38708658368 delay=3.90814s mac=0A-AA-00-00-00-07 seq=13
+WormholeApp CLASS_A_IDLE t=825.93652819647 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=13 t=825.93652819747
+WORMHOLE_EXIT AgriSensorPacket temp=36.0162 soil=66.187 air=69.9699 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=13
+WormholeApp DROP_SELF_RAW t=825.93652819747
+WormholeApp PHY_TX_END t=826.01460819747 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=13 t=826.1218367961 delay=2.43968s due=828.56151501317 captures=79
+WORMHOLE_CAPTURE AgriSensorPacket temp=32.4451 soil=20.2269 air=22.7356 nodeIndex=2
+WormholeApp TUNNEL A->B t=828.56151501317 delay=2.43968s mac=0A-AA-00-00-00-04 seq=13
+WormholeApp CLASS_A_IDLE t=830.06460819747 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=13 t=830.06460819847
+WORMHOLE_EXIT AgriSensorPacket temp=32.4451 soil=20.2269 air=22.7356 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=13
+WormholeApp DROP_SELF_RAW t=830.06460819847
+WormholeApp PHY_TX_END t=830.14268819847 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=834.19268819847 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=14 t=835.36809675254 delay=1.14361s due=836.51170252862 captures=80
+WORMHOLE_CAPTURE AgriSensorPacket temp=10.5724 soil=34.2899 air=22.3088 nodeIndex=5
+WormholeApp TUNNEL A->B t=836.51170252862 delay=1.14361s mac=0A-AA-00-00-00-07 seq=14
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=14 t=836.51170252862
+WORMHOLE_EXIT AgriSensorPacket temp=10.5724 soil=34.2899 air=22.3088 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=14
+WormholeApp DROP_SELF_RAW t=836.51170252862
+WormholeApp PHY_TX_END t=836.58978252862 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=14 t=836.73391153416 delay=4.71896s due=841.45287078891 captures=81
+WORMHOLE_CAPTURE AgriSensorPacket temp=20.742 soil=75.4389 air=91.4984 nodeIndex=2
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=15 t=836.87708223699 delay=1.79428s due=838.67135898705 captures=82
+WORMHOLE_CAPTURE AgriSensorPacket temp=24.297 soil=61.2763 air=42.7095 nodeIndex=8
+WormholeApp TUNNEL A->B t=838.67135898705 delay=1.79428s mac=0A-AA-00-00-00-0A seq=15
+WormholeApp CLASS_A_IDLE t=840.63978252862 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=15 t=840.63978252962
+WORMHOLE_EXIT AgriSensorPacket temp=24.297 soil=61.2763 air=42.7095 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=15
+WormholeApp DROP_SELF_RAW t=840.63978252962
+WormholeApp PHY_TX_END t=840.71786252962 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=841.45287078891 delay=4.71896s mac=0A-AA-00-00-00-04 seq=14
+WormholeApp CLASS_A_IDLE t=844.76786252962 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=14 t=844.76786253062
+WORMHOLE_EXIT AgriSensorPacket temp=20.742 soil=75.4389 air=91.4984 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=14
+WormholeApp DROP_SELF_RAW t=844.76786253062
+WormholeApp PHY_TX_END t=844.84594253062 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=848.89594253062 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=17 t=850.77993194588 delay=2.76109s due=853.54101824323 captures=83
+WORMHOLE_CAPTURE AgriSensorPacket temp=12.2204 soil=75.2803 air=74.5941 nodeIndex=9
+WormholeApp TUNNEL A->B t=853.54101824323 delay=2.76109s mac=0A-AA-00-00-00-0B seq=17
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=17 t=853.54101824323
+WORMHOLE_EXIT AgriSensorPacket temp=12.2204 soil=75.2803 air=74.5941 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=17
+WormholeApp DROP_SELF_RAW t=853.54101824323
+WormholeApp PHY_TX_END t=853.61909824323 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=857.66909824323 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=16 t=858.08901834588 delay=0.895434s due=858.98445275826 captures=84
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.9081 soil=35.2196 air=41.2991 nodeIndex=0
+WormholeApp TUNNEL A->B t=858.98445275826 delay=0.895434s mac=0A-AA-00-00-00-02 seq=16
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=16 t=858.98445275826
+WORMHOLE_EXIT AgriSensorPacket temp=16.9081 soil=35.2196 air=41.2991 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=16
+WormholeApp DROP_SELF_RAW t=858.98445275826
+WormholeApp PHY_TX_END t=859.06253275826 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=16 t=861.69169375035 delay=2.56862s due=864.26031398759 captures=85
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.1401 soil=54.8701 air=68.6291 nodeIndex=8
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=16 t=861.95125195041 delay=4.08252s due=866.0337714304 captures=86
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.6851 soil=63.7667 air=75.7394 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=863.11253275826 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=864.26031398759 delay=2.56862s mac=0A-AA-00-00-00-0A seq=16
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=16 t=864.26031398759
+WORMHOLE_EXIT AgriSensorPacket temp=26.1401 soil=54.8701 air=68.6291 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=16
+WormholeApp DROP_SELF_RAW t=864.26031398759
+WormholeApp PHY_TX_END t=864.33839398759 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=866.0337714304 delay=4.08252s mac=0A-AA-00-00-00-03 seq=16
+WormholeApp CLASS_A_IDLE t=868.38839398759 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=16 t=868.38839398859
+WORMHOLE_EXIT AgriSensorPacket temp=16.6851 soil=63.7667 air=75.7394 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=16
+WormholeApp DROP_SELF_RAW t=868.38839398859
+WormholeApp PHY_TX_END t=868.46647398859 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=15 t=871.792133464 delay=2.38583s due=874.17795907059 captures=87
+WORMHOLE_CAPTURE AgriSensorPacket temp=18.7768 soil=24.8479 air=55.4022 nodeIndex=5
+WormholeApp CLASS_A_IDLE t=872.51647398859 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=17 t=873.68463046093 delay=5.09258s due=878.77720819532 captures=88
+WORMHOLE_CAPTURE AgriSensorPacket temp=28.2632 soil=65.627 air=67.7967 nodeIndex=0
+WormholeApp TUNNEL A->B t=874.17795907059 delay=2.38583s mac=0A-AA-00-00-00-07 seq=15
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=15 t=874.17795907059
+WORMHOLE_EXIT AgriSensorPacket temp=18.7768 soil=24.8479 air=55.4022 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=15
+WormholeApp DROP_SELF_RAW t=874.17795907059
+WormholeApp PHY_TX_END t=874.25603907059 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=14 t=874.48153986041 delay=1.75231s due=876.23384807327 captures=89
+WORMHOLE_CAPTURE AgriSensorPacket temp=24.8461 soil=17.8568 air=37.1425 nodeIndex=3
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=9 t=875.79928469226 delay=2.17442s due=877.97370940056 captures=90
+WORMHOLE_CAPTURE AgriSensorPacket temp=17.2425 soil=29.5499 air=74.7853 nodeIndex=6
+WormholeApp TUNNEL A->B t=876.23384807327 delay=1.75231s mac=0A-AA-00-00-00-05 seq=14
+WormholeApp TUNNEL A->B t=877.97370940056 delay=2.17442s mac=0A-AA-00-00-00-08 seq=9
+WormholeApp CLASS_A_IDLE t=878.30603907059 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=14 t=878.30603907159
+WORMHOLE_EXIT AgriSensorPacket temp=24.8461 soil=17.8568 air=37.1425 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=14
+WormholeApp DROP_SELF_RAW t=878.30603907159
+WormholeApp PHY_TX_END t=878.38411907159 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=878.77720819532 delay=5.09258s mac=0A-AA-00-00-00-02 seq=17
+WormholeApp CLASS_A_IDLE t=882.43411907159 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=9 t=882.43411907259
+WORMHOLE_EXIT AgriSensorPacket temp=17.2425 soil=29.5499 air=74.7853 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=9
+WormholeApp DROP_SELF_RAW t=882.43411907259
+WormholeApp PHY_TX_END t=882.51219907259 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=15 t=886.22813165212 delay=5.70932s due=891.93745261477 captures=91
+WORMHOLE_CAPTURE AgriSensorPacket temp=27.5699 soil=71.0458 air=76.8428 nodeIndex=3
+WormholeApp CLASS_A_IDLE t=886.56219907259 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=17 t=886.56219907359
+WORMHOLE_EXIT AgriSensorPacket temp=28.2632 soil=65.627 air=67.7967 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=17
+WormholeApp DROP_SELF_RAW t=886.56219907359
+WormholeApp PHY_TX_END t=886.64027907359 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=890.69027907359 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=891.93745261477 delay=5.70932s mac=0A-AA-00-00-00-05 seq=15
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=15 t=891.93745261477
+WORMHOLE_EXIT AgriSensorPacket temp=27.5699 soil=71.0458 air=76.8428 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=15
+WormholeApp DROP_SELF_RAW t=891.93745261477
+WormholeApp PHY_TX_END t=892.01553261477 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=896.06553261477 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=15 t=896.99385943483 delay=1.10136s due=898.09522110141 captures=92
+WORMHOLE_CAPTURE AgriSensorPacket temp=36.4309 soil=42.9179 air=45.3685 nodeIndex=2
+WormholeApp TUNNEL A->B t=898.09522110141 delay=1.10136s mac=0A-AA-00-00-00-04 seq=15
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=15 t=898.09522110141
+WORMHOLE_EXIT AgriSensorPacket temp=36.4309 soil=42.9179 air=45.3685 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=15
+WormholeApp DROP_SELF_RAW t=898.09522110141
+WormholeApp PHY_TX_END t=898.17330110141 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=17 t=900.07071826149 delay=2.67565s due=902.74636510423 captures=93
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.3395 soil=74.3636 air=23.1734 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=902.22330110141 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=902.74636510423 delay=2.67565s mac=0A-AA-00-00-00-03 seq=17
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=17 t=902.74636510423
+WORMHOLE_EXIT AgriSensorPacket temp=26.3395 soil=74.3636 air=23.1734 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=17
+WormholeApp DROP_SELF_RAW t=902.74636510423
+WormholeApp PHY_TX_END t=902.82444510423 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=906.87444510423 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=10 t=931.76098063188 delay=3.3918s due=935.15278417345 captures=94
+WORMHOLE_CAPTURE AgriSensorPacket temp=24.0299 soil=82.5734 air=89.5992 nodeIndex=4
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=16 t=934.18359516136 delay=5.06447s due=939.24806921092 captures=95
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.9917 soil=74.9085 air=91.7432 nodeIndex=2
+WormholeApp TUNNEL A->B t=935.15278417345 delay=3.3918s mac=0A-AA-00-00-00-06 seq=10
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=10 t=935.15278417345
+WORMHOLE_EXIT AgriSensorPacket temp=24.0299 soil=82.5734 air=89.5992 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=10
+WormholeApp DROP_SELF_RAW t=935.15278417345
+WormholeApp PHY_TX_END t=935.23086417345 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=939.24806921092 delay=5.06447s mac=0A-AA-00-00-00-04 seq=16
+WormholeApp CLASS_A_IDLE t=939.28086417345 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=16 t=939.39806921092
+WORMHOLE_EXIT AgriSensorPacket temp=37.9917 soil=74.9085 air=91.7432 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=16
+WormholeApp DROP_SELF_RAW t=939.39806921092
+WormholeApp PHY_TX_END t=939.47614921092 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=943.52614921092 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=11 t=946.11650049733 delay=1.03985s due=947.15635223301 captures=96
+WORMHOLE_CAPTURE AgriSensorPacket temp=31.5273 soil=45.6008 air=33.2787 nodeIndex=4
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=18 t=946.55747790735 delay=3.35184s due=949.90931458315 captures=97
+WORMHOLE_CAPTURE AgriSensorPacket temp=12.1476 soil=88.0452 air=36.7765 nodeIndex=9
+WormholeApp TUNNEL A->B t=947.15635223301 delay=1.03985s mac=0A-AA-00-00-00-06 seq=11
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=11 t=947.15635223301
+WORMHOLE_EXIT AgriSensorPacket temp=31.5273 soil=45.6008 air=33.2787 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=11
+WormholeApp DROP_SELF_RAW t=947.15635223301
+WormholeApp PHY_TX_END t=947.23443223301 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=17 t=947.6775161457 delay=2.74068s due=950.41819398852 captures=98
+WORMHOLE_CAPTURE AgriSensorPacket temp=17.4005 soil=59.5403 air=94.9668 nodeIndex=2
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=17 t=947.89722735481 delay=1.8943s due=949.79152631842 captures=99
+WORMHOLE_CAPTURE AgriSensorPacket temp=16.6843 soil=82.605 air=36.0756 nodeIndex=8
+WormholeApp TUNNEL A->B t=949.79152631842 delay=1.8943s mac=0A-AA-00-00-00-0A seq=17
+WormholeApp TUNNEL A->B t=949.90931458315 delay=3.35184s mac=0A-AA-00-00-00-0B seq=18
+WormholeApp TUNNEL A->B t=950.41819398852 delay=2.74068s mac=0A-AA-00-00-00-04 seq=17
+WormholeApp CLASS_A_IDLE t=951.28443223301 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=17 t=951.28443223401
+WORMHOLE_EXIT AgriSensorPacket temp=16.6843 soil=82.605 air=36.0756 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=17
+WormholeApp DROP_SELF_RAW t=951.28443223401
+WormholeApp PHY_TX_END t=951.36251223401 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=10 t=952.17299614029 delay=1.86857s due=954.04156185616 captures=100
+WORMHOLE_CAPTURE AgriSensorPacket temp=18.454 soil=19.0156 air=39.4293 nodeIndex=6
+WormholeApp TUNNEL A->B t=954.04156185616 delay=1.86857s mac=0A-AA-00-00-00-08 seq=10
+WormholeApp CLASS_A_IDLE t=955.41251223401 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=18 t=955.41251223501
+WORMHOLE_EXIT AgriSensorPacket temp=12.1476 soil=88.0452 air=36.7765 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=18
+WormholeApp DROP_SELF_RAW t=955.41251223501
+WormholeApp PHY_TX_END t=955.49059223501 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=959.54059223501 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=17 t=959.54059223601
+WORMHOLE_EXIT AgriSensorPacket temp=17.4005 soil=59.5403 air=94.9668 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=17
+WormholeApp DROP_SELF_RAW t=959.54059223601
+WormholeApp PHY_TX_END t=959.61867223601 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=11 t=961.1798254713 delay=5.39291s due=966.57273327333 captures=101
+WORMHOLE_CAPTURE AgriSensorPacket temp=19.0681 soil=22.8572 air=74.8353 nodeIndex=6
+WormholeApp CLASS_A_IDLE t=963.66867223601 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=10 t=963.66867223701
+WORMHOLE_EXIT AgriSensorPacket temp=18.454 soil=19.0156 air=39.4293 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=10
+WormholeApp DROP_SELF_RAW t=963.66867223701
+WormholeApp PHY_TX_END t=963.74675223701 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=12 t=965.86981945905 delay=3.16383s due=969.03365362695 captures=102
+WORMHOLE_CAPTURE AgriSensorPacket temp=29.8204 soil=22.8104 air=22.7912 nodeIndex=4
+WormholeApp TUNNEL A->B t=966.57273327333 delay=5.39291s mac=0A-AA-00-00-00-08 seq=11
+WormholeApp CLASS_A_IDLE t=967.79675223701 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=11 t=967.79675223801
+WORMHOLE_EXIT AgriSensorPacket temp=19.0681 soil=22.8572 air=74.8353 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=11
+WormholeApp DROP_SELF_RAW t=967.79675223801
+WormholeApp PHY_TX_END t=967.87483223801 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=16 t=968.23509861391 delay=4.87622s due=973.1113136719 captures=103
+WORMHOLE_CAPTURE AgriSensorPacket temp=38.6862 soil=20.1614 air=28.5438 nodeIndex=3
+WormholeApp TUNNEL A->B t=969.03365362695 delay=3.16383s mac=0A-AA-00-00-00-06 seq=12
+WormholeApp CLASS_A_IDLE t=971.92483223801 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=12 t=971.92483223901
+WORMHOLE_EXIT AgriSensorPacket temp=29.8204 soil=22.8104 air=22.7912 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=12
+WormholeApp DROP_SELF_RAW t=971.92483223901
+WormholeApp PHY_TX_END t=972.00291223901 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=973.1113136719 delay=4.87622s mac=0A-AA-00-00-00-05 seq=16
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=18 t=973.42583286375 delay=3.45819s due=976.88401925847 captures=104
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.1085 soil=70.7447 air=48.293 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=976.05291223901 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=16 t=976.05291224001
+WORMHOLE_EXIT AgriSensorPacket temp=38.6862 soil=20.1614 air=28.5438 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=16
+WormholeApp DROP_SELF_RAW t=976.05291224001
+WormholeApp PHY_TX_END t=976.13099224001 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=976.88401925847 delay=3.45819s mac=0A-AA-00-00-00-03 seq=18
+WormholeApp CLASS_A_IDLE t=980.18099224001 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=18 t=980.18099224101
+WORMHOLE_EXIT AgriSensorPacket temp=26.1085 soil=70.7447 air=48.293 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=18
+WormholeApp DROP_SELF_RAW t=980.18099224101
+WormholeApp PHY_TX_END t=980.25907224101 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=17 t=982.27937663283 delay=3.99737s due=986.27674215233 captures=105
+WORMHOLE_CAPTURE AgriSensorPacket temp=11.1319 soil=63.665 air=81.2489 nodeIndex=3
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=16 t=983.41943546311 delay=5.01603s due=988.43546705742 captures=106
+WORMHOLE_CAPTURE AgriSensorPacket temp=31.2809 soil=34.7877 air=80.5794 nodeIndex=5
+WormholeApp CLASS_A_IDLE t=984.30907224101 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=986.27674215233 delay=3.99737s mac=0A-AA-00-00-00-05 seq=17
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=17 t=986.27674215233
+WORMHOLE_EXIT AgriSensorPacket temp=11.1319 soil=63.665 air=81.2489 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=17
+WormholeApp DROP_SELF_RAW t=986.27674215233
+WormholeApp PHY_TX_END t=986.35482215233 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=988.43546705742 delay=5.01603s mac=0A-AA-00-00-00-07 seq=16
+WormholeApp CLASS_A_IDLE t=990.40482215233 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=16 t=990.40482215333
+WORMHOLE_EXIT AgriSensorPacket temp=31.2809 soil=34.7877 air=80.5794 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=16
+WormholeApp DROP_SELF_RAW t=990.40482215333
+WormholeApp PHY_TX_END t=990.48290215333 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=994.53290215333 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=13 t=997.02258728196 delay=0.869058s due=997.89164554248 captures=107
+WORMHOLE_CAPTURE AgriSensorPacket temp=36.9661 soil=65.4321 air=34.2554 nodeIndex=4
+WormholeApp TUNNEL A->B t=997.89164554248 delay=0.869058s mac=0A-AA-00-00-00-06 seq=13
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=13 t=997.89164554248
+WORMHOLE_EXIT AgriSensorPacket temp=36.9661 soil=65.4321 air=34.2554 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=13
+WormholeApp DROP_SELF_RAW t=997.89164554248
+WormholeApp PHY_TX_END t=997.96972554248 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1002.01972554248 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=12 t=1006.42123750032 delay=4.13362s due=1010.55486203027 captures=108
+WORMHOLE_CAPTURE AgriSensorPacket temp=28.3026 soil=64.8215 air=46.485 nodeIndex=6
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=19 t=1008.93628501663 delay=1.00091s due=1009.93719277899 captures=109
+WORMHOLE_CAPTURE AgriSensorPacket temp=17.888 soil=27.4366 air=66.5783 nodeIndex=9
+WormholeApp TUNNEL A->B t=1009.93719277899 delay=1.00091s mac=0A-AA-00-00-00-0B seq=19
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=19 t=1009.93719277899
+WORMHOLE_EXIT AgriSensorPacket temp=17.888 soil=27.4366 air=66.5783 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=19
+WormholeApp DROP_SELF_RAW t=1009.93719277899
+WormholeApp PHY_TX_END t=1010.01527277899 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1010.55486203027 delay=4.13362s mac=0A-AA-00-00-00-08 seq=12
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=18 t=1010.7317298897 delay=0.113581s due=1010.84531124125 captures=110
+WORMHOLE_CAPTURE AgriSensorPacket temp=11.1452 soil=22.3604 air=54.9435 nodeIndex=8
+WormholeApp TUNNEL A->B t=1010.84531124125 delay=0.113581s mac=0A-AA-00-00-00-0A seq=18
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=19 t=1010.88445529394 delay=0.28448s due=1011.16893542607 captures=111
+WORMHOLE_CAPTURE AgriSensorPacket temp=32.8714 soil=76.7845 air=22.8488 nodeIndex=1
+WormholeApp TUNNEL A->B t=1011.16893542607 delay=0.28448s mac=0A-AA-00-00-00-03 seq=19
+WormholeApp CLASS_A_IDLE t=1014.06527277899 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=12 t=1014.06527277999
+WORMHOLE_EXIT AgriSensorPacket temp=28.3026 soil=64.8215 air=46.485 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=12
+WormholeApp DROP_SELF_RAW t=1014.06527277999
+WormholeApp PHY_TX_END t=1014.14335277999 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1018.19335277999 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=18 t=1018.19335278099
+WORMHOLE_EXIT AgriSensorPacket temp=11.1452 soil=22.3604 air=54.9435 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=18
+WormholeApp DROP_SELF_RAW t=1018.19335278099
+WormholeApp PHY_TX_END t=1018.27143278099 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1022.32143278099 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=19 t=1022.32143278199
+WORMHOLE_EXIT AgriSensorPacket temp=32.8714 soil=76.7845 air=22.8488 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=19
+WormholeApp DROP_SELF_RAW t=1022.32143278199
+WormholeApp PHY_TX_END t=1022.39951278199 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1026.44951278199 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=14 t=1027.87941838679 delay=1.9694s due=1029.84881715707 captures=112
+WORMHOLE_CAPTURE AgriSensorPacket temp=23.666 soil=24.531 air=80.6202 nodeIndex=7
+WormholeApp TUNNEL A->B t=1029.84881715707 delay=1.9694s mac=0A-AA-00-00-00-09 seq=14
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=14 t=1029.84881715707
+WORMHOLE_EXIT AgriSensorPacket temp=23.666 soil=24.531 air=80.6202 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=14
+WormholeApp DROP_SELF_RAW t=1029.84881715707
+WormholeApp PHY_TX_END t=1029.92689715707 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=18 t=1033.89798797502 delay=3.4739s due=1037.37188532237 captures=113
+WORMHOLE_CAPTURE AgriSensorPacket temp=14.2 soil=60.1478 air=80.3369 nodeIndex=2
+WormholeApp CLASS_A_IDLE t=1033.97689715707 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=1037.37188532237 delay=3.4739s mac=0A-AA-00-00-00-04 seq=18
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=18 t=1037.37188532237
+WORMHOLE_EXIT AgriSensorPacket temp=14.2 soil=60.1478 air=80.3369 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=18
+WormholeApp DROP_SELF_RAW t=1037.37188532237
+WormholeApp PHY_TX_END t=1037.44996532237 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=14 t=1037.59638550944 delay=1.52161s due=1039.1179913245 captures=114
+WORMHOLE_CAPTURE AgriSensorPacket temp=25.7897 soil=27.2861 air=87.9385 nodeIndex=4
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=20 t=1038.14868340377 delay=3.56824s due=1041.71692369283 captures=115
+WORMHOLE_CAPTURE AgriSensorPacket temp=33.9041 soil=44.5729 air=75.6544 nodeIndex=1
+WormholeApp TUNNEL A->B t=1039.1179913245 delay=1.52161s mac=0A-AA-00-00-00-06 seq=14
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=18 t=1039.35846990547 delay=1.9272s due=1041.28566689539 captures=116
+WORMHOLE_CAPTURE AgriSensorPacket temp=19.3647 soil=71.1959 air=70.7686 nodeIndex=0
+WormholeApp TUNNEL A->B t=1041.28566689539 delay=1.9272s mac=0A-AA-00-00-00-02 seq=18
+WormholeApp CLASS_A_IDLE t=1041.49996532237 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=14 t=1041.49996532337
+WORMHOLE_EXIT AgriSensorPacket temp=25.7897 soil=27.2861 air=87.9385 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=14
+WormholeApp DROP_SELF_RAW t=1041.49996532337
+WormholeApp PHY_TX_END t=1041.57804532337 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1041.71692369283 delay=3.56824s mac=0A-AA-00-00-00-03 seq=20
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=15 t=1041.83088926386 delay=3.07321s due=1044.90410358509 captures=117
+WORMHOLE_CAPTURE AgriSensorPacket temp=39.7547 soil=17.9967 air=75.6861 nodeIndex=7
+WormholeApp TUNNEL A->B t=1044.90410358509 delay=3.07321s mac=0A-AA-00-00-00-09 seq=15
+WormholeApp CLASS_A_IDLE t=1045.62804532337 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=18 t=1045.62804532437
+WORMHOLE_EXIT AgriSensorPacket temp=19.3647 soil=71.1959 air=70.7686 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=18
+WormholeApp DROP_SELF_RAW t=1045.62804532437
+WormholeApp PHY_TX_END t=1045.70612532437 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=19 t=1048.89009427002 delay=5.43957s due=1054.32966015651 captures=118
+WORMHOLE_CAPTURE AgriSensorPacket temp=38.5243 soil=61.4086 air=50.5036 nodeIndex=2
+WormholeApp CLASS_A_IDLE t=1049.75612532437 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=20 t=1049.75612532537
+WORMHOLE_EXIT AgriSensorPacket temp=33.9041 soil=44.5729 air=75.6544 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=20
+WormholeApp DROP_SELF_RAW t=1049.75612532537
+WormholeApp PHY_TX_END t=1049.83420532537 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1053.88420532537 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=15 t=1053.88420532637
+WORMHOLE_EXIT AgriSensorPacket temp=39.7547 soil=17.9967 air=75.6861 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=15
+WormholeApp DROP_SELF_RAW t=1053.88420532637
+WormholeApp PHY_TX_END t=1053.96228532637 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1054.32966015651 delay=5.43957s mac=0A-AA-00-00-00-04 seq=19
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=15 t=1054.95782354039 delay=2.21184s due=1057.16966703076 captures=119
+WORMHOLE_CAPTURE AgriSensorPacket temp=13.4307 soil=62.0631 air=39.1752 nodeIndex=4
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=20 t=1056.8222073116 delay=1.26983s due=1058.09204070134 captures=120
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.8344 soil=23.1898 air=69.1327 nodeIndex=2
+WormholeApp TUNNEL A->B t=1057.16966703076 delay=2.21184s mac=0A-AA-00-00-00-06 seq=15
+WormholeApp CLASS_A_IDLE t=1058.01228532637 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=19 t=1058.01228532737
+WORMHOLE_EXIT AgriSensorPacket temp=38.5243 soil=61.4086 air=50.5036 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=19
+WormholeApp DROP_SELF_RAW t=1058.01228532737
+WormholeApp PHY_TX_END t=1058.09036532737 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1058.09204070134 delay=1.26983s mac=0A-AA-00-00-00-04 seq=20
+WormholeApp CLASS_A_IDLE t=1062.14036532737 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=15 t=1062.14036532837
+WORMHOLE_EXIT AgriSensorPacket temp=13.4307 soil=62.0631 air=39.1752 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=15
+WormholeApp DROP_SELF_RAW t=1062.14036532837
+WormholeApp PHY_TX_END t=1062.21844532837 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=19 t=1066.02662738739 delay=3.76444s due=1069.79107121423 captures=121
+WORMHOLE_CAPTURE AgriSensorPacket temp=20.4204 soil=74.0589 air=30.0897 nodeIndex=8
+WormholeApp CLASS_A_IDLE t=1066.26844532837 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=20 t=1066.26844532937
+WORMHOLE_EXIT AgriSensorPacket temp=37.8344 soil=23.1898 air=69.1327 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=20
+WormholeApp DROP_SELF_RAW t=1066.26844532937
+WormholeApp PHY_TX_END t=1066.34652532937 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1069.79107121423 delay=3.76444s mac=0A-AA-00-00-00-0A seq=19
+WormholeApp CLASS_A_IDLE t=1070.39652532937 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=19 t=1070.39652533037
+WORMHOLE_EXIT AgriSensorPacket temp=20.4204 soil=74.0589 air=30.0897 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=19
+WormholeApp DROP_SELF_RAW t=1070.39652533037
+WormholeApp PHY_TX_END t=1070.47460533037 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1074.52460533037 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=17 t=1074.66953634609 delay=3.43395s due=1078.10348390202 captures=122
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.3393 soil=76.7146 air=40.4028 nodeIndex=5
+WormholeApp TUNNEL A->B t=1078.10348390202 delay=3.43395s mac=0A-AA-00-00-00-07 seq=17
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=17 t=1078.10348390202
+WORMHOLE_EXIT AgriSensorPacket temp=26.3393 soil=76.7146 air=40.4028 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=17
+WormholeApp DROP_SELF_RAW t=1078.10348390202
+WormholeApp PHY_TX_END t=1078.18156390202 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=21 t=1079.9055489436 delay=4.45447s due=1084.36002155967 captures=123
+WORMHOLE_CAPTURE AgriSensorPacket temp=20.8602 soil=72.9737 air=20.1403 nodeIndex=2
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=16 t=1081.62300181639 delay=5.63754s due=1087.2605453613 captures=124
+WORMHOLE_CAPTURE AgriSensorPacket temp=30.9567 soil=54.3842 air=22.7445 nodeIndex=4
+WormholeApp CLASS_A_IDLE t=1082.23156390202 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=19 t=1083.55540615517 delay=3.60593s due=1087.16133877323 captures=125
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.1435 soil=86.8183 air=48.7528 nodeIndex=0
+WormholeApp TUNNEL A->B t=1084.36002155967 delay=4.45447s mac=0A-AA-00-00-00-04 seq=21
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=21 t=1084.36002155967
+WORMHOLE_EXIT AgriSensorPacket temp=20.8602 soil=72.9737 air=20.1403 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=21
+WormholeApp DROP_SELF_RAW t=1084.36002155967
+WormholeApp PHY_TX_END t=1084.43810155967 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1087.16133877323 delay=3.60593s mac=0A-AA-00-00-00-02 seq=19
+WormholeApp TUNNEL A->B t=1087.2605453613 delay=5.63754s mac=0A-AA-00-00-00-06 seq=16
+WormholeApp CLASS_A_IDLE t=1088.48810155967 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=19 t=1088.48810156067
+WORMHOLE_EXIT AgriSensorPacket temp=21.1435 soil=86.8183 air=48.7528 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=19
+WormholeApp DROP_SELF_RAW t=1088.48810156067
+WormholeApp PHY_TX_END t=1088.56618156067 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1092.61618156067 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=16 t=1092.61618156167
+WORMHOLE_EXIT AgriSensorPacket temp=30.9567 soil=54.3842 air=22.7445 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=16
+WormholeApp DROP_SELF_RAW t=1092.61618156167
+WormholeApp PHY_TX_END t=1092.69426156167 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=18 t=1094.07308394334 delay=2.79291s due=1096.86599852505 captures=126
+WORMHOLE_CAPTURE AgriSensorPacket temp=23.062 soil=50.7484 air=27.5423 nodeIndex=5
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=18 t=1094.08384769558 delay=0.228808s due=1094.31265611728 captures=127
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.2134 soil=42.5119 air=30.6906 nodeIndex=3
+WormholeApp TUNNEL A->B t=1094.31265611728 delay=0.228808s mac=0A-AA-00-00-00-05 seq=18
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=16 t=1096.09013620544 delay=1.90019s due=1097.99032779192 captures=128
+WORMHOLE_CAPTURE AgriSensorPacket temp=30.3111 soil=68.0486 air=30.0678 nodeIndex=7
+WormholeApp CLASS_A_IDLE t=1096.74426156167 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=18 t=1096.74426156267
+WORMHOLE_EXIT AgriSensorPacket temp=26.2134 soil=42.5119 air=30.6906 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=18
+WormholeApp DROP_SELF_RAW t=1096.74426156267
+WormholeApp PHY_TX_END t=1096.82234156267 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1096.86599852505 delay=2.79291s mac=0A-AA-00-00-00-07 seq=18
+WormholeApp TUNNEL A->B t=1097.99032779192 delay=1.90019s mac=0A-AA-00-00-00-09 seq=16
+WormholeApp CLASS_A_IDLE t=1100.87234156267 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=18 t=1100.87234156367
+WORMHOLE_EXIT AgriSensorPacket temp=23.062 soil=50.7484 air=27.5423 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=18
+WormholeApp DROP_SELF_RAW t=1100.87234156367
+WormholeApp PHY_TX_END t=1100.95042156367 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=20 t=1104.17382493096 delay=3.55308s due=1107.72690103292 captures=129
+WORMHOLE_CAPTURE AgriSensorPacket temp=19.1591 soil=38.3462 air=56.9914 nodeIndex=8
+WormholeApp CLASS_A_IDLE t=1105.00042156367 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=16 t=1105.00042156467
+WORMHOLE_EXIT AgriSensorPacket temp=30.3111 soil=68.0486 air=30.0678 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=16
+WormholeApp DROP_SELF_RAW t=1105.00042156467
+WormholeApp PHY_TX_END t=1105.07850156467 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=20 t=1105.4066438663 delay=4.6592s due=1110.06584575209 captures=130
+WORMHOLE_CAPTURE AgriSensorPacket temp=39.0252 soil=71.4755 air=87.6662 nodeIndex=9
+WormholeApp TUNNEL A->B t=1107.72690103292 delay=3.55308s mac=0A-AA-00-00-00-0A seq=20
+WormholeApp CLASS_A_IDLE t=1109.12850156467 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=20 t=1109.12850156567
+WORMHOLE_EXIT AgriSensorPacket temp=19.1591 soil=38.3462 air=56.9914 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=20
+WormholeApp DROP_SELF_RAW t=1109.12850156567
+WormholeApp PHY_TX_END t=1109.20658156567 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1110.06584575209 delay=4.6592s mac=0A-AA-00-00-00-0B seq=20
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=19 t=1112.88707684359 delay=4.79477s due=1117.68185099379 captures=131
+WORMHOLE_CAPTURE AgriSensorPacket temp=31.1148 soil=86.6219 air=35.2094 nodeIndex=3
+WormholeApp CLASS_A_IDLE t=1113.25658156567 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=20 t=1113.25658156667
+WORMHOLE_EXIT AgriSensorPacket temp=39.0252 soil=71.4755 air=87.6662 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=20
+WormholeApp DROP_SELF_RAW t=1113.25658156667
+WormholeApp PHY_TX_END t=1113.33466156667 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=19 t=1114.36376760583 delay=1.29029s due=1115.65405687452 captures=132
+WORMHOLE_CAPTURE AgriSensorPacket temp=36.1307 soil=25.342 air=77.0994 nodeIndex=5
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=13 t=1114.80190261504 delay=0.111923s due=1114.91382566472 captures=133
+WORMHOLE_CAPTURE AgriSensorPacket temp=34.9761 soil=80.4242 air=21.0687 nodeIndex=6
+WormholeApp TUNNEL A->B t=1114.91382566472 delay=0.111923s mac=0A-AA-00-00-00-08 seq=13
+WormholeApp TUNNEL A->B t=1115.65405687452 delay=1.29029s mac=0A-AA-00-00-00-07 seq=19
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=20 t=1116.4463523971 delay=4.18101s due=1120.62736722035 captures=134
+WORMHOLE_CAPTURE AgriSensorPacket temp=14.5519 soil=55.0925 air=78.6535 nodeIndex=0
+WormholeApp CLASS_A_IDLE t=1117.38466156667 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=13 t=1117.38466156767
+WORMHOLE_EXIT AgriSensorPacket temp=34.9761 soil=80.4242 air=21.0687 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=13
+WormholeApp DROP_SELF_RAW t=1117.38466156767
+WormholeApp PHY_TX_END t=1117.46274156767 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1117.68185099379 delay=4.79477s mac=0A-AA-00-00-00-05 seq=19
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=21 t=1118.98156164866 delay=1.69069s due=1120.67225352525 captures=135
+WORMHOLE_CAPTURE AgriSensorPacket temp=24.7448 soil=86.9844 air=24.5291 nodeIndex=1
+WormholeApp TUNNEL A->B t=1120.62736722035 delay=4.18101s mac=0A-AA-00-00-00-02 seq=20
+WormholeApp TUNNEL A->B t=1120.67225352525 delay=1.69069s mac=0A-AA-00-00-00-03 seq=21
+WormholeApp CLASS_A_IDLE t=1121.51274156767 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=19 t=1121.51274156867
+WORMHOLE_EXIT AgriSensorPacket temp=36.1307 soil=25.342 air=77.0994 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=19
+WormholeApp DROP_SELF_RAW t=1121.51274156867
+WormholeApp PHY_TX_END t=1121.59082156867 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=21 t=1123.91673668847 delay=5.06288s due=1128.97961814018 captures=136
+WORMHOLE_CAPTURE AgriSensorPacket temp=27.3303 soil=87.7032 air=31.0408 nodeIndex=9
+WormholeApp CLASS_A_IDLE t=1125.64082156867 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=19 t=1125.64082156967
+WORMHOLE_EXIT AgriSensorPacket temp=31.1148 soil=86.6219 air=35.2094 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=19
+WormholeApp DROP_SELF_RAW t=1125.64082156967
+WormholeApp PHY_TX_END t=1125.71890156967 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1128.97961814018 delay=5.06288s mac=0A-AA-00-00-00-0B seq=21
+WormholeApp CLASS_A_IDLE t=1129.76890156967 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=20 t=1129.76890157067
+WORMHOLE_EXIT AgriSensorPacket temp=14.5519 soil=55.0925 air=78.6535 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=20
+WormholeApp DROP_SELF_RAW t=1129.76890157067
+WormholeApp PHY_TX_END t=1129.84698157067 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1133.89698157067 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=21 t=1133.89698157167
+WORMHOLE_EXIT AgriSensorPacket temp=24.7448 soil=86.9844 air=24.5291 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=21
+WormholeApp DROP_SELF_RAW t=1133.89698157167
+WormholeApp PHY_TX_END t=1133.97506157167 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=20 t=1135.2268706039 delay=2.74865s due=1137.97552243977 captures=137
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.8072 soil=25.5633 air=66.8994 nodeIndex=5
+WormholeApp TUNNEL A->B t=1137.97552243977 delay=2.74865s mac=0A-AA-00-00-00-07 seq=20
+WormholeApp CLASS_A_IDLE t=1138.02506157167 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=21 t=1138.02506157267
+WORMHOLE_EXIT AgriSensorPacket temp=27.3303 soil=87.7032 air=31.0408 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=21
+WormholeApp DROP_SELF_RAW t=1138.02506157267
+WormholeApp PHY_TX_END t=1138.10314157267 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=21 t=1139.93906892705 delay=1.84473s due=1141.78380215967 captures=138
+WORMHOLE_CAPTURE AgriSensorPacket temp=29.4951 soil=68.351 air=55.6115 nodeIndex=8
+WormholeApp TUNNEL A->B t=1141.78380215967 delay=1.84473s mac=0A-AA-00-00-00-0A seq=21
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=14 t=1141.90068385448 delay=4.54012s due=1146.44080876777 captures=139
+WORMHOLE_CAPTURE AgriSensorPacket temp=27.5294 soil=72.9197 air=55.1128 nodeIndex=6
+WormholeApp CLASS_A_IDLE t=1142.15314157267 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=20 t=1142.15314157367
+WORMHOLE_EXIT AgriSensorPacket temp=21.8072 soil=25.5633 air=66.8994 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=20
+WormholeApp DROP_SELF_RAW t=1142.15314157367
+WormholeApp PHY_TX_END t=1142.23122157367 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=17 t=1143.7138263822 delay=0.800575s due=1144.51440109525 captures=140
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.1775 soil=70.0798 air=83.6086 nodeIndex=4
+WormholeApp TUNNEL A->B t=1144.51440109525 delay=0.800575s mac=0A-AA-00-00-00-06 seq=17
+WormholeApp CLASS_A_IDLE t=1146.28122157367 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=21 t=1146.28122157467
+WORMHOLE_EXIT AgriSensorPacket temp=29.4951 soil=68.351 air=55.6115 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=21
+WormholeApp DROP_SELF_RAW t=1146.28122157467
+WormholeApp PHY_TX_END t=1146.35930157467 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1146.44080876777 delay=4.54012s mac=0A-AA-00-00-00-08 seq=14
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=22 t=1146.87818555951 delay=0.32586s due=1147.20404601803 captures=141
+WORMHOLE_CAPTURE AgriSensorPacket temp=15.2223 soil=25.8344 air=43.457 nodeIndex=2
+WormholeApp TUNNEL A->B t=1147.20404601803 delay=0.32586s mac=0A-AA-00-00-00-04 seq=22
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=17 t=1147.33004227604 delay=0.285034s due=1147.61507592031 captures=142
+WORMHOLE_CAPTURE AgriSensorPacket temp=23.1674 soil=73.3369 air=74.1239 nodeIndex=7
+WormholeApp TUNNEL A->B t=1147.61507592031 delay=0.285034s mac=0A-AA-00-00-00-09 seq=17
+WormholeApp CLASS_A_IDLE t=1150.40930157467 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=17 t=1150.40930157567
+WORMHOLE_EXIT AgriSensorPacket temp=26.1775 soil=70.0798 air=83.6086 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=17
+WormholeApp DROP_SELF_RAW t=1150.40930157567
+WormholeApp PHY_TX_END t=1150.48738157567 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1154.53738157567 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=14 t=1154.53738157667
+WORMHOLE_EXIT AgriSensorPacket temp=27.5294 soil=72.9197 air=55.1128 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=14
+WormholeApp DROP_SELF_RAW t=1154.53738157667
+WormholeApp PHY_TX_END t=1154.61546157667 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1158.66546157667 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=22 t=1158.66546157767
+WORMHOLE_EXIT AgriSensorPacket temp=15.2223 soil=25.8344 air=43.457 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=22
+WormholeApp DROP_SELF_RAW t=1158.66546157767
+WormholeApp PHY_TX_END t=1158.74354157767 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=21 t=1160.31408657601 delay=3.89812s due=1164.2122052165 captures=143
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.2021 soil=84.5483 air=43.2142 nodeIndex=0
+WormholeApp CLASS_A_IDLE t=1162.79354157767 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=17 t=1162.79354157867
+WORMHOLE_EXIT AgriSensorPacket temp=23.1674 soil=73.3369 air=74.1239 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=17
+WormholeApp DROP_SELF_RAW t=1162.79354157867
+WormholeApp PHY_TX_END t=1162.87162157867 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1164.2122052165 delay=3.89812s mac=0A-AA-00-00-00-02 seq=21
+WormholeApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=15 t=1165.85435998162 delay=1.91285s due=1167.76721117541 captures=144
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.7632 soil=83.4826 air=92.0211 nodeIndex=6
+WormholeApp CLASS_A_IDLE t=1166.92162157867 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=21 t=1166.92162157967
+WORMHOLE_EXIT AgriSensorPacket temp=21.2021 soil=84.5483 air=43.2142 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=21
+WormholeApp DROP_SELF_RAW t=1166.92162157967
+WormholeApp PHY_TX_END t=1166.99970157967 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1167.76721117541 delay=1.91285s mac=0A-AA-00-00-00-08 seq=15
+WormholeApp CLASS_A_IDLE t=1171.04970157967 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-08 seq=15 t=1171.04970158067
+WORMHOLE_EXIT AgriSensorPacket temp=21.7632 soil=83.4826 air=92.0211 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=15
+WormholeApp DROP_SELF_RAW t=1171.04970158067
+WormholeApp PHY_TX_END t=1171.12778158067 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1175.17778158067 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=20 t=1176.33196177492 delay=4.4829s due=1180.81486653772 captures=145
+WORMHOLE_CAPTURE AgriSensorPacket temp=12.3407 soil=87.7624 air=60.862 nodeIndex=3
+WormholeApp TUNNEL A->B t=1180.81486653772 delay=4.4829s mac=0A-AA-00-00-00-05 seq=20
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=20 t=1180.81486653772
+WORMHOLE_EXIT AgriSensorPacket temp=12.3407 soil=87.7624 air=60.862 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=20
+WormholeApp DROP_SELF_RAW t=1180.81486653772
+WormholeApp PHY_TX_END t=1180.89294653772 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1184.94294653772 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=18 t=1198.17203209325 delay=0.408024s due=1198.58005625223 captures=146
+WORMHOLE_CAPTURE AgriSensorPacket temp=27.254 soil=37.2385 air=75.0886 nodeIndex=4
+WormholeApp TUNNEL A->B t=1198.58005625223 delay=0.408024s mac=0A-AA-00-00-00-06 seq=18
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=18 t=1198.58005625223
+WORMHOLE_EXIT AgriSensorPacket temp=27.254 soil=37.2385 air=75.0886 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=18
+WormholeApp DROP_SELF_RAW t=1198.58005625223
+WormholeApp PHY_TX_END t=1198.65813625223 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=22 t=1200.5658074025 delay=5.18003s due=1205.74584063587 captures=147
+WORMHOLE_CAPTURE AgriSensorPacket temp=30.5062 soil=14.6903 air=40.4632 nodeIndex=8
+WormholeApp CLASS_A_IDLE t=1202.70813625223 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=21 t=1205.00093833677 delay=3.48042s due=1208.48136154559 captures=148
+WORMHOLE_CAPTURE AgriSensorPacket temp=29.0667 soil=60.3181 air=37.671 nodeIndex=3
+WormholeApp TUNNEL A->B t=1205.74584063587 delay=5.18003s mac=0A-AA-00-00-00-0A seq=22
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=22 t=1205.74584063587
+WORMHOLE_EXIT AgriSensorPacket temp=30.5062 soil=14.6903 air=40.4632 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=22
+WormholeApp DROP_SELF_RAW t=1205.74584063587
+WormholeApp PHY_TX_END t=1205.82392063587 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=21 t=1208.17398294749 delay=3.22499s due=1211.3989756265 captures=149
+WORMHOLE_CAPTURE AgriSensorPacket temp=22.6904 soil=49.6379 air=76.8069 nodeIndex=5
+WormholeApp TUNNEL A->B t=1208.48136154559 delay=3.48042s mac=0A-AA-00-00-00-05 seq=21
+WormholeApp CLASS_A_IDLE t=1209.87392063587 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=21 t=1209.87392063687
+WORMHOLE_EXIT AgriSensorPacket temp=29.0667 soil=60.3181 air=37.671 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=21
+WormholeApp DROP_SELF_RAW t=1209.87392063687
+WormholeApp PHY_TX_END t=1209.95200063687 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1211.3989756265 delay=3.22499s mac=0A-AA-00-00-00-07 seq=21
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=22 t=1212.47973284934 delay=1.13503s due=1213.61476693336 captures=150
+WORMHOLE_CAPTURE AgriSensorPacket temp=36.6132 soil=70.8022 air=89.9551 nodeIndex=9
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=23 t=1213.2798320268 delay=4.39219s due=1217.67202480797 captures=151
+WORMHOLE_CAPTURE AgriSensorPacket temp=11.0382 soil=18.4658 air=55.2914 nodeIndex=8
+WormholeApp TUNNEL A->B t=1213.61476693336 delay=1.13503s mac=0A-AA-00-00-00-0B seq=22
+WormholeApp CLASS_A_IDLE t=1214.00200063687 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=21 t=1214.00200063787
+WORMHOLE_EXIT AgriSensorPacket temp=22.6904 soil=49.6379 air=76.8069 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=21
+WormholeApp DROP_SELF_RAW t=1214.00200063787
+WormholeApp PHY_TX_END t=1214.08008063787 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1217.67202480797 delay=4.39219s mac=0A-AA-00-00-00-0A seq=23
+WormholeApp CLASS_A_IDLE t=1218.13008063787 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=22 t=1218.13008063887
+WORMHOLE_EXIT AgriSensorPacket temp=36.6132 soil=70.8022 air=89.9551 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=22
+WormholeApp DROP_SELF_RAW t=1218.13008063887
+WormholeApp PHY_TX_END t=1218.20816063887 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1222.25816063887 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=23 t=1222.25816063987
+WORMHOLE_EXIT AgriSensorPacket temp=11.0382 soil=18.4658 air=55.2914 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=23
+WormholeApp DROP_SELF_RAW t=1222.25816063987
+WormholeApp PHY_TX_END t=1222.33624063987 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1226.38624063987 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=23 t=1227.9074850293 delay=3.94586s due=1231.85334636786 captures=152
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.3645 soil=54.6219 air=31.6577 nodeIndex=9
+WormholeApp TUNNEL A->B t=1231.85334636786 delay=3.94586s mac=0A-AA-00-00-00-0B seq=23
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=23 t=1231.85334636786
+WORMHOLE_EXIT AgriSensorPacket temp=37.3645 soil=54.6219 air=31.6577 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=23
+WormholeApp DROP_SELF_RAW t=1231.85334636786
+WormholeApp PHY_TX_END t=1231.93142636786 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1235.98142636786 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=19 t=1244.96740796149 delay=3.28919s due=1248.25660084387 captures=153
+WORMHOLE_CAPTURE AgriSensorPacket temp=30.3045 soil=39.9654 air=92.2078 nodeIndex=4
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=22 t=1246.15006146209 delay=4.18606s due=1250.33612144166 captures=154
+WORMHOLE_CAPTURE AgriSensorPacket temp=25.6088 soil=56.1698 air=35.5189 nodeIndex=1
+WormholeApp TUNNEL A->B t=1248.25660084387 delay=3.28919s mac=0A-AA-00-00-00-06 seq=19
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=19 t=1248.25660084387
+WORMHOLE_EXIT AgriSensorPacket temp=30.3045 soil=39.9654 air=92.2078 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=19
+WormholeApp DROP_SELF_RAW t=1248.25660084387
+WormholeApp PHY_TX_END t=1248.33468084387 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1250.33612144166 delay=4.18606s mac=0A-AA-00-00-00-03 seq=22
+WormholeApp CLASS_A_IDLE t=1252.38468084387 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=22 t=1252.38468084487
+WORMHOLE_EXIT AgriSensorPacket temp=25.6088 soil=56.1698 air=35.5189 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=22
+WormholeApp DROP_SELF_RAW t=1252.38468084487
+WormholeApp PHY_TX_END t=1252.46276084487 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=18 t=1256.31343251261 delay=4.13132s due=1260.44475276942 captures=155
+WORMHOLE_CAPTURE AgriSensorPacket temp=14.2512 soil=80.5414 air=40.8093 nodeIndex=7
+WormholeApp CLASS_A_IDLE t=1256.51276084487 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=24 t=1258.8437225759 delay=4.50562s due=1263.34934705127 captures=156
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.517 soil=81.2595 air=72.15 nodeIndex=8
+WormholeApp TUNNEL A->B t=1260.44475276942 delay=4.13132s mac=0A-AA-00-00-00-09 seq=18
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=18 t=1260.44475276942
+WORMHOLE_EXIT AgriSensorPacket temp=14.2512 soil=80.5414 air=40.8093 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=18
+WormholeApp DROP_SELF_RAW t=1260.44475276942
+WormholeApp PHY_TX_END t=1260.52283276942 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1263.34934705127 delay=4.50562s mac=0A-AA-00-00-00-0A seq=24
+WormholeApp CLASS_A_IDLE t=1264.57283276942 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=24 t=1264.57283277042
+WORMHOLE_EXIT AgriSensorPacket temp=37.517 soil=81.2595 air=72.15 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=24
+WormholeApp DROP_SELF_RAW t=1264.57283277042
+WormholeApp PHY_TX_END t=1264.65091277042 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=23 t=1266.86203460541 delay=3.05447s due=1269.91650147264 captures=157
+WORMHOLE_CAPTURE AgriSensorPacket temp=35.6448 soil=47.2064 air=47.9118 nodeIndex=2
+WormholeApp CLASS_A_IDLE t=1268.70091277042 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=1269.91650147264 delay=3.05447s mac=0A-AA-00-00-00-04 seq=23
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=23 t=1269.91650147264
+WORMHOLE_EXIT AgriSensorPacket temp=35.6448 soil=47.2064 air=47.9118 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=23
+WormholeApp DROP_SELF_RAW t=1269.91650147264
+WormholeApp PHY_TX_END t=1269.99458147264 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=22 t=1271.05572259377 delay=5.80765s due=1276.86337082441 captures=158
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.1867 soil=30.2816 air=49.4081 nodeIndex=0
+WormholeApp CLASS_A_IDLE t=1274.04458147264 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=22 t=1274.15972045717 delay=5.44882s due=1279.6085388068 captures=159
+WORMHOLE_CAPTURE AgriSensorPacket temp=14.6148 soil=79.7161 air=92.1112 nodeIndex=5
+WormholeApp TUNNEL A->B t=1276.86337082441 delay=5.80765s mac=0A-AA-00-00-00-02 seq=22
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=22 t=1276.86337082441
+WORMHOLE_EXIT AgriSensorPacket temp=21.1867 soil=30.2816 air=49.4081 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=22
+WormholeApp DROP_SELF_RAW t=1276.86337082441
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=19 t=1276.92573709118 delay=1.78865s due=1278.71438952455 captures=160
+WORMHOLE_CAPTURE AgriSensorPacket temp=27.0083 soil=62.0661 air=52.1475 nodeIndex=7
+WormholeApp PHY_TX_END t=1276.94145082441 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1278.71438952455 delay=1.78865s mac=0A-AA-00-00-00-09 seq=19
+WormholeApp TUNNEL A->B t=1279.6085388068 delay=5.44882s mac=0A-AA-00-00-00-07 seq=22
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=23 t=1280.48043668189 delay=3.09501s due=1283.57544738226 captures=161
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.0478 soil=55.0855 air=50.43 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=1280.99145082441 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=19 t=1280.99145082541
+WORMHOLE_EXIT AgriSensorPacket temp=27.0083 soil=62.0661 air=52.1475 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=19
+WormholeApp DROP_SELF_RAW t=1280.99145082541
+WormholeApp PHY_TX_END t=1281.06953082541 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=23 t=1282.31639422871 delay=5.82039s due=1288.13678383649 captures=162
+WORMHOLE_CAPTURE AgriSensorPacket temp=31.5957 soil=62.3808 air=29.89 nodeIndex=0
+WormholeApp TUNNEL A->B t=1283.57544738226 delay=3.09501s mac=0A-AA-00-00-00-03 seq=23
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=20 t=1283.62499767433 delay=4.96908s due=1288.59407342147 captures=163
+WORMHOLE_CAPTURE AgriSensorPacket temp=20.9187 soil=48.7682 air=25.0268 nodeIndex=4
+WormholeApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=22 t=1283.75542518907 delay=1.15635s due=1284.91177265954 captures=164
+WORMHOLE_CAPTURE AgriSensorPacket temp=15.8737 soil=75.3495 air=57.869 nodeIndex=3
+WormholeApp TUNNEL A->B t=1284.91177265954 delay=1.15635s mac=0A-AA-00-00-00-05 seq=22
+WormholeApp CLASS_A_IDLE t=1285.11953082541 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=22 t=1285.11953082641
+WORMHOLE_EXIT AgriSensorPacket temp=14.6148 soil=79.7161 air=92.1112 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=22
+WormholeApp DROP_SELF_RAW t=1285.11953082641
+WormholeApp PHY_TX_END t=1285.19761082641 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1288.13678383649 delay=5.82039s mac=0A-AA-00-00-00-02 seq=23
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=20 t=1288.46191114558 delay=4.52266s due=1292.98456999249 captures=165
+WORMHOLE_CAPTURE AgriSensorPacket temp=23.1893 soil=43.9662 air=79.5239 nodeIndex=7
+WormholeApp TUNNEL A->B t=1288.59407342147 delay=4.96908s mac=0A-AA-00-00-00-06 seq=20
+WormholeApp CLASS_A_IDLE t=1289.24761082641 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=23 t=1289.24761082741
+WORMHOLE_EXIT AgriSensorPacket temp=21.0478 soil=55.0855 air=50.43 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=23
+WormholeApp DROP_SELF_RAW t=1289.24761082741
+WormholeApp PHY_TX_END t=1289.32569082741 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1292.98456999249 delay=4.52266s mac=0A-AA-00-00-00-09 seq=20
+WormholeApp CLASS_A_IDLE t=1293.37569082741 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-05 seq=22 t=1293.37569082841
+WORMHOLE_EXIT AgriSensorPacket temp=15.8737 soil=75.3495 air=57.869 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=22
+WormholeApp DROP_SELF_RAW t=1293.37569082841
+WormholeApp PHY_TX_END t=1293.45377082841 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1297.50377082841 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=23 t=1297.50377082941
+WORMHOLE_EXIT AgriSensorPacket temp=31.5957 soil=62.3808 air=29.89 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=23
+WormholeApp DROP_SELF_RAW t=1297.50377082941
+WormholeApp PHY_TX_END t=1297.58185082941 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=24 t=1301.017393123 delay=5.57706s due=1306.59444904899 captures=166
+WORMHOLE_CAPTURE AgriSensorPacket temp=38.8583 soil=80.2901 air=40.9236 nodeIndex=2
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=24 t=1301.46467275835 delay=2.27241s due=1303.73708207852 captures=167
+WORMHOLE_CAPTURE AgriSensorPacket temp=39.2878 soil=14.9398 air=75.8709 nodeIndex=0
+WormholeApp CLASS_A_IDLE t=1301.63185082941 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=20 t=1301.63185083041
+WORMHOLE_EXIT AgriSensorPacket temp=20.9187 soil=48.7682 air=25.0268 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=20
+WormholeApp DROP_SELF_RAW t=1301.63185083041
+WormholeApp PHY_TX_END t=1301.70993083041 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1303.73708207852 delay=2.27241s mac=0A-AA-00-00-00-02 seq=24
+WormholeApp CLASS_A_IDLE t=1305.75993083041 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=20 t=1305.75993083141
+WORMHOLE_EXIT AgriSensorPacket temp=23.1893 soil=43.9662 air=79.5239 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=20
+WormholeApp DROP_SELF_RAW t=1305.75993083141
+WormholeApp PHY_TX_END t=1305.83801083141 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1306.59444904899 delay=5.57706s mac=0A-AA-00-00-00-04 seq=24
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=25 t=1309.4325509577 delay=5.31809s due=1314.75064260467 captures=168
+WORMHOLE_CAPTURE AgriSensorPacket temp=37.1643 soil=34.9098 air=86.7184 nodeIndex=2
+WormholeApp CLASS_A_IDLE t=1309.88801083141 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=24 t=1309.88801083241
+WORMHOLE_EXIT AgriSensorPacket temp=39.2878 soil=14.9398 air=75.8709 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=24
+WormholeApp DROP_SELF_RAW t=1309.88801083241
+WormholeApp PHY_TX_END t=1309.96609083241 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=24 t=1312.14842113216 delay=1.82791s due=1313.97632998204 captures=169
+WORMHOLE_CAPTURE AgriSensorPacket temp=18.9807 soil=57.3441 air=32.8686 nodeIndex=1
+WormholeApp TUNNEL A->B t=1313.97632998204 delay=1.82791s mac=0A-AA-00-00-00-03 seq=24
+WormholeApp CLASS_A_IDLE t=1314.01609083241 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=24 t=1314.01609083341
+WORMHOLE_EXIT AgriSensorPacket temp=38.8583 soil=80.2901 air=40.9236 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=24
+WormholeApp DROP_SELF_RAW t=1314.01609083341
+WormholeApp PHY_TX_END t=1314.09417083341 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1314.75064260467 delay=5.31809s mac=0A-AA-00-00-00-04 seq=25
+WormholeApp CLASS_A_IDLE t=1318.14417083341 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=24 t=1318.14417083441
+WORMHOLE_EXIT AgriSensorPacket temp=18.9807 soil=57.3441 air=32.8686 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=24
+WormholeApp DROP_SELF_RAW t=1318.14417083441
+WormholeApp PHY_TX_END t=1318.22225083441 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1322.27225083441 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=25 t=1322.27225083541
+WORMHOLE_EXIT AgriSensorPacket temp=37.1643 soil=34.9098 air=86.7184 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=25
+WormholeApp DROP_SELF_RAW t=1322.27225083541
+WormholeApp PHY_TX_END t=1322.35033083541 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=25 t=1323.34958900213 delay=5.70847s due=1329.05805982729 captures=170
+WORMHOLE_CAPTURE AgriSensorPacket temp=34.4303 soil=22.13 air=40.8646 nodeIndex=8
+WormholeApp CLASS_A_IDLE t=1326.40033083541 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=1329.05805982729 delay=5.70847s mac=0A-AA-00-00-00-0A seq=25
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=25 t=1329.05805982729
+WORMHOLE_EXIT AgriSensorPacket temp=34.4303 soil=22.13 air=40.8646 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=25
+WormholeApp DROP_SELF_RAW t=1329.05805982729
+WormholeApp PHY_TX_END t=1329.13613982729 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=21 t=1330.96315571946 delay=2.28964s due=1333.25279843222 captures=171
+WORMHOLE_CAPTURE AgriSensorPacket temp=32.5882 soil=61.6791 air=71.4046 nodeIndex=7
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=26 t=1332.22801658153 delay=2.1962s due=1334.42421978973 captures=172
+WORMHOLE_CAPTURE AgriSensorPacket temp=38.2613 soil=83.8646 air=47.0025 nodeIndex=8
+WormholeApp CLASS_A_IDLE t=1333.18613982729 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=1333.25279843222 delay=2.28964s mac=0A-AA-00-00-00-09 seq=21
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=21 t=1333.25279843222
+WORMHOLE_EXIT AgriSensorPacket temp=32.5882 soil=61.6791 air=71.4046 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=21
+WormholeApp DROP_SELF_RAW t=1333.25279843222
+WormholeApp PHY_TX_END t=1333.33087843222 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1334.42421978973 delay=2.1962s mac=0A-AA-00-00-00-0A seq=26
+WormholeApp CLASS_A_IDLE t=1337.38087843222 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=26 t=1337.38087843322
+WORMHOLE_EXIT AgriSensorPacket temp=38.2613 soil=83.8646 air=47.0025 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=26
+WormholeApp DROP_SELF_RAW t=1337.38087843322
+WormholeApp PHY_TX_END t=1337.45895843322 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=22 t=1338.97915884842 delay=3.52842s due=1342.50757671166 captures=173
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.6116 soil=18.9048 air=58.5688 nodeIndex=7
+WormholeApp CLASS_A_IDLE t=1341.50895843322 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=1342.50757671166 delay=3.52842s mac=0A-AA-00-00-00-09 seq=22
+WormholeApp EXIT TX mac=0A-AA-00-00-00-09 seq=22 t=1342.50757671166
+WORMHOLE_EXIT AgriSensorPacket temp=21.6116 soil=18.9048 air=58.5688 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=22
+WormholeApp DROP_SELF_RAW t=1342.50757671166
+WormholeApp PHY_TX_END t=1342.58565671166 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=25 t=1344.0865441261 delay=4.93212s due=1349.01866823414 captures=174
+WORMHOLE_CAPTURE AgriSensorPacket temp=34.7196 soil=80.1573 air=73.9565 nodeIndex=0
+WormholeApp CLASS_A_IDLE t=1346.63565671166 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=1349.01866823414 delay=4.93212s mac=0A-AA-00-00-00-02 seq=25
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=25 t=1349.01866823414
+WORMHOLE_EXIT AgriSensorPacket temp=34.7196 soil=80.1573 air=73.9565 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=25
+WormholeApp DROP_SELF_RAW t=1349.01866823414
+WormholeApp PHY_TX_END t=1349.09674823414 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1353.14674823414 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=26 t=1358.56593509939 delay=1.64466s due=1360.21059148791 captures=175
+WORMHOLE_CAPTURE AgriSensorPacket temp=22.1008 soil=24.1506 air=71.2296 nodeIndex=0
+WormholeApp TUNNEL A->B t=1360.21059148791 delay=1.64466s mac=0A-AA-00-00-00-02 seq=26
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=26 t=1360.21059148791
+WORMHOLE_EXIT AgriSensorPacket temp=22.1008 soil=24.1506 air=71.2296 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=26
+WormholeApp DROP_SELF_RAW t=1360.21059148791
+WormholeApp PHY_TX_END t=1360.28867148791 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1364.33867148791 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=23 t=1364.46842984512 delay=2.46702s due=1366.93544727218 captures=176
+WORMHOLE_CAPTURE AgriSensorPacket temp=14.4704 soil=33.0712 air=86.7867 nodeIndex=5
+WormholeApp TUNNEL A->B t=1366.93544727218 delay=2.46702s mac=0A-AA-00-00-00-07 seq=23
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=23 t=1366.93544727218
+WORMHOLE_EXIT AgriSensorPacket temp=14.4704 soil=33.0712 air=86.7867 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=23
+WormholeApp DROP_SELF_RAW t=1366.93544727218
+WormholeApp PHY_TX_END t=1367.01352727218 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1371.06352727218 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=26 t=1380.28512116247 delay=3.48681s due=1383.77192697311 captures=177
+WORMHOLE_CAPTURE AgriSensorPacket temp=33.1008 soil=22.6282 air=30.3835 nodeIndex=2
+WormholeApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=27 t=1382.96212380143 delay=3.71262s due=1386.67474305367 captures=178
+WORMHOLE_CAPTURE AgriSensorPacket temp=33.6997 soil=61.6277 air=88.3869 nodeIndex=0
+WormholeApp TUNNEL A->B t=1383.77192697311 delay=3.48681s mac=0A-AA-00-00-00-04 seq=26
+WormholeApp EXIT TX mac=0A-AA-00-00-00-04 seq=26 t=1383.77192697311
+WORMHOLE_EXIT AgriSensorPacket temp=33.1008 soil=22.6282 air=30.3835 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=26
+WormholeApp DROP_SELF_RAW t=1383.77192697311
+WormholeApp PHY_TX_END t=1383.85000697311 airtime=0.07808s classAWait=4.05s
+WormholeApp TUNNEL A->B t=1386.67474305367 delay=3.71262s mac=0A-AA-00-00-00-02 seq=27
+WormholeApp CLASS_A_IDLE t=1387.90000697311 lastPhyAirtime=0.07808s
+WormholeApp EXIT TX mac=0A-AA-00-00-00-02 seq=27 t=1387.90000697411
+WORMHOLE_EXIT AgriSensorPacket temp=33.6997 soil=61.6277 air=88.3869 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=27
+WormholeApp DROP_SELF_RAW t=1387.90000697411
+WormholeApp PHY_TX_END t=1387.97808697411 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=21 t=1390.52123101649 delay=2.80622s due=1393.32745554893 captures=179
+WORMHOLE_CAPTURE AgriSensorPacket temp=26.2996 soil=64.4174 air=41.7797 nodeIndex=4
+WormholeApp CLASS_A_IDLE t=1392.02808697411 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=1393.32745554893 delay=2.80622s mac=0A-AA-00-00-00-06 seq=21
+WormholeApp EXIT TX mac=0A-AA-00-00-00-06 seq=21 t=1393.32745554893
+WORMHOLE_EXIT AgriSensorPacket temp=26.2996 soil=64.4174 air=41.7797 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=21
+WormholeApp DROP_SELF_RAW t=1393.32745554893
+WormholeApp PHY_TX_END t=1393.40553554893 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1397.45553554893 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=24 t=1411.99865535618 delay=4.90141s due=1416.90006510038 captures=180
+WORMHOLE_CAPTURE AgriSensorPacket temp=24.0791 soil=77.0736 air=44.1762 nodeIndex=9
+WormholeApp TUNNEL A->B t=1416.90006510038 delay=4.90141s mac=0A-AA-00-00-00-0B seq=24
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=24 t=1416.90006510038
+WORMHOLE_EXIT AgriSensorPacket temp=24.0791 soil=77.0736 air=44.1762 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=24
+WormholeApp DROP_SELF_RAW t=1416.90006510038
+WormholeApp PHY_TX_END t=1416.97814510038 airtime=0.07808s classAWait=4.05s
+WormholeApp CLASS_A_IDLE t=1421.02814510038 lastPhyAirtime=0.07808s
+WormholeApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=24 t=1427.60775842722 delay=1.5679s due=1429.17565672521 captures=181
+WORMHOLE_CAPTURE AgriSensorPacket temp=20.9267 soil=65.8069 air=78.8115 nodeIndex=5
+WormholeApp TUNNEL A->B t=1429.17565672521 delay=1.5679s mac=0A-AA-00-00-00-07 seq=24
+WormholeApp EXIT TX mac=0A-AA-00-00-00-07 seq=24 t=1429.17565672521
+WORMHOLE_EXIT AgriSensorPacket temp=20.9267 soil=65.8069 air=78.8115 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=24
+WormholeApp DROP_SELF_RAW t=1429.17565672521
+WormholeApp PHY_TX_END t=1429.25373672521 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=25 t=1431.74990963499 delay=2.25727s due=1434.00718291959 captures=182
+WORMHOLE_CAPTURE AgriSensorPacket temp=21.2281 soil=18.5792 air=52.6216 nodeIndex=9
+WormholeApp CLASS_A_IDLE t=1433.30373672521 lastPhyAirtime=0.07808s
+WormholeApp TUNNEL A->B t=1434.00718291959 delay=2.25727s mac=0A-AA-00-00-00-0B seq=25
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0B seq=25 t=1434.00718291959
+WORMHOLE_EXIT AgriSensorPacket temp=21.2281 soil=18.5792 air=52.6216 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=25
+WormholeApp DROP_SELF_RAW t=1434.00718291959
+WormholeApp PHY_TX_END t=1434.08526291959 airtime=0.07808s classAWait=4.05s
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=25 t=1435.94438368343 delay=4.53099s due=1440.47537539216 captures=183
+WORMHOLE_CAPTURE AgriSensorPacket temp=15.3615 soil=47.2593 air=71.7916 nodeIndex=1
+WormholeApp CLASS_A_IDLE t=1438.13526291959 lastPhyAirtime=0.07808s
+WormholeApp ATTACK_END role=entry t=1440 captures=183 forwards=182 dropQ=0 dropDup=0 dropRaw=182
+WormholeApp ATTACK_END role=exit t=1440 captures=0 forwards=0 dropQ=0 dropDup=0 dropRaw=0
+** Event #19345   t=1800   Elapsed: 0.349053s (0m 00s)  100% completed  (100% total)
+     Speed:     ev/sec=55425.2   simsec/sec=5154.83   ev/simsec=10.7521
+     Messages:  created: 23808   present: 333   in FES: 13
+
+<!> Simulation time limit reached -- at t=1800s, event #19345
+
+Calling finish() at end of Run #0...
+
+End.

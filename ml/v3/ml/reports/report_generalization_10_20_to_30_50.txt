@@ -1,0 +1,140 @@
+GEN 10+20 → 30+50 (séparé)
+
+run_id train = 192
+run_id test  = 192
+intersection train/test = 0
+fenêtres train = 5760 | test = 5760
+Y train = {'Normal': 3168, 'Jamming': 864, 'Replay': 864, 'Wormhole': 864}
+Y test  = {'Normal': 3168, 'Jamming': 864, 'Replay': 864, 'Wormhole': 864}
+scenarios train runs = {'Jamming': 48, 'Normal': 48, 'Replay': 48, 'Wormhole': 48}
+scenarios test runs  = {'Jamming': 48, 'Normal': 48, 'Replay': 48, 'Wormhole': 48}
+
+{"imputation": "SimpleImputer median, fit TRAIN only; all-NaN TRAIN col → 0 (no TEST peek)", "rf_xgb_scaling": "none (after median impute)", "ann_lstm_scaling": "StandardScaler fit TRAIN only", "ann_early_stopping": "hold-out 15% of TRAIN runs, stratified by scenario; patience=10; TEST untouched", "label_encoder": "fixed order Normal,Jamming,Replay,Wormhole"}
+leakage={'X_columns': ['packet_rate', 'gw_success_rate', 'collision_rate', 'collision_intensity', 'duplicate_rate', 'mean_duplicate_delay_s', 'min_duplicate_delay_s', 'max_duplicate_delay_s', 'mean_rssi', 'std_rssi', 'mean_snir', 'std_snir', 'interarrival_mean', 'interarrival_std'], 'forbidden_intersect_X': [], 'run_id_intersection': 0, 'group_intersection': [], 'stratify': 'run-level scenario (not window Label)', 'same_run_in_train_and_test': False}
+all_nan_train_cols=[]
+
+=== RF ===
+Accuracy         = 0.6542
+Macro Precision  = 0.5892
+Macro Recall     = 0.6599
+Macro F1         = 0.5978
+
+              precision    recall  f1-score   support
+
+      Normal     0.9376    0.6455    0.7646      3168
+     Jamming     0.5140    1.0000    0.6790       864
+      Replay     0.4816    0.5301    0.5047       864
+    Wormhole     0.4234    0.4641    0.4428       864
+
+    accuracy                         0.6542      5760
+   macro avg     0.5892    0.6599    0.5978      5760
+weighted avg     0.7286    0.6542    0.6645      5760
+
+Confusion (rows=true, cols=pred, order Normal Jamming Replay Wormhole):
+[[2045  564  218  341]
+ [   0  864    0    0]
+ [  74  127  458  205]
+ [  62  126  275  401]]
+
+Feature importance (not causal):
+  packet_rate              0.1134
+  interarrival_mean        0.1033
+  collision_intensity      0.1021
+  mean_rssi                0.0956
+  mean_snir                0.0829
+  duplicate_rate           0.0794
+  mean_duplicate_delay_s   0.0771
+  interarrival_std         0.0744
+  max_duplicate_delay_s    0.0680
+  min_duplicate_delay_s    0.0635
+  std_snir                 0.0431
+  std_rssi                 0.0403
+  gw_success_rate          0.0288
+  collision_rate           0.0281
+
+=== XGB ===
+Accuracy         = 0.6087
+Macro Precision  = 0.5602
+Macro Recall     = 0.6372
+Macro F1         = 0.5613
+
+              precision    recall  f1-score   support
+
+      Normal     0.9422    0.5660    0.7072      3168
+     Jamming     0.4747    1.0000    0.6438       864
+      Replay     0.4641    0.5984    0.5228       864
+    Wormhole     0.3597    0.3843    0.3716       864
+
+    accuracy                         0.6087      5760
+   macro avg     0.5602    0.6372    0.5613      5760
+weighted avg     0.7130    0.6087    0.6197      5760
+
+Confusion (rows=true, cols=pred, order Normal Jamming Replay Wormhole):
+[[1793  696  255  424]
+ [   0  864    0    0]
+ [  57  123  517  167]
+ [  53  137  342  332]]
+
+Feature importance (not causal):
+  collision_intensity      0.3448
+  mean_duplicate_delay_s   0.1936
+  max_duplicate_delay_s    0.1014
+  duplicate_rate           0.0881
+  packet_rate              0.0791
+  min_duplicate_delay_s    0.0540
+  collision_rate           0.0255
+  mean_rssi                0.0223
+  mean_snir                0.0177
+  gw_success_rate          0.0155
+  interarrival_mean        0.0152
+  std_snir                 0.0144
+  interarrival_std         0.0143
+  std_rssi                 0.0142
+
+=== ANN ===
+Accuracy         = 0.5766
+Macro Precision  = 0.5656
+Macro Recall     = 0.6242
+Macro F1         = 0.5424
+
+              precision    recall  f1-score   support
+
+      Normal     0.9610    0.5051    0.6621      3168
+     Jamming     0.4162    1.0000    0.5878       864
+      Replay     0.5133    0.4456    0.4771       864
+    Wormhole     0.3719    0.5463    0.4426       864
+
+    accuracy                         0.5766      5760
+   macro avg     0.5656    0.6242    0.5424      5760
+weighted avg     0.7237    0.5766    0.5903      5760
+
+Confusion (rows=true, cols=pred, order Normal Jamming Replay Wormhole):
+[[1600  856  181  531]
+ [   0  864    0    0]
+ [  34  179  385  266]
+ [  31  177  184  472]]
+
+=== LSTM ===
+Accuracy         = 0.6144
+Macro Precision  = 0.6044
+Macro Recall     = 0.6289
+Macro F1         = 0.5784
+
+              precision    recall  f1-score   support
+
+      Normal     0.9439    0.5817    0.7198      2400
+     Jamming     0.4440    1.0000    0.6149       864
+      Replay     0.5195    0.4931    0.5059       864
+    Wormhole     0.5100    0.4410    0.4730       864
+
+    accuracy                         0.6144      4992
+   macro avg     0.6044    0.6289    0.5784      4992
+weighted avg     0.7088    0.6144    0.6219      4992
+
+Confusion (rows=true, cols=pred, order Normal Jamming Replay Wormhole):
+[[1396  577  197  230]
+ [   0  864    0    0]
+ [  44  258  426  136]
+ [  39  247  197  381]]
+
+n_seq_train=4992 n_seq_test=4992 T=5

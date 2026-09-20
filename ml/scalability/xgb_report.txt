@@ -1,0 +1,26 @@
+=== XGBoost AgriLoRaSec ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset.csv
+Accuracy test : 0.914
+F1-macro test : 0.422
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.500     0.181     0.265        83
+      Normal      1.000     1.000     1.000       934
+      Replay      0.129     0.444     0.200        18
+    Wormhole      0.185     0.278     0.222        18
+
+    accuracy                          0.914      1053
+   macro avg      0.454     0.476     0.422      1053
+weighted avg      0.932     0.914     0.915      1053
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        15       0      51        17
+Normal          0     934       0         0
+Replay          5       0       8         5
+Wormhole       10       0       3         5
+
+Label = type d'émetteur (capteur=Normal, jammer, replay, wormhole).
+sender_mac sert UNIQUEMENT à construire Y, jamais comme feature X.

@@ -1,0 +1,31 @@
+=== LSTM AgriLoRaSec ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset.csv
+Accuracy test : 0.938
+F1-macro test : 0.549
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.714     0.714     0.714         7
+      Normal      1.000     0.966     0.982        87
+      Replay      0.333     1.000     0.500         1
+    Wormhole      0.000     0.000     0.000         1
+
+    accuracy                          0.938        96
+   macro avg      0.512     0.670     0.549        96
+weighted avg      0.962     0.938     0.948        96
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming         5       0       1         1
+Normal          2      84       0         1
+Replay          0       0       1         0
+Wormhole        0       0       1         0
+
+Label = type d'émetteur (capteur=Normal, jammer, replay, wormhole).
+sender_mac sert UNIQUEMENT à construire Y, jamais comme feature X.
+
+Fenêtres train 322 | test 96 | longueur 16
+Chaque fenêtre vient d'un seul run ; split toujours par run_id.
+Y de la fenêtre = Label du DERNIER paquet (détection d'émetteur).
+PyTorch LSTM CPU, 25 époques, 32 unités.

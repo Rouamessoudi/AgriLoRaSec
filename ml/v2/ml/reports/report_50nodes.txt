@@ -1,0 +1,134 @@
+ML V2 — 50 nodes
+
+run_id train = 72
+run_id test  = 24
+intersection train/test = 0
+fenêtres train = 2160 | test = 720
+Y train = {'Normal': 540, 'Jamming': 540, 'Replay': 540, 'Wormhole': 540}
+Y test  = {'Normal': 180, 'Jamming': 180, 'Replay': 180, 'Wormhole': 180}
+
+{"imputation": "SimpleImputer median, fit TRAIN only, transform TEST", "rf_xgb_scaling": "none (after median impute)", "ann_lstm_scaling": "StandardScaler fit TRAIN only", "label_encoder": "sklearn LabelEncoder fit on CLASSES order Normal,Jamming,Replay,Wormhole"}
+
+=== RF ===
+Accuracy         = 0.4250
+Macro Precision  = 0.4248
+Macro Recall     = 0.4250
+Macro F1         = 0.4241
+
+              precision    recall  f1-score   support
+
+      Normal     0.2150    0.2389    0.2263       180
+     Jamming     0.9890    1.0000    0.9945       180
+      Replay     0.2316    0.2444    0.2378       180
+    Wormhole     0.2635    0.2167    0.2378       180
+
+    accuracy                         0.4250       720
+   macro avg     0.4248    0.4250    0.4241       720
+weighted avg     0.4248    0.4250    0.4241       720
+
+Confusion (rows=true, cols=pred, order Normal Jamming Replay Wormhole):
+[[ 43   0  75  62]
+ [  0 180   0   0]
+ [ 87   2  44  47]
+ [ 70   0  71  39]]
+
+Feature importance:
+  collision_intensity      0.1359
+  interarrival_std         0.1252
+  interarrival_mean        0.1205
+  packet_rate              0.1017
+  mean_rssi                0.0890
+  mean_snir                0.0883
+  gw_success_rate          0.0863
+  collision_rate           0.0855
+  std_snir                 0.0852
+  std_rssi                 0.0821
+  duplicate_rate           0.0001
+  max_duplicate_delay_s    0.0001
+  mean_duplicate_delay_s   0.0001
+  min_duplicate_delay_s    0.0001
+
+=== XGB ===
+Accuracy         = 0.4403
+Macro Precision  = 0.4413
+Macro Recall     = 0.4403
+Macro F1         = 0.4403
+
+              precision    recall  f1-score   support
+
+      Normal     0.2513    0.2778    0.2639       180
+     Jamming     1.0000    1.0000    1.0000       180
+      Replay     0.2308    0.2333    0.2320       180
+    Wormhole     0.2830    0.2500    0.2655       180
+
+    accuracy                         0.4403       720
+   macro avg     0.4413    0.4403    0.4403       720
+weighted avg     0.4413    0.4403    0.4403       720
+
+Confusion (rows=true, cols=pred, order Normal Jamming Replay Wormhole):
+[[ 50   0  69  61]
+ [  0 180   0   0]
+ [ 85   0  42  53]
+ [ 64   0  71  45]]
+
+Feature importance:
+  collision_intensity      0.5044
+  packet_rate              0.0891
+  collision_rate           0.0631
+  gw_success_rate          0.0520
+  interarrival_mean        0.0510
+  std_snir                 0.0496
+  interarrival_std         0.0489
+  mean_snir                0.0479
+  std_rssi                 0.0472
+  mean_rssi                0.0467
+  duplicate_rate           0.0000
+  mean_duplicate_delay_s   0.0000
+  min_duplicate_delay_s    0.0000
+  max_duplicate_delay_s    0.0000
+
+=== ANN ===
+Accuracy         = 0.4819
+Macro Precision  = 0.4662
+Macro Recall     = 0.4819
+Macro F1         = 0.4702
+
+              precision    recall  f1-score   support
+
+      Normal     0.3527    0.4389    0.3911       180
+     Jamming     0.9622    0.9889    0.9753       180
+      Replay     0.2232    0.1389    0.1712       180
+    Wormhole     0.3266    0.3611    0.3430       180
+
+    accuracy                         0.4819       720
+   macro avg     0.4662    0.4819    0.4702       720
+weighted avg     0.4662    0.4819    0.4702       720
+
+Confusion (rows=true, cols=pred, order Normal Jamming Replay Wormhole):
+[[ 79   0  35  66]
+ [  0 178   2   0]
+ [ 82   5  25  68]
+ [ 63   2  50  65]]
+
+=== LSTM ===
+Accuracy         = 0.3782
+Macro Precision  = 0.3768
+Macro Recall     = 0.3782
+Macro F1         = 0.3763
+
+              precision    recall  f1-score   support
+
+      Normal     0.2065    0.2436    0.2235       156
+     Jamming     1.0000    1.0000    1.0000       156
+      Replay     0.1369    0.1474    0.1420       156
+    Wormhole     0.1638    0.1218    0.1397       156
+
+    accuracy                         0.3782       624
+   macro avg     0.3768    0.3782    0.3763       624
+weighted avg     0.3768    0.3782    0.3763       624
+
+Confusion (rows=true, cols=pred, order Normal Jamming Replay Wormhole):
+[[ 38   0  63  55]
+ [  0 156   0   0]
+ [ 91   0  23  42]
+ [ 55   0  82  19]]

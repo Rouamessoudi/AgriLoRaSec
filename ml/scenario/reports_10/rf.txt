@@ -1,0 +1,35 @@
+=== Random Forest AgriLoRaSec (Y = scénario du run) ===
+Accuracy test : 0.206
+Precision-macro test : 0.241
+Recall-macro test : 0.199
+F1-macro test : 0.209
+Support test : {'Jamming': 324, 'Normal': 210, 'Replay': 253, 'Wormhole': 303}
+Classes présentes dans y_test : ['Jamming', 'Normal', 'Replay', 'Wormhole']
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.513     0.299     0.378       324
+      Normal      0.057     0.095     0.071       210
+      Replay      0.197     0.269     0.227       253
+    Wormhole      0.196     0.132     0.158       303
+
+    accuracy                          0.206      1090
+   macro avg      0.241     0.199     0.209      1090
+weighted avg      0.264     0.206     0.223      1090
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        97     102      71        54
+Normal         24      20     117        49
+Replay         35      89      68        61
+Wormhole       33     141      89        40
+
+Features X : rssi_dBm, snir_dB, packet_size_B, transmitted_bytes, interarrival_s, collision, received, energy_consumed
+sender_name / sender_mac exclus de X.
+Y = scénario du run (pas l'émetteur du paquet).
+
+Lignes ML 4608 (brutes 4608, drop 0)
+Lignes train 3518 | test 1090
+Runs train 72 | test 24
+Runs test par scénario : {'Jamming': 6, 'Normal': 6, 'Replay': 6, 'Wormhole': 6}

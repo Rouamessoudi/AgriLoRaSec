@@ -1,0 +1,39 @@
+=== LSTM AgriLoRaSec (Y = scénario du run) ===
+Accuracy test : 0.346
+Precision-macro test : 0.311
+Recall-macro test : 0.362
+F1-macro test : 0.316
+Support test : {'Jamming': 32, 'Normal': 17, 'Replay': 25, 'Wormhole': 30}
+Classes présentes dans y_test : [np.str_('Jamming'), np.str_('Normal'), np.str_('Replay'), np.str_('Wormhole')]
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.690     0.625     0.656        32
+      Normal      0.270     0.588     0.370        17
+      Replay      0.172     0.200     0.185        25
+    Wormhole      0.111     0.033     0.051        30
+
+    accuracy                          0.346       104
+   macro avg      0.311     0.362     0.316       104
+weighted avg      0.330     0.346     0.322       104
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        20       0      10         2
+Normal          0      10       6         1
+Replay          4      11       5         5
+Wormhole        5      16       8         1
+
+Features X : rssi_dBm, snir_dB, packet_size_B, transmitted_bytes, interarrival_s, collision, received, energy_consumed
+sender_name / sender_mac exclus de X.
+Y = scénario du run (pas l'émetteur du paquet).
+
+Fenêtres train 335 | test 104 | longueur 16 | stride 8
+Y de CHAQUE fenêtre = scénario du run (pas le dernier paquet).
+Classes LSTM enc.classes_ = [np.str_('Jamming'), np.str_('Normal'), np.str_('Replay'), np.str_('Wormhole')]
+PyTorch LSTM CPU, 25 époques, 32 unités.
+Lignes ML 4608 (brutes 4608, drop 0)
+Lignes train 3518 | test 1090
+Runs train 72 | test 24
+Runs test par scénario : {'Jamming': 6, 'Normal': 6, 'Replay': 6, 'Wormhole': 6}

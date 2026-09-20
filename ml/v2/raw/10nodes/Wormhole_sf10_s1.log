@@ -1,0 +1,42 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2025 Andras Varga, OpenSim Ltd.
+Version: 6.3.0, build: 251110-bb3d6a4731, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  4
+Loading NED files from ../src:  13
+Loading NED files from ../../flora-1.2.0/src:  22
+Loading NED files from ../../inet-4.5.4/src:  1187
+
+Preparing for running configuration Wormhole, run #0...
+Scenario: $0="avg", $repetition=0
+Assigned runID=Wormhole-0-20260917-13:15:47-77525
+Setting up network "agrilorasec.simulations.AgriLoRaNetwork"...
+Initializing...
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork.replayer.LoRaNic.mac
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork.wormholeB.LoRaNic.mac
+WormholeApp ENTRY init (tunnelDelay drawn at capture)
+WormholeApp EXIT init on AgriLoRaNetwork.wormholeB.app[0]
+
+Running simulation...
+** Event #0   t=0   Elapsed: 3e-05s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 327   present: 327   in FES: 14
+WormholeApp capture ARMED t=5
+WormholeApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=0 t=9.30626444792 tunnelDelay=0s
+WORMHOLE_CAPTURE AgriSensorPacket temp=30.1158 soil=17.8677 air=64.4799 nodeIndex=8
+WormholeApp DELAY drawn=5.74944s capture_t=9.30626444792 B_tx_at=15.05570716315
+WormholeApp TUNNEL A->B t=15.05570716315 delay=5.74944s mac=0A-AA-00-00-00-0A seq=0
+WormholeApp EXIT TX mac=0A-AA-00-00-00-0A seq=0 t=15.05570716315 (capture was t=0, tunnelDelay=0s)
+WORMHOLE_EXIT AgriSensorPacket temp=30.1158 soil=17.8677 air=64.4799 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=0
+** Event #10482   t=1800   Elapsed: 0.158942s (0m 00s)  100% completed  (100% total)
+     Speed:     ev/sec=65956.1   simsec/sec=11325.5   ev/simsec=5.82366
+     Messages:  created: 10612   present: 329   in FES: 16
+
+<!> Simulation time limit reached -- at t=1800s, event #10482
+
+Calling finish() at end of Run #0...
+
+End.

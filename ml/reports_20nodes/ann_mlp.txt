@@ -1,0 +1,28 @@
+=== ANN (MLP) AgriLoRaSec 20 nodes ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset_20nodes.csv
+Lignes ML (après dropna Label) : 8560
+Accuracy test : 0.977
+Precision-macro test : 0.566
+Recall-macro test : 0.546
+F1-macro test : 0.548
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.759     0.795     0.776        83
+      Normal      1.000     1.000     1.000      1923
+      Replay      0.333     0.167     0.222        18
+    Wormhole      0.174     0.222     0.195        18
+
+    accuracy                          0.977      2042
+   macro avg      0.566     0.546     0.548      2042
+weighted avg      0.977     0.977     0.977      2042
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        66       0       5        12
+Normal          0    1923       0         0
+Replay          8       0       3         7
+Wormhole       13       0       1         4
+
+Features X : rssi_dBm, snir_dB, packet_size_B, transmitted_bytes, interarrival_s, collision, received, energy_consumed

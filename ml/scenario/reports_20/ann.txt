@@ -1,0 +1,35 @@
+=== ANN (MLP) AgriLoRaSec (Y = scénario du run) ===
+Accuracy test : 0.172
+Precision-macro test : 0.259
+Recall-macro test : 0.170
+F1-macro test : 0.173
+Support test : {'Jamming': 590, 'Normal': 449, 'Replay': 546, 'Wormhole': 593}
+Classes présentes dans y_test : ['Jamming', 'Normal', 'Replay', 'Wormhole']
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.622     0.142     0.232       590
+      Normal      0.090     0.118     0.102       449
+      Replay      0.168     0.271     0.207       546
+    Wormhole      0.156     0.150     0.153       593
+
+    accuracy                          0.172      2178
+   macro avg      0.259     0.170     0.173      2178
+weighted avg      0.272     0.172     0.177      2178
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        84      70     311       125
+Normal          7      53     218       171
+Replay         18     196     148       184
+Wormhole       26     272     206        89
+
+Features X : rssi_dBm, snir_dB, packet_size_B, transmitted_bytes, interarrival_s, collision, received, energy_consumed
+sender_name / sender_mac exclus de X.
+Y = scénario du run (pas l'émetteur du paquet).
+
+Lignes ML 9083 (brutes 9083, drop 0)
+Lignes train 6905 | test 2178
+Runs train 72 | test 24
+Runs test par scénario : {'Jamming': 6, 'Normal': 6, 'Replay': 6, 'Wormhole': 6}

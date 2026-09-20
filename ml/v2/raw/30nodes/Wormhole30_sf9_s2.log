@@ -1,0 +1,42 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2025 Andras Varga, OpenSim Ltd.
+Version: 6.3.0, build: 251110-bb3d6a4731, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  4
+Loading NED files from ../src:  13
+Loading NED files from ../../flora-1.2.0/src:  22
+Loading NED files from ../../inet-4.5.4/src:  1187
+
+Preparing for running configuration Wormhole30, run #0...
+Scenario: $0="avg", $repetition=0
+Assigned runID=Wormhole30-0-20260917-13:17:20-77714
+Setting up network "agrilorasec.simulations.AgriLoRaNetwork30"...
+Initializing...
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork30.replayer.LoRaNic.mac
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork30.wormholeB.LoRaNic.mac
+WormholeApp ENTRY init (tunnelDelay drawn at capture)
+WormholeApp EXIT init on AgriLoRaNetwork30.wormholeB.app[0]
+
+Running simulation...
+** Event #0   t=0   Elapsed: 1.5e-05s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 667   present: 667   in FES: 34
+WormholeApp capture ARMED t=5
+WormholeApp CAPTURE from loRaNode19 mac=0A-AA-00-00-00-15 seq=0 t=9.26984077086 tunnelDelay=0s
+WORMHOLE_CAPTURE AgriSensorPacket temp=23.2406 soil=51.3945 air=57.8 nodeIndex=19
+WormholeApp DELAY drawn=1.97507s capture_t=9.26984077086 B_tx_at=11.24491160643
+WormholeApp TUNNEL A->B t=11.24491160643 delay=1.97507s mac=0A-AA-00-00-00-15 seq=0
+WormholeApp EXIT TX mac=0A-AA-00-00-00-15 seq=0 t=11.24491160643 (capture was t=0, tunnelDelay=0s)
+WORMHOLE_EXIT AgriSensorPacket temp=23.2406 soil=51.3945 air=57.8 nodeIndex=19
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-15 seq=0
+** Event #64533   t=1800   Elapsed: 0.514043s (0m 00s)  100% completed  (100% total)
+     Speed:     ev/sec=125543   simsec/sec=3501.65   ev/simsec=35.8524
+     Messages:  created: 81742   present: 669   in FES: 34
+
+<!> Simulation time limit reached -- at t=1800s, event #64533
+
+Calling finish() at end of Run #0...
+
+End.

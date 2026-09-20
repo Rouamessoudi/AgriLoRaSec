@@ -1,0 +1,42 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2025 Andras Varga, OpenSim Ltd.
+Version: 6.3.0, build: 251110-bb3d6a4731, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  4
+Loading NED files from ../src:  13
+Loading NED files from ../../flora-1.2.0/src:  22
+Loading NED files from ../../inet-4.5.4/src:  1187
+
+Preparing for running configuration Wormhole, run #0...
+Scenario: $0="avg", $repetition=0
+Assigned runID=Wormhole-0-20260917-13:15:49-77535
+Setting up network "agrilorasec.simulations.AgriLoRaNetwork"...
+Initializing...
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork.replayer.LoRaNic.mac
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork.wormholeB.LoRaNic.mac
+WormholeApp ENTRY init (tunnelDelay drawn at capture)
+WormholeApp EXIT init on AgriLoRaNetwork.wormholeB.app[0]
+
+Running simulation...
+** Event #0   t=0   Elapsed: 2.4e-05s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 327   present: 327   in FES: 14
+WormholeApp capture ARMED t=5
+WormholeApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=0 t=8.5315721018 tunnelDelay=0s
+WORMHOLE_CAPTURE AgriSensorPacket temp=36.792 soil=41.0377 air=73.8817 nodeIndex=1
+WormholeApp DELAY drawn=0.899168s capture_t=8.5315721018 B_tx_at=9.43074021264
+WormholeApp TUNNEL A->B t=9.43074021264 delay=0.899168s mac=0A-AA-00-00-00-03 seq=0
+WormholeApp EXIT TX mac=0A-AA-00-00-00-03 seq=0 t=9.43074021264 (capture was t=0, tunnelDelay=0s)
+WORMHOLE_EXIT AgriSensorPacket temp=36.792 soil=41.0377 air=73.8817 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=0
+** Event #5699   t=1800   Elapsed: 0.123521s (0m 00s)  100% completed  (100% total)
+     Speed:     ev/sec=46143.5   simsec/sec=14379.9   ev/simsec=3.2089
+     Messages:  created: 5560   present: 325   in FES: 10
+
+<!> Simulation time limit reached -- at t=1800s, event #5699
+
+Calling finish() at end of Run #0...
+
+End.

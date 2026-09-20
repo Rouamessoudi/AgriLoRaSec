@@ -1,0 +1,28 @@
+=== XGBoost AgriLoRaSec 20 nodes ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset_20nodes.csv
+Lignes ML (après dropna Label) : 8560
+Accuracy test : 0.959
+Precision-macro test : 0.471
+Recall-macro test : 0.464
+F1-macro test : 0.439
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.568     0.301     0.394        83
+      Normal      1.000     1.000     1.000      1923
+      Replay      0.117     0.389     0.179        18
+    Wormhole      0.200     0.167     0.182        18
+
+    accuracy                          0.959      2042
+   macro avg      0.471     0.464     0.439      2042
+weighted avg      0.968     0.959     0.961      2042
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        25       0      51         7
+Normal          0    1923       0         0
+Replay          6       0       7         5
+Wormhole       13       0       2         3
+
+Features X : rssi_dBm, snir_dB, packet_size_B, transmitted_bytes, interarrival_s, collision, received, energy_consumed

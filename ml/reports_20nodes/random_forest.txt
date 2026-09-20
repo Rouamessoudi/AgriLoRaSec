@@ -1,0 +1,28 @@
+=== Random Forest AgriLoRaSec 20 nodes ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset_20nodes.csv
+Lignes ML (après dropna Label) : 8560
+Accuracy test : 0.957
+Precision-macro test : 0.505
+Recall-macro test : 0.517
+F1-macro test : 0.447
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.652     0.181     0.283        83
+      Normal      1.000     1.000     1.000      1923
+      Replay      0.136     0.500     0.214        18
+    Wormhole      0.233     0.389     0.292        18
+
+    accuracy                          0.957      2042
+   macro avg      0.505     0.517     0.447      2042
+weighted avg      0.971     0.957     0.958      2042
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        15       0      50        18
+Normal          0    1923       0         0
+Replay          4       0       9         5
+Wormhole        4       0       7         7
+
+Features X : rssi_dBm, snir_dB, packet_size_B, transmitted_bytes, interarrival_s, collision, received, energy_consumed

@@ -1,0 +1,19 @@
+Y = scénario du run (option B) — comparaison 10 vs 20
+Les fichiers dataset.csv / dataset_20nodes.csv / rapports Y-émetteur n'ont PAS été écrasés.
+
+10 nodes (dataset.csv) : 4608 lignes, drop 0, train 3518, test 1090, runs 72/24 (6 par classe en test)
+20 nodes (dataset_20nodes.csv) : 9083 lignes, drop 0, train 6905, test 2178, runs 72/24 (6 par classe en test)
+
+                 10 nodes        20 nodes
+Dataset events      4608           9083
+RF Accuracy         0.206          0.181
+RF F1               0.209          0.185
+XGBoost Accuracy    0.215          0.185
+XGBoost F1          0.215          0.183
+ANN Accuracy        0.238          0.172
+ANN F1              0.212          0.173
+LSTM Accuracy       0.346          0.305
+LSTM F1             0.316          0.303
+
+LSTM 10 test support: Jamming 32, Normal 17, Replay 25, Wormhole 30 (4 classes)
+LSTM 20 test support: Jamming 64, Normal 48, Replay 61, Wormhole 66 (4 classes)

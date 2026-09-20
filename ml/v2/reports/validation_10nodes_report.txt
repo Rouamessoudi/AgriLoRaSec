@@ -1,0 +1,215 @@
+=== DATASET V2 VALIDATION PIPELINE ===
+W=60.0s  n_nodes=10  runs=12  windows=36
+out=/home/opp_env/AgriLoRaSec/ml/v2/features/dataset_v2_validation_10nodes.csv
+
+--- raw filter ---
+raw_total=503
+RX_GW_decoded_used=299
+collision_GW_used=76
+received0_omniscient_excluded=128
+
+--- per run ---
+Jamming_s1.csv: raw=128 D=79 C=17 omni=32 windows=3 excl_pre=0 act=1.0000 dups_run=0
+Jamming_s2.csv: raw=129 D=76 C=18 omni=35 windows=3 excl_pre=0 act=1.0000 dups_run=0
+Jamming_s3.csv: raw=128 D=80 C=17 omni=31 windows=3 excl_pre=0 act=1.0000 dups_run=0
+NoAttack_s1.csv: raw=11 D=7 C=1 omni=3 windows=3 excl_pre=0 act=0.0000 dups_run=0
+NoAttack_s2.csv: raw=15 D=5 C=5 omni=5 windows=3 excl_pre=0 act=0.0000 dups_run=0
+NoAttack_s3.csv: raw=11 D=9 C=1 omni=1 windows=3 excl_pre=0 act=0.0000 dups_run=0
+Replay_s1.csv: raw=12 D=8 C=1 omni=3 windows=3 excl_pre=0 act=9.3063 dups_run=1
+Replay_s2.csv: raw=15 D=5 C=5 omni=5 windows=3 excl_pre=0 act=5.0757 dups_run=0
+Replay_s3.csv: raw=13 D=9 C=2 omni=2 windows=3 excl_pre=0 act=8.5316 dups_run=0
+Wormhole_s1.csv: raw=12 D=8 C=1 omni=3 windows=3 excl_pre=0 act=9.3063 dups_run=1
+Wormhole_s2.csv: raw=16 D=4 C=6 omni=6 windows=3 excl_pre=0 act=5.0757 dups_run=0
+Wormhole_s3.csv: raw=13 D=9 C=2 omni=2 windows=3 excl_pre=0 act=8.5316 dups_run=0
+
+--- examples ---
+[A_Normal]
+  run_id=Normal_n10_sf12_seed1 t=[0.0,60.0) Label=Normal
+  D=3 C=0 duplicate_count=0 activation_s=0.0
+  packet_rate=0.05
+  gw_success_rate=1
+  collision_rate=0
+  collision_intensity=0
+  duplicate_rate=0
+  mean_duplicate_delay_s=NaN
+  min_duplicate_delay_s=NaN
+  max_duplicate_delay_s=NaN
+  mean_rssi=-132.746
+  std_rssi=3.08301
+  mean_snir=4.2535
+  std_snir=3.08334
+  interarrival_mean=13.6
+  interarrival_std=9.84498
+[B_Jamming]
+  run_id=Jamming_n10_sf12_seed1 t=[0.0,60.0) Label=Jamming
+  D=25 C=8 duplicate_count=0 activation_s=1.0
+  packet_rate=0.416667
+  gw_success_rate=0.757576
+  collision_rate=0.242424
+  collision_intensity=0.133333
+  duplicate_rate=0
+  mean_duplicate_delay_s=NaN
+  min_duplicate_delay_s=NaN
+  max_duplicate_delay_s=NaN
+  mean_rssi=-131.504
+  std_rssi=3.18745
+  mean_snir=4.94766
+  std_snir=3.1802
+  interarrival_mean=2.27737
+  interarrival_std=1.10036
+[C_Replay_no_dup]
+  run_id=Replay_n10_sf12_seed1 t=[60.0,120.0) Label=Replay
+  D=5 C=1 duplicate_count=0 activation_s=9.30626444792
+  packet_rate=0.0833333
+  gw_success_rate=0.833333
+  collision_rate=0.166667
+  collision_intensity=0.0166667
+  duplicate_rate=0
+  mean_duplicate_delay_s=NaN
+  min_duplicate_delay_s=NaN
+  max_duplicate_delay_s=NaN
+  mean_rssi=-130.664
+  std_rssi=3.92389
+  mean_snir=5.29658
+  std_snir=3.8327
+  interarrival_mean=13.3919
+  interarrival_std=11.169
+[D_Replay_dup]
+  run_id=Replay_n10_sf12_seed1 t=[0.0,60.0) Label=Replay
+  D=3 C=0 duplicate_count=1 activation_s=9.30626444792
+  packet_rate=0.05
+  gw_success_rate=1
+  collision_rate=0
+  collision_intensity=0
+  duplicate_rate=0.333333
+  mean_duplicate_delay_s=17.8733
+  min_duplicate_delay_s=17.8733
+  max_duplicate_delay_s=17.8733
+  mean_rssi=-131.967
+  std_rssi=4.75719
+  mean_snir=5.0327
+  std_snir=4.75767
+  interarrival_mean=8.93665
+  interarrival_std=3.24993
+[E_Wormhole_no_dup]
+  run_id=Wormhole_n10_sf12_seed1 t=[60.0,120.0) Label=Wormhole
+  D=4 C=1 duplicate_count=0 activation_s=9.30626444792
+  packet_rate=0.0666667
+  gw_success_rate=0.8
+  collision_rate=0.2
+  collision_intensity=0.0166667
+  duplicate_rate=0
+  mean_duplicate_delay_s=NaN
+  min_duplicate_delay_s=NaN
+  max_duplicate_delay_s=NaN
+  mean_rssi=-127.326
+  std_rssi=3.64994
+  mean_snir=8.77341
+  std_snir=4.57446
+  interarrival_mean=8.05177
+  interarrival_std=3.40575
+[F_Wormhole_dup]
+  run_id=Wormhole_n10_sf12_seed1 t=[0.0,60.0) Label=Wormhole
+  D=4 C=0 duplicate_count=1 activation_s=9.30626444792
+  packet_rate=0.0666667
+  gw_success_rate=1
+  collision_rate=0
+  collision_intensity=0
+  duplicate_rate=0.25
+  mean_duplicate_delay_s=3.9808
+  min_duplicate_delay_s=3.9808
+  max_duplicate_delay_s=3.9808
+  mean_rssi=-133.525
+  std_rssi=1.7999
+  mean_snir=3.47449
+  std_snir=1.80005
+  interarrival_mean=9.0667
+  interarrival_std=9.97674
+
+--- stats by class ---
+## Normal n_windows=9
+  windows_duplicate_rate>0 = 0
+  packet_rate: mean=0.0388889 median=0.05 std=0.0399653 nan=0/9
+  gw_success_rate: mean=0.831429 median=0.857143 std=0.205138 nan=4/9
+  collision_rate: mean=0.168571 median=0.142857 std=0.205138 nan=4/9
+  collision_intensity: mean=0.012963 median=0 std=0.0273579 nan=0/9
+  duplicate_rate: mean=0 median=0 std=0 nan=4/9
+    NOTE: constante (= 0)
+  mean_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=9/9
+  min_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=9/9
+  max_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=9/9
+  mean_rssi: mean=-130.103 median=-130.165 std=1.93258 nan=4/9
+  std_rssi: mean=3.44745 median=3.64994 std=0.943873 nan=4/9
+  mean_snir: mean=6.44466 median=6.58961 std=1.64695 nan=4/9
+  std_snir: mean=3.59728 median=3.9847 std=1.04163 nan=4/9
+  interarrival_mean: mean=8.75134 median=8.05177 std=2.89183 nan=4/9
+  interarrival_std: mean=5.85213 median=4.16353 std=3.19055 nan=4/9
+## Jamming n_windows=9
+  windows_duplicate_rate>0 = 0
+  packet_rate: mean=0.435185 median=0.416667 std=0.0481926 nan=0/9
+  gw_success_rate: mean=0.837803 median=0.83871 std=0.171757 nan=0/9
+  collision_rate: mean=0.162197 median=0.16129 std=0.171757 nan=0/9
+  collision_intensity: mean=0.0962963 median=0.0833333 std=0.108262 nan=0/9
+  duplicate_rate: mean=0 median=0 std=0 nan=0/9
+    NOTE: constante (= 0)
+  mean_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=9/9
+  min_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=9/9
+  max_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=9/9
+  mean_rssi: mean=-131.068 median=-131.097 std=0.520919 nan=0/9
+  std_rssi: mean=3.13442 median=3.06629 std=0.403057 nan=0/9
+  mean_snir: mean=5.33464 median=5.32578 std=0.388543 nan=0/9
+  std_snir: mean=3.14347 median=3.07643 std=0.388421 nan=0/9
+  interarrival_mean: mean=2.2764 median=2.27735 std=0.22009 nan=0/9
+  interarrival_std: mean=1.14487 median=1.10036 std=0.358964 nan=0/9
+## Replay n_windows=9
+  windows_duplicate_rate>0 = 1
+  packet_rate: mean=0.0407407 median=0.05 std=0.0417592 nan=0/9
+  gw_success_rate: mean=0.816667 median=0.833333 std=0.207498 nan=4/9
+  collision_rate: mean=0.183333 median=0.166667 std=0.207498 nan=4/9
+  collision_intensity: mean=0.0148148 median=0 std=0.0281914 nan=0/9
+  duplicate_rate: mean=0.0666667 median=0 std=0.149071 nan=4/9
+  mean_duplicate_delay_s: mean=17.8733 median=17.8733 std=NaN nan=8/9
+    NOTE: constante (= 17.8733)
+  min_duplicate_delay_s: mean=17.8733 median=17.8733 std=NaN nan=8/9
+    NOTE: constante (= 17.8733)
+  max_duplicate_delay_s: mean=17.8733 median=17.8733 std=NaN nan=8/9
+    NOTE: constante (= 17.8733)
+  mean_rssi: mean=-130.663 median=-130.664 std=1.04562 nan=4/9
+  std_rssi: mean=3.68341 median=3.89368 std=1.00092 nan=4/9
+  mean_snir: mean=5.68975 median=5.29658 std=1.27138 nan=4/9
+  std_snir: mean=3.72654 median=3.9274 std=1.01518 nan=4/9
+  interarrival_mean: mean=8.70164 median=7.92013 std=2.81471 nan=4/9
+  interarrival_std: mean=5.18604 median=4.16353 std=3.38449 nan=4/9
+## Wormhole n_windows=9
+  windows_duplicate_rate>0 = 1
+  packet_rate: mean=0.0388889 median=0.05 std=0.0390868 nan=0/9
+  gw_success_rate: mean=0.79 median=0.8 std=0.245967 nan=4/9
+  collision_rate: mean=0.21 median=0.2 std=0.245967 nan=4/9
+  collision_intensity: mean=0.0166667 median=0 std=0.0333333 nan=0/9
+  duplicate_rate: mean=0.05 median=0 std=0.111803 nan=4/9
+  mean_duplicate_delay_s: mean=3.9808 median=3.9808 std=NaN nan=8/9
+    NOTE: constante (= 3.9808)
+  min_duplicate_delay_s: mean=3.9808 median=3.9808 std=NaN nan=8/9
+    NOTE: constante (= 3.9808)
+  max_duplicate_delay_s: mean=3.9808 median=3.9808 std=NaN nan=8/9
+    NOTE: constante (= 3.9808)
+  mean_rssi: mean=-130.043 median=-130.165 std=2.52981 nan=4/9
+  std_rssi: mean=2.86147 median=2.93439 std=0.93697 nan=4/9
+  mean_snir: mean=5.82003 median=5.8002 std=2.11084 nan=4/9
+  std_snir: mean=3.66984 median=3.61911 std=1.87489 nan=4/9
+  interarrival_mean: mean=8.28438 median=8.05177 std=1.88395 nan=4/9
+  interarrival_std: mean=5.98523 median=4.16353 std=3.35681 nan=4/9
+
+--- scientific checks ---
+Normal duplicate_count>0 windows: 0 (attendu 0)
+Jamming packet_rate mean=0.435185 (jammer ~0.57/s + capteurs)
+Jamming collision_intensity mean=0.0962963
+Replay: windows_with_dup=1 without_dup_but_label=8
+  dup Replay_n10_sf12_seed1 W=[0.0,60.0) rate=0.333333 delay=17.8733
+Wormhole: windows_with_dup=1 without_dup_but_label=8
+  dup Wormhole_n10_sf12_seed1 W=[0.0,60.0) rate=0.25 delay=3.9808
+
+--- leakage / artefacts ---
+ARTEFACT packet_rate: min(Jamming)=0.3667 > max(autres)=0.1000 (separe presque a lui seul le Jamming sur ce petit echantillon).
+ARTEFACT possible duplicate_delay: max(Wormhole)=3.981 < min(Replay)=17.873 (peu de doublons recus; ne pas conclure a une separation parfaite).
+Controle X: FEATURES_X exactes, aucune colonne interdite dans X: OK

@@ -1,0 +1,26 @@
+=== ANN (MLP) AgriLoRaSec ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset.csv
+Accuracy test : 0.955
+F1-macro test : 0.539
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.795     0.747     0.770        83
+      Normal      1.000     1.000     1.000       934
+      Replay      0.294     0.556     0.385        18
+    Wormhole      0.000     0.000     0.000        18
+
+    accuracy                          0.955      1053
+   macro avg      0.522     0.576     0.539      1053
+weighted avg      0.955     0.955     0.954      1053
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        62       0      15         6
+Normal          0     934       0         0
+Replay          7       0      10         1
+Wormhole        9       0       9         0
+
+Label = type d'émetteur (capteur=Normal, jammer, replay, wormhole).
+sender_mac sert UNIQUEMENT à construire Y, jamais comme feature X.

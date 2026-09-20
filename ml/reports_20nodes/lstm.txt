@@ -1,0 +1,27 @@
+=== LSTM AgriLoRaSec 20 nodes ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset_20nodes.csv
+Lignes ML (après dropna Label) : 8560
+Accuracy test : 0.995
+Precision-macro test : 0.750
+Recall-macro test : 0.725
+F1-macro test : 0.737
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      1.000     0.900     0.947        10
+      Normal      1.000     1.000     1.000       211
+      Replay      1.000     1.000     1.000         1
+
+   micro avg      1.000     0.995     0.998       222
+   macro avg      1.000     0.967     0.982       222
+weighted avg      1.000     0.995     0.998       222
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+         Jamming  Normal  Replay
+Jamming        9       0       0
+Normal         0     211       0
+Replay         0       0       1
+
+Features X : rssi_dBm, snir_dB, packet_size_B, transmitted_bytes, interarrival_s, collision, received, energy_consumed
+Fenêtres train 714 | test 222 | longueur 16

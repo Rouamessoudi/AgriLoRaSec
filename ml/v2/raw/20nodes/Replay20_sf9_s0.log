@@ -1,0 +1,42 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2025 Andras Varga, OpenSim Ltd.
+Version: 6.3.0, build: 251110-bb3d6a4731, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  4
+Loading NED files from ../src:  13
+Loading NED files from ../../flora-1.2.0/src:  22
+Loading NED files from ../../inet-4.5.4/src:  1187
+
+Preparing for running configuration Replay20, run #0...
+Scenario: $0="avg", $repetition=0
+Assigned runID=Replay20-0-20260917-13:16:22-77592
+Setting up network "agrilorasec.simulations.AgriLoRaNetwork20"...
+Initializing...
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork20.replayer.LoRaNic.mac
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork20.wormholeB.LoRaNic.mac
+ReplayApp INITSTAGE_APPLICATION_LAYER
+ReplayApp init: radio ok, scheduling captureTimer
+ReplayApp init done
+
+Running simulation...
+** Event #0   t=0   Elapsed: 2.1e-05s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 497   present: 497   in FES: 24
+ReplayApp capture ARMED t=5
+ReplayApp CAPTURE from loRaNode10 mac=0A-AA-00-00-00-0C seq=0 t=5.22806128876
+CAPTURE AgriSensorPacket temp=19.4629 soil=58.6265 air=47.2783 nodeIndex=10
+ReplayApp DELAY drawn=4.80693s capture_t=5.22806128876 replay_at=10.03499522496
+ReplayApp REPLAY mac=0A-AA-00-00-00-0C seq=0 t=10.03499522496 capture_t=5.22806128876 delay=4.80693s
+REPLAY AgriSensorPacket temp=19.4629 soil=58.6265 air=47.2783 nodeIndex=10
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0C seq=0
+** Event #35894   t=1800   Elapsed: 0.415036s (0m 00s)  100% completed  (100% total)
+     Speed:     ev/sec=86488.6   simsec/sec=4334.96   ev/simsec=19.9514
+     Messages:  created: 42656   present: 497   in FES: 25
+
+<!> Simulation time limit reached -- at t=1800s, event #35894
+
+Calling finish() at end of Run #0...
+
+End.

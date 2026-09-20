@@ -1,0 +1,212 @@
+=== DATASET V2 VALIDATION PIPELINE ===
+W=60.0s  n_nodes=30  runs=4  windows=4
+out=/home/opp_env/AgriLoRaSec/ml/v2/features/smoke_30nodes_windows.csv
+
+--- raw filter ---
+raw_total=222
+RX_GW_decoded_used=75
+collision_GW_used=67
+received0_omniscient_excluded=80
+
+--- per run ---
+Jamming30_s1.csv: raw=112 D=35 C=36 omni=41 windows=1 excl_pre=0 act=1.0000 dups_run=0
+NoAttack30_s1.csv: raw=36 D=13 C=10 omni=13 windows=1 excl_pre=0 act=0.0000 dups_run=0
+Replay30_s1.csv: raw=38 D=13 C=11 omni=14 windows=1 excl_pre=0 act=5.3979 dups_run=0
+Wormhole30_s1.csv: raw=36 D=14 C=10 omni=12 windows=1 excl_pre=0 act=5.3979 dups_run=0
+
+--- examples ---
+[A_Normal]
+  run_id=Normal_n30_sf12_seed1 t=[0.0,60.0) Label=Normal
+  D=10 C=9 duplicate_count=0 activation_s=0.0
+  packet_rate=0.166667
+  gw_success_rate=0.526316
+  collision_rate=0.473684
+  collision_intensity=0.15
+  duplicate_rate=0
+  mean_duplicate_delay_s=NaN
+  min_duplicate_delay_s=NaN
+  max_duplicate_delay_s=NaN
+  mean_rssi=-129.051
+  std_rssi=3.98535
+  mean_snir=4.07276
+  std_snir=4.63802
+  interarrival_mean=5.45598
+  interarrival_std=3.9209
+[B_Jamming]
+  run_id=Jamming_n30_sf12_seed1 t=[0.0,60.0) Label=Jamming
+  D=21 C=33 duplicate_count=0 activation_s=1.0
+  packet_rate=0.35
+  gw_success_rate=0.388889
+  collision_rate=0.611111
+  collision_intensity=0.55
+  duplicate_rate=0
+  mean_duplicate_delay_s=NaN
+  min_duplicate_delay_s=NaN
+  max_duplicate_delay_s=NaN
+  mean_rssi=-129.469
+  std_rssi=4.23847
+  mean_snir=4.51995
+  std_snir=3.62244
+  interarrival_mean=2.821
+  interarrival_std=1.558
+[C_Replay_no_dup]
+  run_id=Replay_n30_sf12_seed1 t=[0.0,60.0) Label=Replay
+  D=10 C=10 duplicate_count=0 activation_s=5.39788485084
+  packet_rate=0.166667
+  gw_success_rate=0.5
+  collision_rate=0.5
+  collision_intensity=0.166667
+  duplicate_rate=0
+  mean_duplicate_delay_s=NaN
+  min_duplicate_delay_s=NaN
+  max_duplicate_delay_s=NaN
+  mean_rssi=-128.195
+  std_rssi=4.82839
+  mean_snir=4.50074
+  std_snir=4.99016
+  interarrival_mean=5.45598
+  interarrival_std=4.01183
+[D_Replay_dup]
+  ABSENT dans cet echantillon de validation
+[E_Wormhole_no_dup]
+  run_id=Wormhole_n30_sf12_seed1 t=[0.0,60.0) Label=Wormhole
+  D=11 C=10 duplicate_count=0 activation_s=5.39788485084
+  packet_rate=0.183333
+  gw_success_rate=0.52381
+  collision_rate=0.47619
+  collision_intensity=0.166667
+  duplicate_rate=0
+  mean_duplicate_delay_s=NaN
+  min_duplicate_delay_s=NaN
+  max_duplicate_delay_s=NaN
+  mean_rssi=-128.352
+  std_rssi=4.41449
+  mean_snir=4.80781
+  std_snir=5.36726
+  interarrival_mean=4.69625
+  interarrival_std=2.70786
+[F_Wormhole_dup]
+  ABSENT dans cet echantillon de validation
+
+--- stats by class ---
+## Normal n_windows=1
+  windows_duplicate_rate>0 = 0
+  packet_rate: mean=0.166667 median=0.166667 std=NaN nan=0/1
+    NOTE: constante (= 0.166667)
+  gw_success_rate: mean=0.526316 median=0.526316 std=NaN nan=0/1
+    NOTE: constante (= 0.526316)
+  collision_rate: mean=0.473684 median=0.473684 std=NaN nan=0/1
+    NOTE: constante (= 0.473684)
+  collision_intensity: mean=0.15 median=0.15 std=NaN nan=0/1
+    NOTE: constante (= 0.15)
+  duplicate_rate: mean=0 median=0 std=NaN nan=0/1
+    NOTE: constante (= 0)
+  mean_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  min_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  max_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  mean_rssi: mean=-129.051 median=-129.051 std=NaN nan=0/1
+    NOTE: constante (= -129.051)
+  std_rssi: mean=3.98535 median=3.98535 std=NaN nan=0/1
+    NOTE: constante (= 3.98535)
+  mean_snir: mean=4.07276 median=4.07276 std=NaN nan=0/1
+    NOTE: constante (= 4.07276)
+  std_snir: mean=4.63802 median=4.63802 std=NaN nan=0/1
+    NOTE: constante (= 4.63802)
+  interarrival_mean: mean=5.45598 median=5.45598 std=NaN nan=0/1
+    NOTE: constante (= 5.45598)
+  interarrival_std: mean=3.9209 median=3.9209 std=NaN nan=0/1
+    NOTE: constante (= 3.9209)
+## Jamming n_windows=1
+  windows_duplicate_rate>0 = 0
+  packet_rate: mean=0.35 median=0.35 std=NaN nan=0/1
+    NOTE: constante (= 0.35)
+  gw_success_rate: mean=0.388889 median=0.388889 std=NaN nan=0/1
+    NOTE: constante (= 0.388889)
+  collision_rate: mean=0.611111 median=0.611111 std=NaN nan=0/1
+    NOTE: constante (= 0.611111)
+  collision_intensity: mean=0.55 median=0.55 std=NaN nan=0/1
+    NOTE: constante (= 0.55)
+  duplicate_rate: mean=0 median=0 std=NaN nan=0/1
+    NOTE: constante (= 0)
+  mean_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  min_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  max_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  mean_rssi: mean=-129.469 median=-129.469 std=NaN nan=0/1
+    NOTE: constante (= -129.469)
+  std_rssi: mean=4.23847 median=4.23847 std=NaN nan=0/1
+    NOTE: constante (= 4.23847)
+  mean_snir: mean=4.51995 median=4.51995 std=NaN nan=0/1
+    NOTE: constante (= 4.51995)
+  std_snir: mean=3.62244 median=3.62244 std=NaN nan=0/1
+    NOTE: constante (= 3.62244)
+  interarrival_mean: mean=2.821 median=2.821 std=NaN nan=0/1
+    NOTE: constante (= 2.821)
+  interarrival_std: mean=1.558 median=1.558 std=NaN nan=0/1
+    NOTE: constante (= 1.558)
+## Replay n_windows=1
+  windows_duplicate_rate>0 = 0
+  packet_rate: mean=0.166667 median=0.166667 std=NaN nan=0/1
+    NOTE: constante (= 0.166667)
+  gw_success_rate: mean=0.5 median=0.5 std=NaN nan=0/1
+    NOTE: constante (= 0.5)
+  collision_rate: mean=0.5 median=0.5 std=NaN nan=0/1
+    NOTE: constante (= 0.5)
+  collision_intensity: mean=0.166667 median=0.166667 std=NaN nan=0/1
+    NOTE: constante (= 0.166667)
+  duplicate_rate: mean=0 median=0 std=NaN nan=0/1
+    NOTE: constante (= 0)
+  mean_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  min_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  max_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  mean_rssi: mean=-128.195 median=-128.195 std=NaN nan=0/1
+    NOTE: constante (= -128.195)
+  std_rssi: mean=4.82839 median=4.82839 std=NaN nan=0/1
+    NOTE: constante (= 4.82839)
+  mean_snir: mean=4.50074 median=4.50074 std=NaN nan=0/1
+    NOTE: constante (= 4.50074)
+  std_snir: mean=4.99016 median=4.99016 std=NaN nan=0/1
+    NOTE: constante (= 4.99016)
+  interarrival_mean: mean=5.45598 median=5.45598 std=NaN nan=0/1
+    NOTE: constante (= 5.45598)
+  interarrival_std: mean=4.01183 median=4.01183 std=NaN nan=0/1
+    NOTE: constante (= 4.01183)
+## Wormhole n_windows=1
+  windows_duplicate_rate>0 = 0
+  packet_rate: mean=0.183333 median=0.183333 std=NaN nan=0/1
+    NOTE: constante (= 0.183333)
+  gw_success_rate: mean=0.52381 median=0.52381 std=NaN nan=0/1
+    NOTE: constante (= 0.52381)
+  collision_rate: mean=0.47619 median=0.47619 std=NaN nan=0/1
+    NOTE: constante (= 0.47619)
+  collision_intensity: mean=0.166667 median=0.166667 std=NaN nan=0/1
+    NOTE: constante (= 0.166667)
+  duplicate_rate: mean=0 median=0 std=NaN nan=0/1
+    NOTE: constante (= 0)
+  mean_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  min_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  max_duplicate_delay_s: mean=NaN median=NaN std=NaN nan=1/1
+  mean_rssi: mean=-128.352 median=-128.352 std=NaN nan=0/1
+    NOTE: constante (= -128.352)
+  std_rssi: mean=4.41449 median=4.41449 std=NaN nan=0/1
+    NOTE: constante (= 4.41449)
+  mean_snir: mean=4.80781 median=4.80781 std=NaN nan=0/1
+    NOTE: constante (= 4.80781)
+  std_snir: mean=5.36726 median=5.36726 std=NaN nan=0/1
+    NOTE: constante (= 5.36726)
+  interarrival_mean: mean=4.69625 median=4.69625 std=NaN nan=0/1
+    NOTE: constante (= 4.69625)
+  interarrival_std: mean=2.70786 median=2.70786 std=NaN nan=0/1
+    NOTE: constante (= 2.70786)
+
+--- scientific checks ---
+Normal duplicate_count>0 windows: 0 (attendu 0)
+Jamming packet_rate mean=0.35 (jammer ~0.57/s + capteurs)
+Jamming collision_intensity mean=0.55
+Replay: windows_with_dup=0 without_dup_but_label=1
+Wormhole: windows_with_dup=0 without_dup_but_label=1
+
+--- leakage / artefacts ---
+ARTEFACT packet_rate: min(Jamming)=0.3500 > max(autres)=0.1833 (separe presque a lui seul le Jamming sur ce petit echantillon).
+Controle X: FEATURES_X exactes, aucune colonne interdite dans X: OK
+
+Wrote /home/opp_env/AgriLoRaSec/ml/v2/reports/validation_10nodes_report.txt

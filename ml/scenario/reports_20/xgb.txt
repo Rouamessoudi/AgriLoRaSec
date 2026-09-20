@@ -1,0 +1,35 @@
+=== XGBoost AgriLoRaSec (Y = scénario du run) ===
+Accuracy test : 0.185
+Precision-macro test : 0.206
+Recall-macro test : 0.181
+F1-macro test : 0.183
+Support test : {'Jamming': 590, 'Normal': 449, 'Replay': 546, 'Wormhole': 593}
+Classes présentes dans y_test : ['Jamming', 'Normal', 'Replay', 'Wormhole']
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.398     0.195     0.262       590
+      Normal      0.072     0.085     0.078       449
+      Replay      0.228     0.319     0.266       546
+    Wormhole      0.125     0.126     0.126       593
+
+    accuracy                          0.185      2178
+   macro avg      0.206     0.181     0.183      2178
+weighted avg      0.214     0.185     0.188      2178
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming       115      48     160       267
+Normal         57      38     227       127
+Replay         51     191     174       130
+Wormhole       66     250     202        75
+
+Features X : rssi_dBm, snir_dB, packet_size_B, transmitted_bytes, interarrival_s, collision, received, energy_consumed
+sender_name / sender_mac exclus de X.
+Y = scénario du run (pas l'émetteur du paquet).
+
+Lignes ML 9083 (brutes 9083, drop 0)
+Lignes train 6905 | test 2178
+Runs train 72 | test 24
+Runs test par scénario : {'Jamming': 6, 'Normal': 6, 'Replay': 6, 'Wormhole': 6}

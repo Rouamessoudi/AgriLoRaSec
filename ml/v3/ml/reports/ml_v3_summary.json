@@ -1,0 +1,1687 @@
+{
+  "hashes_unchanged": true,
+  "hashes_before": {
+    "/home/opp_env/AgriLoRaSec/ml/v3/features/dataset_v3_10nodes.csv": "c0191f25f35ddb9fbe61ca69d66c17f5",
+    "/home/opp_env/AgriLoRaSec/ml/v3/features/dataset_v3_20nodes.csv": "ab6c9211a651ae8e2af60737442a4386",
+    "/home/opp_env/AgriLoRaSec/ml/v3/features/dataset_v3_30nodes.csv": "92d06480014510ed7cd281ecbb16c61e",
+    "/home/opp_env/AgriLoRaSec/ml/v3/features/dataset_v3_50nodes.csv": "f245c32673af81793a90ed845856f69f",
+    "/home/opp_env/AgriLoRaSec/ml/v2/features/dataset_v2_10nodes.csv": "3607bba303629cbbcf2dbb85a19b1463",
+    "/home/opp_env/AgriLoRaSec/ml/v2/features/dataset_v2_20nodes.csv": "02679f666286beed1a413796c5608328",
+    "/home/opp_env/AgriLoRaSec/ml/v2/features/dataset_v2_30nodes.csv": "575f13fb3135c718c88e37c6dc6ec21c",
+    "/home/opp_env/AgriLoRaSec/ml/v2/features/dataset_v2_50nodes.csv": "642c450444f5be6b4a931d499cd95769",
+    "/home/opp_env/AgriLoRaSec/ml/v2/features/dataset_v2_all_nodes.csv": "f0b26d65e0dff1eb2ca582bda46ec461",
+    "/home/opp_env/AgriLoRaSec/ml/dataset.csv": "e5eb3bb0d713c50b5a8be8a7ea975eb6",
+    "/home/opp_env/AgriLoRaSec/ml/dataset_20nodes.csv": "56adee033e596a75deb9a793a0c7272f",
+    "/home/opp_env/AgriLoRaSec/ml/v2/build_dataset_v2.py": "6666ec5d80e866bf958e4732f8333e4f",
+    "/home/opp_env/AgriLoRaSec/ml/v3/build_dataset_v3.py": "31ed53b9fdf8f1d57e4b9b604ab0eb6f",
+    "/home/opp_env/AgriLoRaSec/ml/v3/features/dataset_v3_all_nodes.csv": "9da4bf6c12fbc571296c55e3e79f884d",
+    "/home/opp_env/AgriLoRaSec/src/ReplayApp.cc": "4b765ea32ab5dcbc55d3849cfed12018",
+    "/home/opp_env/AgriLoRaSec/src/WormholeApp.cc": "eac6dc951fb0bba866273245880d5993",
+    "/home/opp_env/AgriLoRaSec/src/JammerApp.cc": "fe948c66ef8cb6d22d328d24c7c91efe",
+    "/home/opp_env/AgriLoRaSec/src/PreserveHeaderLoRaMac.cc": "98c820d69a6686f354d7ef02eeb23cbe",
+    "/home/opp_env/flora-1.2.0/src/LoRa/LoRaMac.cc": "e4c6e32f8529fdbd76d619058123fa62"
+  },
+  "lstm_T": 5,
+  "split": {
+    "test_size": 0.25,
+    "seed": 42,
+    "grouped_by": "_group = n_nodes::run_id",
+    "stratify": "run scenario"
+  },
+  "hyperparams": {
+    "RF": {
+      "n_estimators": 300,
+      "class_weight": "balanced",
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "XGB": {
+      "n_estimators": 200,
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "random_state": 42,
+      "n_jobs": -1,
+      "eval_metric": "mlogloss"
+    },
+    "ANN": {
+      "hidden_layer_sizes": [
+        64,
+        32
+      ],
+      "activation": "relu",
+      "max_iter": 400,
+      "early_stopping": "train-run hold-out 15%, patience 10"
+    },
+    "LSTM": {
+      "T": 5,
+      "stride": 1,
+      "hidden": 32,
+      "epochs": 25,
+      "batch": 32,
+      "lr": 0.001
+    }
+  },
+  "principal": [
+    {
+      "model": "RF",
+      "N": 10,
+      "accuracy": 0.8194444444444444,
+      "macro_precision": 0.8036688554345505,
+      "macro_recall": 0.7495791245791246,
+      "macro_f1": 0.7688377947992563,
+      "per_class": {
+        "Normal": {
+          "precision": 0.820627802690583,
+          "recall": 0.9242424242424242,
+          "f1": 0.8693586698337292,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6857142857142857,
+          "recall": 0.4444444444444444,
+          "f1": 0.5393258426966292,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.7083333333333334,
+          "recall": 0.6296296296296297,
+          "f1": 0.6666666666666666,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "XGB",
+      "N": 10,
+      "accuracy": 0.8166666666666667,
+      "macro_precision": 0.7929915209326973,
+      "macro_recall": 0.7415824915824917,
+      "macro_f1": 0.7592977505360682,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8288288288288288,
+          "recall": 0.9292929292929293,
+          "f1": 0.8761904761904762,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 1.0,
+          "recall": 0.9814814814814815,
+          "f1": 0.9906542056074766,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6764705882352942,
+          "recall": 0.42592592592592593,
+          "f1": 0.5227272727272727,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6296296296296297,
+          "f1": 0.6476190476190476,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "ANN",
+      "N": 10,
+      "accuracy": 0.7986111111111112,
+      "macro_precision": 0.7720162411957354,
+      "macro_recall": 0.7518939393939394,
+      "macro_f1": 0.7599204342155699,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8431372549019608,
+          "recall": 0.8686868686868687,
+          "f1": 0.8557213930348259,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 0.9906542056074766,
+          "recall": 0.9814814814814815,
+          "f1": 0.986046511627907,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.5042735042735043,
+          "recall": 0.5462962962962963,
+          "f1": 0.5244444444444445,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.75,
+          "recall": 0.6111111111111112,
+          "f1": 0.673469387755102,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "LSTM",
+      "N": 10,
+      "accuracy": 0.8493589743589743,
+      "macro_precision": 0.8393877457106163,
+      "macro_recall": 0.8357407407407407,
+      "macro_f1": 0.8335591526576703,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8770764119601329,
+          "recall": 0.88,
+          "f1": 0.8785357737104825,
+          "support": 300.0
+        },
+        "Jamming": {
+          "precision": 0.9908256880733946,
+          "recall": 1.0,
+          "f1": 0.9953917050691244,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.7764705882352941,
+          "recall": 0.6111111111111112,
+          "f1": 0.6839378238341969,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.7131782945736435,
+          "recall": 0.8518518518518519,
+          "f1": 0.7763713080168776,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "RF",
+      "N": 20,
+      "accuracy": 0.8291666666666667,
+      "macro_precision": 0.780307360725308,
+      "macro_recall": 0.7590488215488215,
+      "macro_f1": 0.7660891100082727,
+      "per_class": {
+        "Normal": {
+          "precision": 0.883054892601432,
+          "recall": 0.9343434343434344,
+          "f1": 0.9079754601226994,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6329113924050633,
+          "recall": 0.46296296296296297,
+          "f1": 0.5347593582887701,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.6052631578947368,
+          "recall": 0.6388888888888888,
+          "f1": 0.6216216216216216,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "XGB",
+      "N": 20,
+      "accuracy": 0.8194444444444444,
+      "macro_precision": 0.7652136799717939,
+      "macro_recall": 0.7394781144781144,
+      "macro_f1": 0.7456769360814315,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8732394366197183,
+          "recall": 0.9393939393939394,
+          "f1": 0.9051094890510949,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 0.9818181818181818,
+          "recall": 1.0,
+          "f1": 0.9908256880733946,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6231884057971014,
+          "recall": 0.39814814814814814,
+          "f1": 0.4858757062146893,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.5826086956521739,
+          "recall": 0.6203703703703703,
+          "f1": 0.600896860986547,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "ANN",
+      "N": 20,
+      "accuracy": 0.8277777777777777,
+      "macro_precision": 0.7752151639344262,
+      "macro_recall": 0.771885521885522,
+      "macro_f1": 0.7718180825073986,
+      "per_class": {
+        "Normal": {
+          "precision": 0.9025,
+          "recall": 0.9116161616161617,
+          "f1": 0.907035175879397,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6,
+          "recall": 0.5,
+          "f1": 0.5454545454545454,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.5983606557377049,
+          "recall": 0.6759259259259259,
+          "f1": 0.6347826086956522,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "LSTM",
+      "N": 20,
+      "accuracy": 0.8301282051282052,
+      "macro_precision": 0.8115031393598049,
+      "macro_recall": 0.807962962962963,
+      "macro_f1": 0.7981764774997535,
+      "per_class": {
+        "Normal": {
+          "precision": 0.9198606271777003,
+          "recall": 0.88,
+          "f1": 0.899488926746167,
+          "support": 300.0
+        },
+        "Jamming": {
+          "precision": 0.9818181818181818,
+          "recall": 1.0,
+          "f1": 0.9908256880733946,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.7534246575342466,
+          "recall": 0.5092592592592593,
+          "f1": 0.6077348066298343,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.5909090909090909,
+          "recall": 0.8425925925925926,
+          "f1": 0.6946564885496184,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "RF",
+      "N": 30,
+      "accuracy": 0.8361111111111111,
+      "macro_precision": 0.7939251639833035,
+      "macro_recall": 0.7605218855218855,
+      "macro_f1": 0.773048229164057,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8744186046511628,
+          "recall": 0.9494949494949495,
+          "f1": 0.910411622276029,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6666666666666666,
+          "recall": 0.48148148148148145,
+          "f1": 0.5591397849462365,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.6346153846153846,
+          "recall": 0.6111111111111112,
+          "f1": 0.6226415094339622,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "XGB",
+      "N": 30,
+      "accuracy": 0.8277777777777777,
+      "macro_precision": 0.7788447031566298,
+      "macro_recall": 0.7466329966329965,
+      "macro_f1": 0.7576041051091917,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8703703703703703,
+          "recall": 0.9494949494949495,
+          "f1": 0.9082125603864735,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 0.9908256880733946,
+          "recall": 1.0,
+          "f1": 0.9953917050691244,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6351351351351351,
+          "recall": 0.4351851851851852,
+          "f1": 0.5164835164835165,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.6190476190476191,
+          "recall": 0.6018518518518519,
+          "f1": 0.6103286384976526,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "ANN",
+      "N": 30,
+      "accuracy": 0.8,
+      "macro_precision": 0.7471092102126113,
+      "macro_recall": 0.7508417508417509,
+      "macro_f1": 0.7485806547932855,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8804071246819338,
+          "recall": 0.8737373737373737,
+          "f1": 0.8770595690747782,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 0.9908256880733946,
+          "recall": 1.0,
+          "f1": 0.9953917050691244,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.5445544554455446,
+          "recall": 0.5092592592592593,
+          "f1": 0.5263157894736842,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.5726495726495726,
+          "recall": 0.6203703703703703,
+          "f1": 0.5955555555555555,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "LSTM",
+      "N": 30,
+      "accuracy": 0.8333333333333334,
+      "macro_precision": 0.8018652915711739,
+      "macro_recall": 0.7903703703703705,
+      "macro_f1": 0.7955663283340908,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8857142857142857,
+          "recall": 0.93,
+          "f1": 0.9073170731707317,
+          "support": 300.0
+        },
+        "Jamming": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6060606060606061,
+          "recall": 0.5555555555555556,
+          "f1": 0.5797101449275363,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.7156862745098039,
+          "recall": 0.6759259259259259,
+          "f1": 0.6952380952380952,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "RF",
+      "N": 50,
+      "accuracy": 0.8166666666666667,
+      "macro_precision": 0.7439565281564188,
+      "macro_recall": 0.718013468013468,
+      "macro_f1": 0.7281274418849941,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8822170900692841,
+          "recall": 0.9646464646464646,
+          "f1": 0.9215922798552473,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.5357142857142857,
+          "recall": 0.4166666666666667,
+          "f1": 0.46875,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.5578947368421052,
+          "recall": 0.49074074074074076,
+          "f1": 0.5221674876847291,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "XGB",
+      "N": 50,
+      "accuracy": 0.8069444444444445,
+      "macro_precision": 0.7316470539828835,
+      "macro_recall": 0.7068602693602695,
+      "macro_f1": 0.7159965829025667,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8732718894009217,
+          "recall": 0.9570707070707071,
+          "f1": 0.9132530120481928,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.5125,
+          "recall": 0.37962962962962965,
+          "f1": 0.43617021276595747,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.5408163265306123,
+          "recall": 0.49074074074074076,
+          "f1": 0.5145631067961165,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "ANN",
+      "N": 50,
+      "accuracy": 0.7694444444444445,
+      "macro_precision": 0.704728280826061,
+      "macro_recall": 0.7133838383838383,
+      "macro_f1": 0.7080719597857371,
+      "per_class": {
+        "Normal": {
+          "precision": 0.9061662198391421,
+          "recall": 0.8535353535353535,
+          "f1": 0.8790637191157347,
+          "support": 396.0
+        },
+        "Jamming": {
+          "precision": 0.9905660377358491,
+          "recall": 0.9722222222222222,
+          "f1": 0.9813084112149533,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.4435483870967742,
+          "recall": 0.5092592592592593,
+          "f1": 0.47413793103448276,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.47863247863247865,
+          "recall": 0.5185185185185185,
+          "f1": 0.49777777777777776,
+          "support": 108.0
+        }
+      }
+    },
+    {
+      "model": "LSTM",
+      "N": 50,
+      "accuracy": 0.8365384615384616,
+      "macro_precision": 0.7974819489336317,
+      "macro_recall": 0.797962962962963,
+      "macro_f1": 0.7971726091363545,
+      "per_class": {
+        "Normal": {
+          "precision": 0.920265780730897,
+          "recall": 0.9233333333333333,
+          "f1": 0.9217970049916805,
+          "support": 300.0
+        },
+        "Jamming": {
+          "precision": 0.9818181818181818,
+          "recall": 1.0,
+          "f1": 0.9908256880733946,
+          "support": 108.0
+        },
+        "Replay": {
+          "precision": 0.6347826086956522,
+          "recall": 0.6759259259259259,
+          "f1": 0.6547085201793722,
+          "support": 108.0
+        },
+        "Wormhole": {
+          "precision": 0.6530612244897959,
+          "recall": 0.5925925925925926,
+          "f1": 0.6213592233009708,
+          "support": 108.0
+        }
+      }
+    }
+  ],
+  "generalization": {
+    "RF": {
+      "accuracy": 0.6541666666666667,
+      "macro_precision": 0.5891659560609754,
+      "macro_recall": 0.6599326599326599,
+      "macro_f1": 0.5977849354361081,
+      "per_class": {
+        "Normal": {
+          "precision": 0.9376432828977533,
+          "recall": 0.6455176767676768,
+          "f1-score": 0.7646289025986166,
+          "support": 3168.0
+        },
+        "Jamming": {
+          "precision": 0.5139797739440809,
+          "recall": 1.0,
+          "f1-score": 0.6789783889980353,
+          "support": 864.0
+        },
+        "Replay": {
+          "precision": 0.4815983175604627,
+          "recall": 0.5300925925925926,
+          "f1-score": 0.5046831955922865,
+          "support": 864.0
+        },
+        "Wormhole": {
+          "precision": 0.42344244984160506,
+          "recall": 0.46412037037037035,
+          "f1-score": 0.4428492545554942,
+          "support": 864.0
+        }
+      }
+    },
+    "XGB": {
+      "accuracy": 0.6086805555555556,
+      "macro_precision": 0.5601779512937649,
+      "macro_recall": 0.6371527777777778,
+      "macro_f1": 0.5613240683014956,
+      "per_class": {
+        "Normal": {
+          "precision": 0.9421965317919075,
+          "recall": 0.5659722222222222,
+          "f1-score": 0.7071583514099783,
+          "support": 3168.0
+        },
+        "Jamming": {
+          "precision": 0.4747252747252747,
+          "recall": 1.0,
+          "f1-score": 0.6438152011922503,
+          "support": 864.0
+        },
+        "Replay": {
+          "precision": 0.46409335727109513,
+          "recall": 0.5983796296296297,
+          "f1-score": 0.5227502527805864,
+          "support": 864.0
+        },
+        "Wormhole": {
+          "precision": 0.35969664138678226,
+          "recall": 0.38425925925925924,
+          "f1-score": 0.37157246782316733,
+          "support": 864.0
+        }
+      }
+    },
+    "ANN": {
+      "accuracy": 0.5765625,
+      "macro_precision": 0.5656064199730415,
+      "macro_recall": 0.6242371632996633,
+      "macro_f1": 0.5423786176663887,
+      "per_class": {
+        "Normal": {
+          "precision": 0.960960960960961,
+          "recall": 0.5050505050505051,
+          "f1-score": 0.6621146285950755,
+          "support": 3168.0
+        },
+        "Jamming": {
+          "precision": 0.4161849710982659,
+          "recall": 1.0,
+          "f1-score": 0.5877551020408164,
+          "support": 864.0
+        },
+        "Replay": {
+          "precision": 0.5133333333333333,
+          "recall": 0.44560185185185186,
+          "f1-score": 0.4770755885997522,
+          "support": 864.0
+        },
+        "Wormhole": {
+          "precision": 0.37194641449960597,
+          "recall": 0.5462962962962963,
+          "f1-score": 0.44256915142991093,
+          "support": 864.0
+        }
+      }
+    },
+    "LSTM": {
+      "accuracy": 0.6143830128205128,
+      "macro_precision": 0.604355255862476,
+      "macro_recall": 0.6289236111111112,
+      "macro_f1": 0.5784140341766305,
+      "per_class": {
+        "Normal": {
+          "precision": 0.9438810006761326,
+          "recall": 0.5816666666666667,
+          "f1-score": 0.719773137406548,
+          "support": 2400.0
+        },
+        "Jamming": {
+          "precision": 0.44398766700924974,
+          "recall": 1.0,
+          "f1-score": 0.6149466192170818,
+          "support": 864.0
+        },
+        "Replay": {
+          "precision": 0.5195121951219512,
+          "recall": 0.4930555555555556,
+          "f1-score": 0.505938242280285,
+          "support": 864.0
+        },
+        "Wormhole": {
+          "precision": 0.5100401606425703,
+          "recall": 0.4409722222222222,
+          "f1-score": 0.4729981378026071,
+          "support": 864.0
+        }
+      },
+      "n_seq_train": 4992,
+      "n_seq_test": 4992
+    }
+  },
+  "splits": {
+    "10": {
+      "n_run_train": 72,
+      "n_run_test": 24,
+      "intersection": 0,
+      "windows_train": 2160,
+      "windows_test": 720,
+      "y_train": {
+        "Normal": 1188,
+        "Jamming": 324,
+        "Replay": 324,
+        "Wormhole": 324
+      },
+      "y_test": {
+        "Normal": 396,
+        "Jamming": 108,
+        "Replay": 108,
+        "Wormhole": 108
+      },
+      "train_scenarios": {
+        "Jamming": 18,
+        "Normal": 18,
+        "Replay": 18,
+        "Wormhole": 18
+      },
+      "test_scenarios": {
+        "Jamming": 6,
+        "Normal": 6,
+        "Replay": 6,
+        "Wormhole": 6
+      }
+    },
+    "20": {
+      "n_run_train": 72,
+      "n_run_test": 24,
+      "intersection": 0,
+      "windows_train": 2160,
+      "windows_test": 720,
+      "y_train": {
+        "Normal": 1188,
+        "Jamming": 324,
+        "Replay": 324,
+        "Wormhole": 324
+      },
+      "y_test": {
+        "Normal": 396,
+        "Jamming": 108,
+        "Replay": 108,
+        "Wormhole": 108
+      },
+      "train_scenarios": {
+        "Jamming": 18,
+        "Normal": 18,
+        "Replay": 18,
+        "Wormhole": 18
+      },
+      "test_scenarios": {
+        "Jamming": 6,
+        "Normal": 6,
+        "Replay": 6,
+        "Wormhole": 6
+      }
+    },
+    "30": {
+      "n_run_train": 72,
+      "n_run_test": 24,
+      "intersection": 0,
+      "windows_train": 2160,
+      "windows_test": 720,
+      "y_train": {
+        "Normal": 1188,
+        "Jamming": 324,
+        "Replay": 324,
+        "Wormhole": 324
+      },
+      "y_test": {
+        "Normal": 396,
+        "Jamming": 108,
+        "Replay": 108,
+        "Wormhole": 108
+      },
+      "train_scenarios": {
+        "Jamming": 18,
+        "Normal": 18,
+        "Replay": 18,
+        "Wormhole": 18
+      },
+      "test_scenarios": {
+        "Jamming": 6,
+        "Normal": 6,
+        "Replay": 6,
+        "Wormhole": 6
+      }
+    },
+    "50": {
+      "n_run_train": 72,
+      "n_run_test": 24,
+      "intersection": 0,
+      "windows_train": 2160,
+      "windows_test": 720,
+      "y_train": {
+        "Normal": 1188,
+        "Jamming": 324,
+        "Replay": 324,
+        "Wormhole": 324
+      },
+      "y_test": {
+        "Normal": 396,
+        "Jamming": 108,
+        "Replay": 108,
+        "Wormhole": 108
+      },
+      "train_scenarios": {
+        "Jamming": 18,
+        "Normal": 18,
+        "Replay": 18,
+        "Wormhole": 18
+      },
+      "test_scenarios": {
+        "Jamming": 6,
+        "Normal": 6,
+        "Replay": 6,
+        "Wormhole": 6
+      }
+    }
+  },
+  "importances": {
+    "10": {
+      "RF": {
+        "packet_rate": 0.10975470803793089,
+        "gw_success_rate": 0.030181134542387043,
+        "collision_rate": 0.030496801121775996,
+        "collision_intensity": 0.0995085053252774,
+        "duplicate_rate": 0.0575765901753916,
+        "mean_duplicate_delay_s": 0.0977603512736834,
+        "min_duplicate_delay_s": 0.06333901887937074,
+        "max_duplicate_delay_s": 0.08366061681371176,
+        "mean_rssi": 0.09465128192909009,
+        "std_rssi": 0.036644436033295806,
+        "mean_snir": 0.08174869721493772,
+        "std_snir": 0.03867732102615728,
+        "interarrival_mean": 0.1021695008622545,
+        "interarrival_std": 0.07383103676473572
+      },
+      "XGB": {
+        "packet_rate": 0.08125757426023483,
+        "gw_success_rate": 0.015120401978492737,
+        "collision_rate": 0.03265753015875816,
+        "collision_intensity": 0.26328983902931213,
+        "duplicate_rate": 0.07637540996074677,
+        "mean_duplicate_delay_s": 0.25721848011016846,
+        "min_duplicate_delay_s": 0.05242210999131203,
+        "max_duplicate_delay_s": 0.12820123136043549,
+        "mean_rssi": 0.017994144931435585,
+        "std_rssi": 0.012764127925038338,
+        "mean_snir": 0.0160831231623888,
+        "std_snir": 0.012938328087329865,
+        "interarrival_mean": 0.020137427374720573,
+        "interarrival_std": 0.013540325686335564
+      }
+    },
+    "20": {
+      "RF": {
+        "packet_rate": 0.1039189367538914,
+        "gw_success_rate": 0.034810360111581055,
+        "collision_rate": 0.03581418097925039,
+        "collision_intensity": 0.11312028374212062,
+        "duplicate_rate": 0.09271285990899066,
+        "mean_duplicate_delay_s": 0.07537076616313082,
+        "min_duplicate_delay_s": 0.0534546765045378,
+        "max_duplicate_delay_s": 0.07221893494528293,
+        "mean_rssi": 0.08781068770575952,
+        "std_rssi": 0.042373518346257744,
+        "mean_snir": 0.06462816520894292,
+        "std_snir": 0.04303177108183683,
+        "interarrival_mean": 0.103238837999278,
+        "interarrival_std": 0.07749602054913929
+      },
+      "XGB": {
+        "packet_rate": 0.08432530611753464,
+        "gw_success_rate": 0.019659090787172318,
+        "collision_rate": 0.03207499906420708,
+        "collision_intensity": 0.3518922030925751,
+        "duplicate_rate": 0.08221866935491562,
+        "mean_duplicate_delay_s": 0.14968137443065643,
+        "min_duplicate_delay_s": 0.05774080380797386,
+        "max_duplicate_delay_s": 0.09690152853727341,
+        "mean_rssi": 0.031524449586868286,
+        "std_rssi": 0.018093328922986984,
+        "mean_snir": 0.01833021640777588,
+        "std_snir": 0.016486376523971558,
+        "interarrival_mean": 0.02295384556055069,
+        "interarrival_std": 0.018117811530828476
+      }
+    },
+    "30": {
+      "RF": {
+        "packet_rate": 0.10922373683280148,
+        "gw_success_rate": 0.04879545536585802,
+        "collision_rate": 0.04662240632424575,
+        "collision_intensity": 0.12524688245571158,
+        "duplicate_rate": 0.10350684672851253,
+        "mean_duplicate_delay_s": 0.04632283570557473,
+        "min_duplicate_delay_s": 0.04524331957058983,
+        "max_duplicate_delay_s": 0.07506021313538958,
+        "mean_rssi": 0.06690778313573606,
+        "std_rssi": 0.04437701144197219,
+        "mean_snir": 0.0651664136816003,
+        "std_snir": 0.04491076381451884,
+        "interarrival_mean": 0.10288034366695317,
+        "interarrival_std": 0.07573598814053599
+      },
+      "XGB": {
+        "packet_rate": 0.08689305186271667,
+        "gw_success_rate": 0.023978542536497116,
+        "collision_rate": 0.035835303366184235,
+        "collision_intensity": 0.3221120834350586,
+        "duplicate_rate": 0.16005203127861023,
+        "mean_duplicate_delay_s": 0.041311681270599365,
+        "min_duplicate_delay_s": 0.04376167804002762,
+        "max_duplicate_delay_s": 0.135140061378479,
+        "mean_rssi": 0.034052882343530655,
+        "std_rssi": 0.021321754902601242,
+        "mean_snir": 0.026941513642668724,
+        "std_snir": 0.018650425598025322,
+        "interarrival_mean": 0.031352974474430084,
+        "interarrival_std": 0.01859600655734539
+      }
+    },
+    "50": {
+      "RF": {
+        "packet_rate": 0.08047860953821882,
+        "gw_success_rate": 0.059149456628310115,
+        "collision_rate": 0.056606401127853194,
+        "collision_intensity": 0.14077496880419718,
+        "duplicate_rate": 0.10431568948124949,
+        "mean_duplicate_delay_s": 0.04024868654384536,
+        "min_duplicate_delay_s": 0.06352208841391123,
+        "max_duplicate_delay_s": 0.0720159311332825,
+        "mean_rssi": 0.06373225678241651,
+        "std_rssi": 0.04255410127301336,
+        "mean_snir": 0.05811559529837667,
+        "std_snir": 0.04491116917446391,
+        "interarrival_mean": 0.09494516094632098,
+        "interarrival_std": 0.07862988485454064
+      },
+      "XGB": {
+        "packet_rate": 0.06030501797795296,
+        "gw_success_rate": 0.025053218007087708,
+        "collision_rate": 0.044880032539367676,
+        "collision_intensity": 0.3084581196308136,
+        "duplicate_rate": 0.1070110872387886,
+        "mean_duplicate_delay_s": 0.05460527539253235,
+        "min_duplicate_delay_s": 0.1231355369091034,
+        "max_duplicate_delay_s": 0.11663933098316193,
+        "mean_rssi": 0.03860832750797272,
+        "std_rssi": 0.0198381207883358,
+        "mean_snir": 0.028907956555485725,
+        "std_snir": 0.020901169627904892,
+        "interarrival_mean": 0.02533610165119171,
+        "interarrival_std": 0.02632070519030094
+      }
+    }
+  },
+  "cms": {
+    "10": {
+      "RF": [
+        [
+          366,
+          0,
+          12,
+          18
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          50,
+          0,
+          48,
+          10
+        ],
+        [
+          30,
+          0,
+          10,
+          68
+        ]
+      ],
+      "XGB": [
+        [
+          368,
+          0,
+          11,
+          17
+        ],
+        [
+          0,
+          106,
+          1,
+          1
+        ],
+        [
+          46,
+          0,
+          46,
+          16
+        ],
+        [
+          30,
+          0,
+          10,
+          68
+        ]
+      ],
+      "ANN": [
+        [
+          344,
+          0,
+          41,
+          11
+        ],
+        [
+          0,
+          106,
+          1,
+          1
+        ],
+        [
+          39,
+          0,
+          59,
+          10
+        ],
+        [
+          25,
+          1,
+          16,
+          66
+        ]
+      ],
+      "LSTM": [
+        [
+          264,
+          1,
+          14,
+          21
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          26,
+          0,
+          66,
+          16
+        ],
+        [
+          11,
+          0,
+          5,
+          92
+        ]
+      ]
+    },
+    "20": {
+      "RF": [
+        [
+          370,
+          0,
+          9,
+          17
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          30,
+          0,
+          50,
+          28
+        ],
+        [
+          19,
+          0,
+          20,
+          69
+        ]
+      ],
+      "XGB": [
+        [
+          372,
+          0,
+          8,
+          16
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          32,
+          1,
+          43,
+          32
+        ],
+        [
+          22,
+          1,
+          18,
+          67
+        ]
+      ],
+      "ANN": [
+        [
+          361,
+          0,
+          17,
+          18
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          23,
+          0,
+          54,
+          31
+        ],
+        [
+          16,
+          0,
+          19,
+          73
+        ]
+      ],
+      "LSTM": [
+        [
+          264,
+          2,
+          8,
+          26
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          16,
+          0,
+          55,
+          37
+        ],
+        [
+          7,
+          0,
+          10,
+          91
+        ]
+      ]
+    },
+    "30": {
+      "RF": [
+        [
+          376,
+          0,
+          5,
+          15
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          33,
+          0,
+          52,
+          23
+        ],
+        [
+          21,
+          0,
+          21,
+          66
+        ]
+      ],
+      "XGB": [
+        [
+          376,
+          0,
+          5,
+          15
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          36,
+          0,
+          47,
+          25
+        ],
+        [
+          20,
+          1,
+          22,
+          65
+        ]
+      ],
+      "ANN": [
+        [
+          346,
+          0,
+          24,
+          26
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          28,
+          1,
+          55,
+          24
+        ],
+        [
+          19,
+          0,
+          22,
+          67
+        ]
+      ],
+      "LSTM": [
+        [
+          279,
+          0,
+          14,
+          7
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          26,
+          0,
+          60,
+          22
+        ],
+        [
+          10,
+          0,
+          25,
+          73
+        ]
+      ]
+    },
+    "50": {
+      "RF": [
+        [
+          382,
+          0,
+          3,
+          11
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          32,
+          0,
+          45,
+          31
+        ],
+        [
+          19,
+          0,
+          36,
+          53
+        ]
+      ],
+      "XGB": [
+        [
+          379,
+          0,
+          6,
+          11
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          33,
+          0,
+          41,
+          34
+        ],
+        [
+          22,
+          0,
+          33,
+          53
+        ]
+      ],
+      "ANN": [
+        [
+          338,
+          0,
+          32,
+          26
+        ],
+        [
+          3,
+          105,
+          0,
+          0
+        ],
+        [
+          17,
+          1,
+          55,
+          35
+        ],
+        [
+          15,
+          0,
+          37,
+          56
+        ]
+      ],
+      "LSTM": [
+        [
+          277,
+          1,
+          10,
+          12
+        ],
+        [
+          0,
+          108,
+          0,
+          0
+        ],
+        [
+          12,
+          1,
+          73,
+          22
+        ],
+        [
+          12,
+          0,
+          32,
+          64
+        ]
+      ]
+    }
+  },
+  "gen_split": {
+    "n_run_train": 192,
+    "n_run_test": 192,
+    "intersection": 0,
+    "windows_train": 5760,
+    "windows_test": 5760,
+    "y_train": {
+      "Normal": 3168,
+      "Jamming": 864,
+      "Replay": 864,
+      "Wormhole": 864
+    },
+    "y_test": {
+      "Normal": 3168,
+      "Jamming": 864,
+      "Replay": 864,
+      "Wormhole": 864
+    },
+    "train_scenarios": {
+      "Jamming": 48,
+      "Normal": 48,
+      "Replay": 48,
+      "Wormhole": 48
+    },
+    "test_scenarios": {
+      "Jamming": 48,
+      "Normal": 48,
+      "Replay": 48,
+      "Wormhole": 48
+    }
+  },
+  "gen_cms": {
+    "RF": [
+      [
+        2045,
+        564,
+        218,
+        341
+      ],
+      [
+        0,
+        864,
+        0,
+        0
+      ],
+      [
+        74,
+        127,
+        458,
+        205
+      ],
+      [
+        62,
+        126,
+        275,
+        401
+      ]
+    ],
+    "XGB": [
+      [
+        1793,
+        696,
+        255,
+        424
+      ],
+      [
+        0,
+        864,
+        0,
+        0
+      ],
+      [
+        57,
+        123,
+        517,
+        167
+      ],
+      [
+        53,
+        137,
+        342,
+        332
+      ]
+    ],
+    "ANN": [
+      [
+        1600,
+        856,
+        181,
+        531
+      ],
+      [
+        0,
+        864,
+        0,
+        0
+      ],
+      [
+        34,
+        179,
+        385,
+        266
+      ],
+      [
+        31,
+        177,
+        184,
+        472
+      ]
+    ],
+    "LSTM": [
+      [
+        1396,
+        577,
+        197,
+        230
+      ],
+      [
+        0,
+        864,
+        0,
+        0
+      ],
+      [
+        44,
+        258,
+        426,
+        136
+      ],
+      [
+        39,
+        247,
+        197,
+        381
+      ]
+    ]
+  },
+  "lstm_seq": {
+    "10": {
+      "n_seq_train": 1872,
+      "n_seq_test": 624,
+      "T": 5
+    },
+    "20": {
+      "n_seq_train": 1872,
+      "n_seq_test": 624,
+      "T": 5
+    },
+    "30": {
+      "n_seq_train": 1872,
+      "n_seq_test": 624,
+      "T": 5
+    },
+    "50": {
+      "n_seq_train": 1872,
+      "n_seq_test": 624,
+      "T": 5
+    }
+  },
+  "leakage": {
+    "10": {
+      "X_columns": [
+        "packet_rate",
+        "gw_success_rate",
+        "collision_rate",
+        "collision_intensity",
+        "duplicate_rate",
+        "mean_duplicate_delay_s",
+        "min_duplicate_delay_s",
+        "max_duplicate_delay_s",
+        "mean_rssi",
+        "std_rssi",
+        "mean_snir",
+        "std_snir",
+        "interarrival_mean",
+        "interarrival_std"
+      ],
+      "forbidden_intersect_X": [],
+      "run_id_intersection": 0,
+      "group_intersection": [],
+      "stratify": "run-level scenario (not window Label)",
+      "same_run_in_train_and_test": false
+    },
+    "20": {
+      "X_columns": [
+        "packet_rate",
+        "gw_success_rate",
+        "collision_rate",
+        "collision_intensity",
+        "duplicate_rate",
+        "mean_duplicate_delay_s",
+        "min_duplicate_delay_s",
+        "max_duplicate_delay_s",
+        "mean_rssi",
+        "std_rssi",
+        "mean_snir",
+        "std_snir",
+        "interarrival_mean",
+        "interarrival_std"
+      ],
+      "forbidden_intersect_X": [],
+      "run_id_intersection": 0,
+      "group_intersection": [],
+      "stratify": "run-level scenario (not window Label)",
+      "same_run_in_train_and_test": false
+    },
+    "30": {
+      "X_columns": [
+        "packet_rate",
+        "gw_success_rate",
+        "collision_rate",
+        "collision_intensity",
+        "duplicate_rate",
+        "mean_duplicate_delay_s",
+        "min_duplicate_delay_s",
+        "max_duplicate_delay_s",
+        "mean_rssi",
+        "std_rssi",
+        "mean_snir",
+        "std_snir",
+        "interarrival_mean",
+        "interarrival_std"
+      ],
+      "forbidden_intersect_X": [],
+      "run_id_intersection": 0,
+      "group_intersection": [],
+      "stratify": "run-level scenario (not window Label)",
+      "same_run_in_train_and_test": false
+    },
+    "50": {
+      "X_columns": [
+        "packet_rate",
+        "gw_success_rate",
+        "collision_rate",
+        "collision_intensity",
+        "duplicate_rate",
+        "mean_duplicate_delay_s",
+        "min_duplicate_delay_s",
+        "max_duplicate_delay_s",
+        "mean_rssi",
+        "std_rssi",
+        "mean_snir",
+        "std_snir",
+        "interarrival_mean",
+        "interarrival_std"
+      ],
+      "forbidden_intersect_X": [],
+      "run_id_intersection": 0,
+      "group_intersection": [],
+      "stratify": "run-level scenario (not window Label)",
+      "same_run_in_train_and_test": false
+    }
+  }
+}

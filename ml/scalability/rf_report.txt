@@ -1,0 +1,38 @@
+=== Random Forest AgriLoRaSec ===
+CSV : \\wsl$\opp_env\home\opp_env\AgriLoRaSec\ml\dataset.csv
+Accuracy test : 0.918
+F1-macro test : 0.469
+
+Rapport :
+              precision    recall  f1-score   support
+
+     Jamming      0.522     0.289     0.372        83
+      Normal      1.000     1.000     1.000       934
+      Replay      0.538     0.389     0.452        18
+    Wormhole      0.033     0.111     0.051        18
+
+    accuracy                          0.918      1053
+   macro avg      0.523     0.447     0.469      1053
+weighted avg      0.938     0.918     0.925      1053
+
+Matrice de confusion (lignes = vrai, colonnes = prédit) :
+          Jamming  Normal  Replay  Wormhole
+Jamming        24       0       6        53
+Normal          0     934       0         0
+Replay          6       0       7         5
+Wormhole       16       0       0         2
+
+Label = type d'émetteur (capteur=Normal, jammer, replay, wormhole).
+sender_mac sert UNIQUEMENT à construire Y, jamais comme feature X.
+
+Runs train 72 | test 24
+Lignes train 3419 | test 1053
+Importance des features :
+transmitted_bytes    0.453757
+energy_consumed      0.134047
+interarrival_s       0.131309
+rssi_dBm             0.098441
+snir_dB              0.098287
+packet_size_B        0.063929
+received             0.020229
+collision            0.000000
