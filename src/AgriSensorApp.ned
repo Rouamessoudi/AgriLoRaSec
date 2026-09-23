@@ -42,6 +42,12 @@ simple AgriSensorApp like IApp
         bool evaluateADRinNode = default(false);
         int dataSize @unit(B) = default(20B);
 
+        // Mitigation jamming : hop de frequence (FLoRa ne collisionne que si meme loRaCF).
+        // Desactive par defaut : les campagnes V2/V3 restent inchangees.
+        bool enableChannelHop = default(false);
+        double channelHopTime @unit(s) = default(360s);
+        double channelHopFrequency @unit(Hz) = default(868.3MHz);
+
     gates:
         input socketIn @labels(LoRaAppPacket/up);
         output socketOut @labels(LoRaAppPacket/down);

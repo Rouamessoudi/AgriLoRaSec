@@ -59,7 +59,7 @@ network AgriLoRaNetwork20
             @display("p=100,534;i=device/accesspoint");
         }
         loRaNode1: LoRaNode {
-            @display("p=90,462;i=device/accesspoint");
+            @display("p=69,428;i=device/accesspoint");
         }
         loRaNode2: LoRaNode {
             @display("p=69,634;i=device/accesspoint");
@@ -71,10 +71,10 @@ network AgriLoRaNetwork20
             @display("p=541,534;i=device/accesspoint");
         }
         loRaNode5: LoRaNode {
-            @display("p=320,615;i=device/accesspoint");
+            @display("p=341,649;i=device/accesspoint");
         }
         loRaNode6: LoRaNode {
-            @display("p=217,634;i=device/accesspoint");
+            @display("p=217,615;i=device/accesspoint");
         }
         loRaNode7: LoRaNode {
             @display("p=648,634;i=device/accesspoint");
@@ -88,16 +88,16 @@ network AgriLoRaNetwork20
 
         // ----- 10 noeuds ajoutes (scalabilite 20) -----
         loRaNode10: LoRaNode {
-            @display("p=175,500;i=device/accesspoint");
+            @display("p=90,484;i=device/accesspoint");
         }
         loRaNode11: LoRaNode {
             @display("p=250,500;i=device/accesspoint");
         }
         loRaNode12: LoRaNode {
-            @display("p=400,470;i=device/accesspoint");
+            @display("p=431,452;i=device/accesspoint");
         }
         loRaNode13: LoRaNode {
-            @display("p=470,534;i=device/accesspoint");
+            @display("p=431,500;i=device/accesspoint");
         }
         loRaNode14: LoRaNode {
             @display("p=590,560;i=device/accesspoint");
@@ -112,10 +112,10 @@ network AgriLoRaNetwork20
             @display("p=560,470;i=device/accesspoint");
         }
         loRaNode18: LoRaNode {
-            @display("p=720,630;i=device/accesspoint");
+            @display("p=697,600;i=device/accesspoint");
         }
         loRaNode19: LoRaNode {
-            @display("p=280,470;i=device/accesspoint");
+            @display("p=228,428;i=device/accesspoint");
         }
 
         jammer: JammerNode {

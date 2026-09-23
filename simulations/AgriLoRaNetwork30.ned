@@ -53,10 +53,10 @@ network AgriLoRaNetwork30
 
         // ----- loRaNode0-9 : positions identiques a AgriLoRaNetwork -----
         loRaNode0: LoRaNode {
-            @display("p=100,534;i=device/accesspoint");
+            @display("p=69,534;i=device/accesspoint");
         }
         loRaNode1: LoRaNode {
-            @display("p=90,462;i=device/accesspoint");
+            @display("p=69,452;i=device/accesspoint");
         }
         loRaNode2: LoRaNode {
             @display("p=69,634;i=device/accesspoint");
@@ -71,7 +71,7 @@ network AgriLoRaNetwork30
             @display("p=320,615;i=device/accesspoint");
         }
         loRaNode6: LoRaNode {
-            @display("p=217,634;i=device/accesspoint");
+            @display("p=286,665;i=device/accesspoint");
         }
         loRaNode7: LoRaNode {
             @display("p=648,634;i=device/accesspoint");
@@ -84,19 +84,19 @@ network AgriLoRaNetwork30
         }
         // ----- loRaNode10-19 : identiques a AgriLoRaNetwork20 -----
         loRaNode10: LoRaNode {
-            @display("p=175,500;i=device/accesspoint");
+            @display("p=79,500;i=device/accesspoint");
         }
         loRaNode11: LoRaNode {
-            @display("p=250,500;i=device/accesspoint");
+            @display("p=231,469;i=device/accesspoint");
         }
         loRaNode12: LoRaNode {
             @display("p=400,470;i=device/accesspoint");
         }
         loRaNode13: LoRaNode {
-            @display("p=470,534;i=device/accesspoint");
+            @display("p=460,428;i=device/accesspoint");
         }
         loRaNode14: LoRaNode {
-            @display("p=590,560;i=device/accesspoint");
+            @display("p=683,452;i=device/accesspoint");
         }
         loRaNode15: LoRaNode {
             @display("p=150,650;i=device/accesspoint");
@@ -108,14 +108,14 @@ network AgriLoRaNetwork30
             @display("p=560,470;i=device/accesspoint");
         }
         loRaNode18: LoRaNode {
-            @display("p=720,630;i=device/accesspoint");
+            @display("p=718,579;i=device/accesspoint");
         }
         loRaNode19: LoRaNode {
-            @display("p=280,470;i=device/accesspoint");
+            @display("p=149,420;i=device/accesspoint");
         }
         // ----- loRaNode20-29 : densification meme zone display -----
         loRaNode20: LoRaNode {
-            @display("p=130,560;i=device/accesspoint");
+            @display("p=200,517;i=device/accesspoint");
         }
         loRaNode21: LoRaNode {
             @display("p=210,560;i=device/accesspoint");
@@ -124,13 +124,13 @@ network AgriLoRaNetwork30
             @display("p=360,500;i=device/accesspoint");
         }
         loRaNode23: LoRaNode {
-            @display("p=440,620;i=device/accesspoint");
+            @display("p=286,442;i=device/accesspoint");
         }
         loRaNode24: LoRaNode {
             @display("p=510,500;i=device/accesspoint");
         }
         loRaNode25: LoRaNode {
-            @display("p=620,500;i=device/accesspoint");
+            @display("p=670,500;i=device/accesspoint");
         }
         loRaNode26: LoRaNode {
             @display("p=80,580;i=device/accesspoint");
@@ -142,14 +142,14 @@ network AgriLoRaNetwork30
             @display("p=430,640;i=device/accesspoint");
         }
         loRaNode29: LoRaNode {
-            @display("p=670,560;i=device/accesspoint");
+            @display("p=580,579;i=device/accesspoint");
         }
 
         jammer: JammerNode {
             @display("p=649,194;i=device/antennatower;is=s");
         }
         replayer: ReplayNode {
-            @display("p=648,429;i=device/antennatower;is=s");
+            @display("p=648,387;i=device/antennatower;is=s");
         }
         wormholeA: LoRaNode {
             @display("p=100,298;i=device/antennatower;is=s");

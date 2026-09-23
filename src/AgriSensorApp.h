@@ -42,7 +42,13 @@ class AgriSensorApp : public cSimpleModule, public ILifecycle
     simtime_t timeToNextPacket;
 
     cMessage *sendMeasurements = nullptr;
+    cMessage *channelHopTimer = nullptr;
     flora::LoRaRadio *loRaRadio = nullptr;
+    bool enableChannelHop = false;
+    bool channelHopDone = false;
+    simtime_t channelHopTime;
+    inet::units::values::Hz channelHopFrequency = inet::units::values::Hz(868.3e6);
+    void applyChannelHop();
 
     bool evaluateADRinNode = false;
     int ADR_ACK_CNT = 0;

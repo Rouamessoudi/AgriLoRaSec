@@ -9,6 +9,7 @@ Define_Module(AgriSensorApp);
 AgriSensorApp::~AgriSensorApp()
 {
     cancelAndDelete(sendMeasurements);
+    cancelAndDelete(channelHopTimer);
 }
 
 void AgriSensorApp::initialize(int stage)
@@ -53,6 +54,18 @@ void AgriSensorApp::initialize(int stage)
         loRaRadio->loRaUseHeader = par("initialUseHeader");
         evaluateADRinNode = par("evaluateADRinNode");
 
+        enableChannelHop = par("enableChannelHop").boolValue();
+        channelHopDone = false;
+        channelHopTime = par("channelHopTime").doubleValue();
+        channelHopFrequency = inet::units::values::Hz(par("channelHopFrequency").doubleValue());
+        if (enableChannelHop) {
+            channelHopTimer = new cMessage("channelHopTimer");
+            scheduleAt(channelHopTime, channelHopTimer);
+            fprintf(stderr, "AgriSensorApp CHANNEL_HOP armed t=%s freq=%gHz (current=%gHz)\n",
+                    channelHopTime.str().c_str(), channelHopFrequency.get(), getCF().get());
+            fflush(stderr);
+        }
+
         EV_INFO << "AgriSensorApp init on " << hostName
                 << " (nodeIndex=" << nodeIndex
                 << ") with 3 sensors: temperature, soilHumidity, airHumidity\n";
@@ -64,11 +77,19 @@ void AgriSensorApp::finish()
     recordScalar("sentPackets", sentPackets);
     recordScalar("receivedADRCommands", receivedADRCommands);
     recordScalar("nodeIndex", nodeIndex);
+    recordScalar("channelHopEnabled", enableChannelHop ? 1 : 0);
+    recordScalar("channelHopDone", channelHopDone ? 1 : 0);
+    if (enableChannelHop)
+        recordScalar("channelHopFrequencyHz", channelHopFrequency.get());
 }
 
 void AgriSensorApp::handleMessage(cMessage *msg)
 {
     if (msg->isSelfMessage()) {
+        if (msg == channelHopTimer) {
+            applyChannelHop();
+            return;
+        }
         if (msg == sendMeasurements) {
             sendSensorReading();
             if (simTime() >= getSimulation()->getWarmupPeriod())
@@ -201,6 +222,17 @@ void AgriSensorApp::sendSensorReading()
         }
     }
     emit(LoRa_AppPacketSent, (long)getSF());
+}
+
+void AgriSensorApp::applyChannelHop()
+{
+    if (channelHopDone)
+        return;
+    setCF(channelHopFrequency);
+    channelHopDone = true;
+    fprintf(stderr, "AgriSensorApp CHANNEL_HOP applied t=%s newCF=%gHz node=%d\n",
+            simTime().str().c_str(), getCF().get(), nodeIndex);
+    fflush(stderr);
 }
 
 void AgriSensorApp::increaseSFIfPossible()

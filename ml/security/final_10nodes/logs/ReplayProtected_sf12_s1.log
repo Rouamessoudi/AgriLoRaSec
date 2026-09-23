@@ -1,0 +1,463 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2025 Andras Varga, OpenSim Ltd.
+Version: 6.3.0, build: 251110-bb3d6a4731, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  4
+Loading NED files from ../src:  13
+Loading NED files from ../../flora-1.2.0/src:  22
+Loading NED files from ../../inet-4.5.4/src:  1187
+
+Preparing for running configuration ReplayProtected, run #0...
+Scenario: $0="avg", $repetition=0
+Assigned runID=ReplayProtected-0-20260923-16:41:08-534
+Setting up network "agrilorasec.simulations.AgriLoRaNetwork"...
+Initializing...
+LoggingPacketForwarder duplicateFilter=1 log=results/ReplayProtected_sf12_s1_security.csv
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork.replayer.LoRaNic.mac
+PreserveHeaderLoRaMac initialized on AgriLoRaNetwork.wormholeB.LoRaNic.mac
+ReplayApp init attackStart=360 attackEnd=1440 maxPending=4 numberOfReplays=0 SF=12 classA=4.00s margin=0.05s
+
+Running simulation...
+** Event #0   t=0   Elapsed: 1.2e-05s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 328   present: 328   in FES: 15
+ReplayApp ATTACK_START t=360 end=1440
+ReplayApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=2 t=425.01199285765 delay=15.7196s due=440.73164226659 captures=1
+CAPTURE AgriSensorPacket temp=15.4035 soil=10.6346 air=66.4501 nodeIndex=1
+ReplayApp REPLAY mac=0A-AA-00-00-00-03 seq=2 t=440.73164226659 capture_t=425.01199285765 delay=15.7196s
+REPLAY AgriSensorPacket temp=15.4035 soil=10.6346 air=66.4501 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=2
+ReplayApp DROP_SELF_RAW t=440.73164226659
+ReplayApp PHY_TX_END t=442.44377026659 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-03 seq=2 t=442.44377120921
+ReplayApp CLASS_A_IDLE t=446.49377026659 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=2 t=460.86633149072 delay=6.03225s due=466.89858592538 captures=2
+CAPTURE AgriSensorPacket temp=16.5283 soil=73.3457 air=87.8634 nodeIndex=5
+ReplayApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=2 t=464.20669095001 delay=13.7196s due=477.92631241276 captures=3
+CAPTURE AgriSensorPacket temp=12.6462 soil=53.5297 air=84.5782 nodeIndex=8
+ReplayApp REPLAY mac=0A-AA-00-00-00-07 seq=2 t=466.89858592538 capture_t=460.86633149072 delay=6.03225s
+REPLAY AgriSensorPacket temp=16.5283 soil=73.3457 air=87.8634 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=2
+ReplayApp DROP_SELF_RAW t=466.89858592538
+ReplayApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=2 t=467.22656861844 delay=5.31703s due=472.54359580798 captures=4
+CAPTURE AgriSensorPacket temp=27.3808 soil=42.9238 air=89.3528 nodeIndex=6
+ReplayApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=2 t=467.34973728981 delay=12.0318s due=479.38155398656 captures=5
+CAPTURE AgriSensorPacket temp=33.859 soil=71.1946 air=56.5926 nodeIndex=9
+ReplayApp PHY_TX_END t=468.61071392538 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=472.66071392538 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-08 seq=2 t=472.66071392638 capture_t=467.22656861844 delay=5.31703s
+REPLAY AgriSensorPacket temp=27.3808 soil=42.9238 air=89.3528 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=2
+ReplayApp DROP_SELF_RAW t=472.66071392638
+ReplayApp PHY_TX_END t=474.37284192638 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=478.42284192638 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-0A seq=2 t=478.42284192738 capture_t=464.20669095001 delay=13.7196s
+REPLAY AgriSensorPacket temp=12.6462 soil=53.5297 air=84.5782 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=2
+ReplayApp DROP_SELF_RAW t=478.42284192738
+ReplayApp PHY_TX_END t=480.13496992738 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-0A seq=2 t=480.13497087
+ReplayApp CLASS_A_IDLE t=484.18496992738 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-0B seq=2 t=484.18496992838 capture_t=467.34973728981 delay=12.0318s
+REPLAY AgriSensorPacket temp=33.859 soil=71.1946 air=56.5926 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=2
+ReplayApp DROP_SELF_RAW t=484.18496992838
+ReplayApp PHY_TX_END t=485.89709792838 airtime=1.71213s classAWait=4.05s
+ReplayApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=2 t=489.89948818352 delay=8.51688s due=498.41637181895 captures=6
+CAPTURE AgriSensorPacket temp=18.0819 soil=40.4865 air=90.8194 nodeIndex=3
+ReplayApp CLASS_A_IDLE t=489.94709792838 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-05 seq=2 t=498.41637181895 capture_t=489.89948818352 delay=8.51688s
+REPLAY AgriSensorPacket temp=18.0819 soil=40.4865 air=90.8194 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=2
+ReplayApp DROP_SELF_RAW t=498.41637181895
+ReplayApp PHY_TX_END t=500.12849981895 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-05 seq=2 t=500.12850076157
+ReplayApp CLASS_A_IDLE t=504.17849981895 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=2 t=520.80412186445 delay=19.8093s due=540.6133804726 captures=7
+CAPTURE AgriSensorPacket temp=31.721 soil=75.0006 air=46.2297 nodeIndex=0
+ReplayApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=2 t=524.50068008285 delay=16.8926s due=541.39329408333 captures=8
+CAPTURE AgriSensorPacket temp=17.536 soil=44.4377 air=68.6105 nodeIndex=7
+ReplayApp REPLAY mac=0A-AA-00-00-00-02 seq=2 t=540.6133804726 capture_t=520.80412186445 delay=19.8093s
+REPLAY AgriSensorPacket temp=31.721 soil=75.0006 air=46.2297 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=2
+ReplayApp DROP_SELF_RAW t=540.6133804726
+ReplayApp PHY_TX_END t=542.3255084726 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-02 seq=2 t=542.32550941522
+ReplayApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=2 t=544.35429741353 delay=4.75743s due=549.11173210507 captures=9
+CAPTURE AgriSensorPacket temp=36.4531 soil=61.7855 air=56.5063 nodeIndex=2
+ReplayApp CLASS_A_IDLE t=546.3755084726 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-09 seq=2 t=546.3755084736 capture_t=524.50068008285 delay=16.8926s
+REPLAY AgriSensorPacket temp=17.536 soil=44.4377 air=68.6105 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=2
+ReplayApp DROP_SELF_RAW t=546.3755084736
+ReplayApp PHY_TX_END t=548.0876364736 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-09 seq=2 t=548.08763741622
+ReplayApp CLASS_A_IDLE t=552.1376364736 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-04 seq=2 t=552.1376364746 capture_t=544.35429741353 delay=4.75743s
+REPLAY AgriSensorPacket temp=36.4531 soil=61.7855 air=56.5063 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=2
+ReplayApp DROP_SELF_RAW t=552.1376364746
+ReplayApp PHY_TX_END t=553.8497644746 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-04 seq=2 t=553.84976541722
+ReplayApp CLASS_A_IDLE t=557.8997644746 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=2 t=559.06778595746 delay=20.7817s due=579.84947855198 captures=10
+CAPTURE AgriSensorPacket temp=32.8001 soil=48.1122 air=52.0749 nodeIndex=4
+ReplayApp REPLAY mac=0A-AA-00-00-00-06 seq=2 t=579.84947855198 capture_t=559.06778595746 delay=20.7817s
+REPLAY AgriSensorPacket temp=32.8001 soil=48.1122 air=52.0749 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=2
+ReplayApp DROP_SELF_RAW t=579.84947855198
+ReplayApp PHY_TX_END t=581.56160655198 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-06 seq=2 t=581.5616074946
+ReplayApp CLASS_A_IDLE t=585.61160655198 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=3 t=645.75698767206 delay=14.4124s due=660.16934197186 captures=11
+CAPTURE AgriSensorPacket temp=17.3061 soil=56.6725 air=23.5677 nodeIndex=5
+ReplayApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=3 t=646.31281733298 delay=13.6591s due=659.97190871713 captures=12
+CAPTURE AgriSensorPacket temp=30.6822 soil=57.2416 air=38.1884 nodeIndex=9
+ReplayApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=3 t=652.07511148375 delay=5.60707s due=657.68218382664 captures=13
+CAPTURE AgriSensorPacket temp=25.0954 soil=14.651 air=37.3181 nodeIndex=1
+ReplayApp REPLAY mac=0A-AA-00-00-00-03 seq=3 t=657.68218382664 capture_t=652.07511148375 delay=5.60707s
+REPLAY AgriSensorPacket temp=25.0954 soil=14.651 air=37.3181 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=3
+ReplayApp DROP_SELF_RAW t=657.68218382664
+ReplayApp PHY_TX_END t=659.39431182664 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-03 seq=3 t=659.39431276926
+ReplayApp CLASS_A_IDLE t=663.44431182664 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-0B seq=3 t=663.44431182764 capture_t=646.31281733298 delay=13.6591s
+REPLAY AgriSensorPacket temp=30.6822 soil=57.2416 air=38.1884 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=3
+ReplayApp DROP_SELF_RAW t=663.44431182764
+ReplayApp PHY_TX_END t=665.15643982764 airtime=1.71213s classAWait=4.05s
+ReplayApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=3 t=665.77224388606 delay=16.0466s due=681.81880809906 captures=14
+CAPTURE AgriSensorPacket temp=26.1396 soil=49.1238 air=45.4403 nodeIndex=8
+ReplayApp CLASS_A_IDLE t=669.20643982764 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-07 seq=3 t=669.20643982864 capture_t=645.75698767206 delay=14.4124s
+REPLAY AgriSensorPacket temp=17.3061 soil=56.6725 air=23.5677 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=3
+ReplayApp DROP_SELF_RAW t=669.20643982864
+ReplayApp PHY_TX_END t=670.91856782864 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-07 seq=3 t=670.91856877126
+ReplayApp CLASS_A_IDLE t=674.96856782864 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-0A seq=3 t=681.81880809906 capture_t=665.77224388606 delay=16.0466s
+REPLAY AgriSensorPacket temp=26.1396 soil=49.1238 air=45.4403 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=3
+ReplayApp DROP_SELF_RAW t=681.81880809906
+ReplayApp PHY_TX_END t=683.53093609906 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-0A seq=3 t=683.53093704168
+ReplayApp CLASS_A_IDLE t=687.58093609906 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=3 t=704.06903660105 delay=18.7599s due=722.82893010735 captures=15
+CAPTURE AgriSensorPacket temp=22.6151 soil=36.3788 air=33.3549 nodeIndex=0
+ReplayApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=3 t=704.7162086758 delay=15.4606s due=720.17683691989 captures=16
+CAPTURE AgriSensorPacket temp=22.5131 soil=82.1287 air=80.0495 nodeIndex=6
+ReplayApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=3 t=713.3115135641 delay=20.4792s due=733.79075613992 captures=17
+CAPTURE AgriSensorPacket temp=33.0886 soil=55.9042 air=51.4441 nodeIndex=7
+ReplayApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=3 t=719.65026000778 delay=14.1706s due=733.82089122136 captures=18
+CAPTURE AgriSensorPacket temp=26.2942 soil=60.6567 air=20.382 nodeIndex=2
+ReplayApp REPLAY mac=0A-AA-00-00-00-08 seq=3 t=720.17683691989 capture_t=704.7162086758 delay=15.4606s
+REPLAY AgriSensorPacket temp=22.5131 soil=82.1287 air=80.0495 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=3
+ReplayApp DROP_SELF_RAW t=720.17683691989
+ReplayApp PHY_TX_END t=721.88896491989 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=725.93896491989 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-02 seq=3 t=725.93896492089 capture_t=704.06903660105 delay=18.7599s
+REPLAY AgriSensorPacket temp=22.6151 soil=36.3788 air=33.3549 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=3
+ReplayApp DROP_SELF_RAW t=725.93896492089
+ReplayApp PHY_TX_END t=727.65109292089 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=731.70109292089 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-09 seq=3 t=733.79075613992 capture_t=713.3115135641 delay=20.4792s
+REPLAY AgriSensorPacket temp=33.0886 soil=55.9042 air=51.4441 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=3
+ReplayApp DROP_SELF_RAW t=733.79075613992
+ReplayApp PHY_TX_END t=735.50288413992 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=739.55288413992 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-04 seq=3 t=739.55288414092 capture_t=719.65026000778 delay=14.1706s
+REPLAY AgriSensorPacket temp=26.2942 soil=60.6567 air=20.382 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=3
+ReplayApp DROP_SELF_RAW t=739.55288414092
+ReplayApp PHY_TX_END t=741.26501214092 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-04 seq=3 t=741.26501308354
+ReplayApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=3 t=741.39396497479 delay=20.09s due=761.48392064834 captures=19
+CAPTURE AgriSensorPacket temp=12.2687 soil=86.421 air=43.5542 nodeIndex=3
+ReplayApp CLASS_A_IDLE t=745.31501214092 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-05 seq=3 t=761.48392064834 capture_t=741.39396497479 delay=20.09s
+REPLAY AgriSensorPacket temp=12.2687 soil=86.421 air=43.5542 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=3
+ReplayApp DROP_SELF_RAW t=761.48392064834
+ReplayApp PHY_TX_END t=763.19604864834 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-05 seq=3 t=763.19604959096
+ReplayApp CLASS_A_IDLE t=767.24604864834 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=3 t=800.14093891979 delay=21.7579s due=821.89885308855 captures=20
+CAPTURE AgriSensorPacket temp=36.8526 soil=75.5674 air=43.326 nodeIndex=4
+ReplayApp REPLAY mac=0A-AA-00-00-00-06 seq=3 t=821.89885308855 capture_t=800.14093891979 delay=21.7579s
+REPLAY AgriSensorPacket temp=36.8526 soil=75.5674 air=43.326 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=3
+ReplayApp DROP_SELF_RAW t=821.89885308855
+ReplayApp PHY_TX_END t=823.61098108855 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-06 seq=3 t=823.61098203117
+ReplayApp CLASS_A_IDLE t=827.66098108855 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=4 t=841.46438830351 delay=17.9985s due=859.46289395919 captures=21
+CAPTURE AgriSensorPacket temp=13.1579 soil=23.7775 air=32.9546 nodeIndex=5
+ReplayApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=4 t=845.51635238124 delay=12.1041s due=857.62045891365 captures=22
+CAPTURE AgriSensorPacket temp=25.6791 soil=68.0133 air=47.7408 nodeIndex=9
+ReplayApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=4 t=854.61003569328 delay=19.1842s due=873.79424278439 captures=23
+CAPTURE AgriSensorPacket temp=22.9306 soil=89.8307 air=67.27 nodeIndex=1
+ReplayApp REPLAY mac=0A-AA-00-00-00-0B seq=4 t=857.62045891365 capture_t=845.51635238124 delay=12.1041s
+REPLAY AgriSensorPacket temp=25.6791 soil=68.0133 air=47.7408 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=4
+ReplayApp DROP_SELF_RAW t=857.62045891365
+ReplayApp PHY_TX_END t=859.33258691365 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-0B seq=4 t=859.33258785627
+ReplayApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=4 t=860.35917566762 delay=23.641s due=884.00013481009 captures=24
+CAPTURE AgriSensorPacket temp=15.0689 soil=62.3072 air=20.8392 nodeIndex=8
+ReplayApp CLASS_A_IDLE t=863.38258691365 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-07 seq=4 t=863.38258691465 capture_t=841.46438830351 delay=17.9985s
+REPLAY AgriSensorPacket temp=13.1579 soil=23.7775 air=32.9546 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=4
+ReplayApp DROP_SELF_RAW t=863.38258691465
+ReplayApp PHY_TX_END t=865.09471491465 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-07 seq=4 t=865.09471585727
+ReplayApp CLASS_A_IDLE t=869.14471491465 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-03 seq=4 t=873.79424278439 capture_t=854.61003569328 delay=19.1842s
+REPLAY AgriSensorPacket temp=22.9306 soil=89.8307 air=67.27 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=4
+ReplayApp DROP_SELF_RAW t=873.79424278439
+ReplayApp PHY_TX_END t=875.50637078439 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-03 seq=4 t=875.50637172701
+ReplayApp CLASS_A_IDLE t=879.55637078439 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=4 t=882.29478449909 delay=4.07527s due=886.37005380517 captures=25
+CAPTURE AgriSensorPacket temp=10.1066 soil=79.8496 air=74.2521 nodeIndex=6
+ReplayApp REPLAY mac=0A-AA-00-00-00-0A seq=4 t=884.00013481009 capture_t=860.35917566762 delay=23.641s
+REPLAY AgriSensorPacket temp=15.0689 soil=62.3072 air=20.8392 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=4
+ReplayApp DROP_SELF_RAW t=884.00013481009
+ReplayApp PHY_TX_END t=885.71226281009 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-0A seq=4 t=885.71226375271
+ReplayApp CLASS_A_IDLE t=889.76226281009 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-08 seq=4 t=889.76226281109 capture_t=882.29478449909 delay=4.07527s
+REPLAY AgriSensorPacket temp=10.1066 soil=79.8496 air=74.2521 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=4
+ReplayApp DROP_SELF_RAW t=889.76226281109
+ReplayApp PHY_TX_END t=891.47439081109 airtime=1.71213s classAWait=4.05s
+ReplayApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=4 t=892.50015919315 delay=22.2681s due=914.76828547273 captures=26
+CAPTURE AgriSensorPacket temp=26.5472 soil=45.2255 air=67.7674 nodeIndex=0
+ReplayApp CLASS_A_IDLE t=895.52439081109 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=4 t=908.50109758979 delay=14.7407s due=923.24180418026 captures=27
+CAPTURE AgriSensorPacket temp=38.0626 soil=44.2023 air=46.4509 nodeIndex=2
+ReplayApp REPLAY mac=0A-AA-00-00-00-02 seq=4 t=914.76828547273 capture_t=892.50015919315 delay=22.2681s
+REPLAY AgriSensorPacket temp=26.5472 soil=45.2255 air=67.7674 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=4
+ReplayApp DROP_SELF_RAW t=914.76828547273
+ReplayApp PHY_TX_END t=916.48041347273 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-02 seq=4 t=916.48041441535
+ReplayApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=4 t=919.89686170818 delay=20.8602s due=940.75705789255 captures=28
+CAPTURE AgriSensorPacket temp=34.7709 soil=64.4963 air=87.221 nodeIndex=3
+ReplayApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=4 t=920.4668674592 delay=18.7944s due=939.26130871727 captures=29
+CAPTURE AgriSensorPacket temp=11.0474 soil=64.337 air=20.2585 nodeIndex=7
+ReplayApp CLASS_A_IDLE t=920.53041347273 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-04 seq=4 t=923.24180418026 capture_t=908.50109758979 delay=14.7407s
+REPLAY AgriSensorPacket temp=38.0626 soil=44.2023 air=46.4509 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=4
+ReplayApp DROP_SELF_RAW t=923.24180418026
+ReplayApp PHY_TX_END t=924.95393218026 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=929.00393218026 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-09 seq=4 t=939.26130871727 capture_t=920.4668674592 delay=18.7944s
+REPLAY AgriSensorPacket temp=11.0474 soil=64.337 air=20.2585 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=4
+ReplayApp DROP_SELF_RAW t=939.26130871727
+ReplayApp PHY_TX_END t=940.97343671727 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=945.02343671727 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-05 seq=4 t=945.02343671827 capture_t=919.89686170818 delay=20.8602s
+REPLAY AgriSensorPacket temp=34.7709 soil=64.4963 air=87.221 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=4
+ReplayApp DROP_SELF_RAW t=945.02343671827
+ReplayApp PHY_TX_END t=946.73556471827 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-05 seq=4 t=946.73556566089
+ReplayApp CLASS_A_IDLE t=950.78556471827 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=5 t=1023.03051900719 delay=19.4338s due=1042.46430128854 captures=30
+CAPTURE AgriSensorPacket temp=13.7225 soil=59.6375 air=33.6108 nodeIndex=5
+ReplayApp REPLAY mac=0A-AA-00-00-00-07 seq=5 t=1042.46430128854 capture_t=1023.03051900719 delay=19.4338s
+REPLAY AgriSensorPacket temp=13.7225 soil=59.6375 air=33.6108 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=5
+ReplayApp DROP_SELF_RAW t=1042.46430128854
+ReplayApp PHY_TX_END t=1044.17642928854 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-07 seq=5 t=1044.17643023116
+ReplayApp CLASS_A_IDLE t=1048.22642928854 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=5 t=1051.79876744224 delay=21.9119s due=1073.71067707928 captures=31
+CAPTURE AgriSensorPacket temp=32.4833 soil=65.285 air=62.9516 nodeIndex=8
+ReplayApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=5 t=1059.84047258046 delay=18.5571s due=1078.39755833574 captures=32
+CAPTURE AgriSensorPacket temp=34.2168 soil=81.611 air=79.3383 nodeIndex=9
+ReplayApp REPLAY mac=0A-AA-00-00-00-0A seq=5 t=1073.71067707928 capture_t=1051.79876744224 delay=21.9119s
+REPLAY AgriSensorPacket temp=32.4833 soil=65.285 air=62.9516 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=5
+ReplayApp DROP_SELF_RAW t=1073.71067707928
+ReplayApp PHY_TX_END t=1075.42280507928 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-0A seq=5 t=1075.4228060219
+ReplayApp CLASS_A_IDLE t=1079.47280507928 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-0B seq=5 t=1079.47280508028 capture_t=1059.84047258046 delay=18.5571s
+REPLAY AgriSensorPacket temp=34.2168 soil=81.611 air=79.3383 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=5
+ReplayApp DROP_SELF_RAW t=1079.47280508028
+ReplayApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=5 t=1080.67093358036 delay=7.82409s due=1088.4950211289 captures=33
+CAPTURE AgriSensorPacket temp=38.7168 soil=61.0011 air=72.6737 nodeIndex=6
+ReplayApp PHY_TX_END t=1081.18493308028 airtime=1.71213s classAWait=4.05s
+ReplayApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=5 t=1083.42436106091 delay=22.2619s due=1105.68625681063 captures=34
+CAPTURE AgriSensorPacket temp=10.7818 soil=86.5815 air=20.5285 nodeIndex=1
+ReplayApp CLASS_A_IDLE t=1085.23493308028 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-08 seq=5 t=1088.4950211289 capture_t=1080.67093358036 delay=7.82409s
+REPLAY AgriSensorPacket temp=38.7168 soil=61.0011 air=72.6737 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=5
+ReplayApp DROP_SELF_RAW t=1088.4950211289
+ReplayApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=4 t=1089.12542664153 delay=7.22184s due=1096.34726646552 captures=35
+CAPTURE AgriSensorPacket temp=11.2506 soil=75.6963 air=69.4977 nodeIndex=4
+ReplayApp PHY_TX_END t=1090.2071491289 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=1094.2571491289 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-06 seq=4 t=1096.34726646552 capture_t=1089.12542664153 delay=7.22184s
+REPLAY AgriSensorPacket temp=11.2506 soil=75.6963 air=69.4977 nodeIndex=4
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-06 seq=4
+ReplayApp DROP_SELF_RAW t=1096.34726646552
+ReplayApp PHY_TX_END t=1098.05939446552 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-06 seq=4 t=1098.05939540814
+ReplayApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=5 t=1101.03678251181 delay=13.6205s due=1114.65732584598 captures=36
+CAPTURE AgriSensorPacket temp=31.1064 soil=22.4503 air=88.7945 nodeIndex=7
+ReplayApp CLASS_A_IDLE t=1102.10939446552 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-03 seq=5 t=1105.68625681063 capture_t=1083.42436106091 delay=22.2619s
+REPLAY AgriSensorPacket temp=10.7818 soil=86.5815 air=20.5285 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=5
+ReplayApp DROP_SELF_RAW t=1105.68625681063
+ReplayApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=5 t=1105.88110889051 delay=8.35554s due=1114.2366466741 captures=37
+CAPTURE AgriSensorPacket temp=39.4163 soil=79.4591 air=51.5571 nodeIndex=2
+ReplayApp PHY_TX_END t=1107.39838481063 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-03 seq=5 t=1107.39838575325
+ReplayApp CLASS_A_IDLE t=1111.44838481063 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-04 seq=5 t=1114.2366466741 capture_t=1105.88110889051 delay=8.35554s
+REPLAY AgriSensorPacket temp=39.4163 soil=79.4591 air=51.5571 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=5
+ReplayApp DROP_SELF_RAW t=1114.2366466741
+ReplayApp PHY_TX_END t=1115.9487746741 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=1119.9987746741 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-09 seq=5 t=1119.9987746751 capture_t=1101.03678251181 delay=13.6205s
+REPLAY AgriSensorPacket temp=31.1064 soil=22.4503 air=88.7945 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=5
+ReplayApp DROP_SELF_RAW t=1119.9987746751
+ReplayApp PHY_TX_END t=1121.7109026751 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-09 seq=5 t=1121.71090361772
+ReplayApp CLASS_A_IDLE t=1125.7609026751 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=5 t=1127.1884180814 delay=12.2947s due=1139.48313075364 captures=38
+CAPTURE AgriSensorPacket temp=13.7585 soil=24.1219 air=78.9027 nodeIndex=3
+ReplayApp REPLAY mac=0A-AA-00-00-00-05 seq=5 t=1139.48313075364 capture_t=1127.1884180814 delay=12.2947s
+REPLAY AgriSensorPacket temp=13.7585 soil=24.1219 air=78.9027 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=5
+ReplayApp DROP_SELF_RAW t=1139.48313075364
+ReplayApp PHY_TX_END t=1141.19525875364 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-05 seq=5 t=1141.19525969626
+ReplayApp CLASS_A_IDLE t=1145.24525875364 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=5 t=1194.70651762807 delay=9.77262s due=1204.47914103875 captures=39
+CAPTURE AgriSensorPacket temp=24.373 soil=25.5432 air=92.6577 nodeIndex=0
+ReplayApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=6 t=1194.98819924715 delay=13.4069s due=1208.39506486883 captures=40
+CAPTURE AgriSensorPacket temp=19.3964 soil=79.959 air=36.9665 nodeIndex=5
+ReplayApp REPLAY mac=0A-AA-00-00-00-02 seq=5 t=1204.47914103875 capture_t=1194.70651762807 delay=9.77262s
+REPLAY AgriSensorPacket temp=24.373 soil=25.5432 air=92.6577 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=5
+ReplayApp DROP_SELF_RAW t=1204.47914103875
+ReplayApp PHY_TX_END t=1206.19126903875 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=1210.24126903875 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-07 seq=6 t=1210.24126903975 capture_t=1194.98819924715 delay=13.4069s
+REPLAY AgriSensorPacket temp=19.3964 soil=79.959 air=36.9665 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=6
+ReplayApp DROP_SELF_RAW t=1210.24126903975
+ReplayApp PHY_TX_END t=1211.95339703975 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-07 seq=6 t=1211.95339798237
+ReplayApp CLASS_A_IDLE t=1216.00339703975 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=6 t=1237.03232401835 delay=7.99707s due=1245.02939672435 captures=41
+CAPTURE AgriSensorPacket temp=38.1264 soil=73.6402 air=49.5597 nodeIndex=9
+ReplayApp REPLAY mac=0A-AA-00-00-00-0B seq=6 t=1245.02939672435 capture_t=1237.03232401835 delay=7.99707s
+REPLAY AgriSensorPacket temp=38.1264 soil=73.6402 air=49.5597 nodeIndex=9
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0B seq=6
+ReplayApp DROP_SELF_RAW t=1245.02939672435
+ReplayApp PHY_TX_END t=1246.74152472435 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-0B seq=6 t=1246.74152566697
+ReplayApp CLASS_A_IDLE t=1250.79152472435 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode1 mac=0A-AA-00-00-00-03 seq=6 t=1277.00719620201 delay=19.2719s due=1296.27914049925 captures=42
+CAPTURE AgriSensorPacket temp=39.1385 soil=37.605 air=32.3729 nodeIndex=1
+ReplayApp CAPTURE from loRaNode7 mac=0A-AA-00-00-00-09 seq=6 t=1277.40662186424 delay=7.1852s due=1284.59181700571 captures=43
+CAPTURE AgriSensorPacket temp=24.7563 soil=25.1673 air=78.6171 nodeIndex=7
+ReplayApp REPLAY mac=0A-AA-00-00-00-09 seq=6 t=1284.59181700571 capture_t=1277.40662186424 delay=7.1852s
+REPLAY AgriSensorPacket temp=24.7563 soil=25.1673 air=78.6171 nodeIndex=7
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-09 seq=6
+ReplayApp DROP_SELF_RAW t=1284.59181700571
+ReplayApp PHY_TX_END t=1286.30394500571 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-09 seq=6 t=1286.30394594833
+ReplayApp CLASS_A_IDLE t=1290.35394500571 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode6 mac=0A-AA-00-00-00-08 seq=6 t=1290.80827024289 delay=20.3185s due=1311.12675060996 captures=44
+CAPTURE AgriSensorPacket temp=32.2616 soil=62.1581 air=48.1088 nodeIndex=6
+ReplayApp REPLAY mac=0A-AA-00-00-00-03 seq=6 t=1296.27914049925 capture_t=1277.00719620201 delay=19.2719s
+REPLAY AgriSensorPacket temp=39.1385 soil=37.605 air=32.3729 nodeIndex=1
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-03 seq=6
+ReplayApp DROP_SELF_RAW t=1296.27914049925
+ReplayApp PHY_TX_END t=1297.99126849925 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=1302.04126849925 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-08 seq=6 t=1311.12675060996 capture_t=1290.80827024289 delay=20.3185s
+REPLAY AgriSensorPacket temp=32.2616 soil=62.1581 air=48.1088 nodeIndex=6
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-08 seq=6
+ReplayApp DROP_SELF_RAW t=1311.12675060996
+ReplayApp PHY_TX_END t=1312.83887860996 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=1316.88887860996 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode2 mac=0A-AA-00-00-00-04 seq=6 t=1329.55588287333 delay=20.0321s due=1349.58799430806 captures=45
+CAPTURE AgriSensorPacket temp=20.7363 soil=70.7243 air=91.1721 nodeIndex=2
+ReplayApp CAPTURE from loRaNode3 mac=0A-AA-00-00-00-05 seq=6 t=1345.03787086858 delay=12.9427s due=1357.98058846733 captures=46
+CAPTURE AgriSensorPacket temp=22.6779 soil=88.4887 air=39.1809 nodeIndex=3
+ReplayApp REPLAY mac=0A-AA-00-00-00-04 seq=6 t=1349.58799430806 capture_t=1329.55588287333 delay=20.0321s
+REPLAY AgriSensorPacket temp=20.7363 soil=70.7243 air=91.1721 nodeIndex=2
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-04 seq=6
+ReplayApp DROP_SELF_RAW t=1349.58799430806
+ReplayApp PHY_TX_END t=1351.30012230806 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-04 seq=6 t=1351.30012325068
+ReplayApp CLASS_A_IDLE t=1355.35012230806 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-05 seq=6 t=1357.98058846733 capture_t=1345.03787086858 delay=12.9427s
+REPLAY AgriSensorPacket temp=22.6779 soil=88.4887 air=39.1809 nodeIndex=3
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-05 seq=6
+ReplayApp DROP_SELF_RAW t=1357.98058846733
+ReplayApp PHY_TX_END t=1359.69271646733 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-05 seq=6 t=1359.69271740995
+ReplayApp CLASS_A_IDLE t=1363.74271646733 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode0 mac=0A-AA-00-00-00-02 seq=6 t=1378.37549375015 delay=16.1168s due=1394.49230966851 captures=47
+CAPTURE AgriSensorPacket temp=16.8646 soil=39.0948 air=89.827 nodeIndex=0
+ReplayApp CAPTURE from loRaNode5 mac=0A-AA-00-00-00-07 seq=7 t=1380.24007330087 delay=21.7071s due=1401.9471920775 captures=48
+CAPTURE AgriSensorPacket temp=15.6393 soil=51.1327 air=59.7988 nodeIndex=5
+ReplayApp CAPTURE from loRaNode8 mac=0A-AA-00-00-00-0A seq=6 t=1380.33040215214 delay=24.3038s due=1404.63421388668 captures=49
+CAPTURE AgriSensorPacket temp=10.4987 soil=74.7101 air=49.0526 nodeIndex=8
+ReplayApp REPLAY mac=0A-AA-00-00-00-02 seq=6 t=1394.49230966851 capture_t=1378.37549375015 delay=16.1168s
+REPLAY AgriSensorPacket temp=16.8646 soil=39.0948 air=89.827 nodeIndex=0
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-02 seq=6
+ReplayApp DROP_SELF_RAW t=1394.49230966851
+ReplayApp PHY_TX_END t=1396.20443766851 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=1400.25443766851 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-07 seq=7 t=1401.9471920775 capture_t=1380.24007330087 delay=21.7071s
+REPLAY AgriSensorPacket temp=15.6393 soil=51.1327 air=59.7988 nodeIndex=5
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-07 seq=7
+ReplayApp DROP_SELF_RAW t=1401.9471920775
+ReplayApp PHY_TX_END t=1403.6593200775 airtime=1.71213s classAWait=4.05s
+GW_DUP_REJECT mac=0A-AA-00-00-00-07 seq=7 t=1403.65932102012
+ReplayApp CLASS_A_IDLE t=1407.7093200775 lastPhyAirtime=1.71213s
+ReplayApp REPLAY mac=0A-AA-00-00-00-0A seq=6 t=1407.7093200785 capture_t=1380.33040215214 delay=24.3038s
+REPLAY AgriSensorPacket temp=10.4987 soil=74.7101 air=49.0526 nodeIndex=8
+PreserveHeaderLoRaMac skip encapsulate mac=0A-AA-00-00-00-0A seq=6
+ReplayApp DROP_SELF_RAW t=1407.7093200785
+ReplayApp PHY_TX_END t=1409.4214480785 airtime=1.71213s classAWait=4.05s
+ReplayApp CLASS_A_IDLE t=1413.4714480785 lastPhyAirtime=1.71213s
+ReplayApp CAPTURE from loRaNode4 mac=0A-AA-00-00-00-06 seq=5 t=1425.66520471664 delay=15.5865s due=1441.25170200786 captures=50
+CAPTURE AgriSensorPacket temp=14.6204 soil=80.2863 air=48.336 nodeIndex=4
+ReplayApp CAPTURE from loRaNode9 mac=0A-AA-00-00-00-0B seq=7 t=1439.40652062953 delay=21.1045s due=1460.51102420082 captures=51
+CAPTURE AgriSensorPacket temp=28.9478 soil=23.9869 air=92.2747 nodeIndex=9
+ReplayApp ATTACK_END t=1440 captures=51 replays=49 dropQ=0 dropDup=0 dropRaw=49
+** Event #7736   t=1800   Elapsed: 0.062508s (0m 00s)  100% completed  (100% total)
+     Speed:     ev/sec=123778   simsec/sec=28799   ev/simsec=4.298
+     Messages:  created: 7922   present: 332   in FES: 16
+
+<!> Simulation time limit reached -- at t=1800s, event #7736
+
+Calling finish() at end of Run #0...
+
+End.

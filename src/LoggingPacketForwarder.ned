@@ -15,6 +15,11 @@ simple LoggingPacketForwarder like IApp
         int destPort;
         int indexNumber = default(0);
 
+        // Filtre anti-replay / anti-doublon wormhole (MAC + sequenceNumber).
+        // Desactive par defaut : campagnes V2/V3 inchangees.
+        bool enableDuplicateFilter = default(false);
+        string securityLogFile = default("results/security_events.csv");
+
     gates:
         output socketOut @labels(UdpControlInfo/up);
         input socketIn @labels(UdpControlInfo/down);
